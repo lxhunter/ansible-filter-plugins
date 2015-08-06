@@ -51,7 +51,7 @@
 
 ### Object Utilities
 * [attr] (#attrobj-name) - Get an attribute of an object.
-* [selectattr] (#slicevalue-slices-fill_withnone) - Slice an iterator and return a list of lists containing those items.
+* [selectattr] (#selectattr) - Slice an iterator and return a list of lists containing those items.
 
 ### Helper Utilities
 * [default] (#defaultvalue-default_valueu-booleanfalse) - Set a default value
@@ -1073,7 +1073,7 @@ Return true if the variable is uppercased.
 # => False
 ```
 
-#### Testing
+# Testing
 
 ```shell
 python -m unittest -v string_utils
