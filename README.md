@@ -14,7 +14,7 @@
 * [indent] (#indentstring-width4-indentfirstfalse) - Indent a string.
 * [list] (#listvalue) - Convert the value into a list.
 * [lower] (#lowerstring) - Convert a value to lowercase.
-* [replace] (#hreplacehaystack-neddle-substitute-countnone) - Search for needle in haystack and replace it with substitute.
+* [replace] (#replacehaystack-neddle-substitute-countnone) - Search for needle in haystack and replace it with substitute.
 * [string] (#stringobject) - Make a string unicode.
 * [title] (#titlestring) - Return a titlecased version of the value.
 * [trim] (#trimvalue) - Strip leading and trailing whitespace.
