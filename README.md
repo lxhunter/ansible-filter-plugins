@@ -46,7 +46,7 @@
 * [reject] (#reject) - Filters a sequence of objects by applying a test to the object and rejecting the ones with the test succeeding.
 * [rejectattr] (#rejectattr) - Filters a sequence of objects by applying a test to an attribute of an object or the attribute and rejecting the ones with the test succeeding.
 * [select] (#select) - Filters a sequence of objects by applying a test to the object and only selecting the ones with the test succeeding.
-* [slice] (#select) - Filters a sequence of objects by applying a test to the object and only selecting the ones with the test succeeding.
+* [slice] (#slicevalue-slices-fill_withnone) - Filters a sequence of objects by applying a test to the object and only selecting the ones with the test succeeding.
 * [sort] (#sortvalue-reversefalse-case_sensitivefalse-attributenone) - Sort an iterable.
 
 ### Object Utilities
