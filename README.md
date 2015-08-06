@@ -7,12 +7,27 @@
 ## String Utilities
 * [capitalize] (#capitalizestring) - Capitalize a String.
 * [center] (#centervalue-width80) - Centers the value in a field of a given width.
+* [filesizeformat] (#filesizeformatnumber-binaryfalse) - Format file sizes into ‘human-readable’ 
+* [escape] (#escapestring) - Convert the chars to HTML-safe sequences.
+* [forceescape] (#forceescapestring--string) - Enforce HTML escaping.
+* [format] (#formatstring-args-kwargs--string) - Apply python string formatting on an object.
+* [indent] (#indentstring-width4-indentfirstfalse) - Indent a string.
+* [list] (#listvalue) - Convert the value into a list.
+* [lower] (#lowerstring) - Convert a value to lowercase.
 
 ## Number Utilities 
 * [abs] (#absnumber) - Return the absolute value of the argument.
+* [float] (#floatstring-default00--string) - Convert the value into a floating point number.
+* [int] (#intvalue-default0-base10) - Convert the value into an integer.
 
 ## Collection Utilities
 * [batch] (#batchsequence-linecount-fill_withnone) - A filter that batches items.
+* [dictsort] (#dictsortdict-case_sensitivefalse-bykey) - Sort a dict and yield (key, value) pairs.
+* [first] (#firstsequence) - Return the first item of a sequence.
+* [groupby] (#groupbyvalue-attribute) - Group a sequence of objects by a common attribute.
+* [join] (#joinvalue-delimiter-attributenone) - Return a string which is the concatenation of the strings in the sequence.
+* [last] (#lastsequence) - Return the last item of a sequence.
+* [length] (#lengthobject) - Return the number of items of a sequence or mapping.
 
 ## Object Utilities
 * [attr] (#attrobj-name) - Get an attribute of an object.
