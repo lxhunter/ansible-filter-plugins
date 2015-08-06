@@ -14,11 +14,24 @@
 * [indent] (#indentstring-width4-indentfirstfalse) - Indent a string.
 * [list] (#listvalue) - Convert the value into a list.
 * [lower] (#lowerstring) - Convert a value to lowercase.
+* [replace] (#hreplacehaystack-neddle-substitute-countnone) - Search for needle in haystack and replace it with substitute.
+* [string] (#stringobject) - Make a string unicode.
+* [title] (#titlestring) - Return a titlecased version of the value.
+* [trim] (#trimvalue) - Strip leading and trailing whitespace.
+* [truncate] (#truncatestring-length255-killwordsfalse-end) - Return a truncated copy of the string.
+* [upper] (#upperstring) - Convert a value to uppercase.
+* [urlencode] (#urlencodevalue) - Escape strings for use in URLs.
+* [urlize] (#urlizevalue-trim_url_limitnone-nofollowfalse-targetnone) - Converts URLs in plain text into clickable links.
+* [wordcount] (#wordcountstring) - Count the words in that string.
+* [wordwrap] (#wordwrapstring-width79-break_long_wordstrue-wrapstringnone) - Return a copy of the string passed to the filter wrapped after n characters. 
+* [xmlattr] (#xmlattrdict-autospacetrue) - Create an SGML/XML attribute string based on the items in a dict. 
 
 ## Number Utilities 
-* [abs] (#absnumber) - Return the absolute value of the argument.
+* [abs] (#abs) - Return the absolute value of the argument.
 * [float] (#floatstring-default00--string) - Convert the value into a floating point number.
 * [int] (#intvalue-default0-base10) - Convert the value into an integer.
+* [round] (#roundvalue-precision0-methodcommon) - Round the number to a given precision.
+* [sum] (#sumiterable-attributenone-start0) - Returns the sum of a sequence.
 
 ## Collection Utilities
 * [batch] (#batchsequence-linecount-fill_withnone) - A filter that batches items.
@@ -28,16 +41,29 @@
 * [join] (#joinvalue-delimiter-attributenone) - Return a string which is the concatenation of the strings in the sequence.
 * [last] (#lastsequence) - Return the last item of a sequence.
 * [length] (#lengthobject) - Return the number of items of a sequence or mapping.
+* [map] (#map--list) - Applies a filter on a sequence of objects or looks up an attribute.
+* [random] (#randomsequence) - Return a random item from the sequence.
+* [reject] (#reject) - Filters a sequence of objects by applying a test to the object and rejecting the ones with the test succeeding.
+* [rejectattr] (#rejectattr) - Filters a sequence of objects by applying a test to an attribute of an object or the attribute and rejecting the ones with the test succeeding.
+* [select] (#select) - Filters a sequence of objects by applying a test to the object and only selecting the ones with the test succeeding.
+* [slice] (#select) - Filters a sequence of objects by applying a test to the object and only selecting the ones with the test succeeding.
+* [sort] (#sortvalue-reversefalse-case_sensitivefalse-attributenone) - Sort an iterable.
 
 ## Object Utilities
 * [attr] (#attrobj-name) - Get an attribute of an object.
+* [selectattr] (#slicevalue-slices-fill_withnone) - Slice an iterator and return a list of lists containing those items.
 
 ## Helper Utilities
 * [default] (#defaultvalue-default_valueu-booleanfalse) - Set a default value
+* [pprint] (#pprintvalue-verbosefalse) - Pretty print a variable.
+* [reverse] (#reversevalue) - Reverse the object or return an iterator that iterates over it the other way round.
+* [safe] (#safevalue) - Make all potentionally dangerous chars safe. - safety is a illusion, so beware!
+* [striptags] (#striptagsvalue) - Strip SGML/XML tags and replace adjacent whitespace by one space.
+
 
 ## Jinja List of Builtin Functions 
 
-#### abs(number)
+#### [abs] (#abs)(number)
 > jinja built-in
 
 Return the absolute value of the argument. 
@@ -347,8 +373,6 @@ Convert a value to lowercase.
 
 #### map() => list
 > jinja built-in
-
-_aliases_:
 
 Applies a filter on a sequence of objects or looks up an attribute. This is useful when dealing with lists of objects but you are really only interested in a certain value of it.
 
