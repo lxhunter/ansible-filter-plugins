@@ -9,11 +9,22 @@ python -m unittest -v string_utils
 nodemon -e 'py' --exec "python -m unittest -v string_utils"
 ```
 
+## String Utilities
+
+## Number Utilities 
+* [abs] (#absnumber) - Return the absolute value of the argument.
+
+
+## Collection Utilities
+
+## Object Utilities
+* [attr] (#attrobj-name) - Get an attribute of an object.
+
+
 ### Jinja List of Builtin Functions 
 
 #### abs(number)
 > jinja built-in
-
 
 Return the absolute value of the argument. 
 
@@ -999,37 +1010,16 @@ Like defined() but the other way round.
 Return true if the variable is uppercased.
 
 ```python
-{{ foo is equalto 12 }}
+{{ "FOO" is upper }}
 # => True
 
-{{ foo is equalto 0 }}
-# => False
-
-{{ foo is equalto (3 * 4) }}
-# => True
-
-{{ bar is equalto "baz" }}
-# => True
-
-{{ bar is equalto "zab" }}
-# => False
-
-{{ bar is equalto ("ba" + "z") }}
-# => True
-
-{{ bar is equalto bar }}
-# => True
-
-{{ bar is equalto foo }}
+{{ "foo" is upper }}
 # => False
 ```
 
 
-
-
 #### title
 > jinja built-in
-
 
 _aliases:_
 
@@ -1073,7 +1063,6 @@ _version_
 #### dedent
 
 ### should have functions
-#### capitalize (check)
 #### decapitalize (check)
 #### chop 
 #### escapeHTML
@@ -1096,7 +1085,6 @@ _version_
 #### join (check)
 #### predecessor
 #### classify
-#### trim (check)
 #### rtrim (check)
 #### ltrim (check)
 #### words (check)
