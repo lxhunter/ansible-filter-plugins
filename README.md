@@ -5,18 +5,22 @@
 # Shortcut Overview
 
 ## String Utilities
+* [capitalize] (#capitalizestring) - Capitalize a String.
+* [center] (#centervalue-width80) - Centers the value in a field of a given width.
 
 ## Number Utilities 
 * [abs] (#absnumber) - Return the absolute value of the argument.
 
-
 ## Collection Utilities
+* [batch] (#batchsequence-linecount-fill_withnone) - A filter that batches items.
 
 ## Object Utilities
 * [attr] (#attrobj-name) - Get an attribute of an object.
 
+## Helper Utilities
+* [default] (#defaultvalue-default_valueu-booleanfalse) - Set a default value
 
-### Jinja List of Builtin Functions 
+## Jinja List of Builtin Functions 
 
 #### abs(number)
 > jinja built-in
@@ -57,7 +61,7 @@ A filter that batches items. It works pretty much like slice just the other way 
 > jinja built-in
 
 
-Capitalize a value. The first character will be uppercase, all others lowercase.
+Capitalize a string. The first character will be uppercase, all others lowercase.
 
 ```python
 {{ "foo bar"|capitalize }} 
@@ -742,7 +746,7 @@ Create an SGML/XML attribute string based on the items in a dict. All values tha
 # => class="my_list" id="list-42"
 ```
 
-### List of Builtin Tests 
+## List of Jinja Builtin Tests 
 
 #### callable(object)
 > jinja built-in
