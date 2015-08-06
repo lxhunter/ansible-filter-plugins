@@ -826,44 +826,73 @@ Check if an object points to the same memory address than another object
 # => False
 ```
 
-#### title
+#### sequence(value) 
 
-_aliases:_
-
-desc
+Return true if the variable is a sequence. Sequences are variables that are iterable.
 
 ```python
+{{ "foo" is sequence }}
+# => True
 
-# =>
+{{ [1] is sequence }}
+# => True
 ```
 
-_version_
+#### string(value)
 
-#### title
-
-_aliases:_
-
-desc
+Return true if the object is a string.
 
 ```python
-
-# =>
+{{ 42 is string }}
+# => False
+{{ "foo" is string }}
+# => True
 ```
 
-_version_
+#### undefined(value)
 
-#### title
-
-_aliases:_
-
-desc
+Like defined() but the other way round.
 
 ```python
+{{ 42 is undefined }}
+# => False
 
-# =>
+{{ missing is undefined }}
+# => True
 ```
 
-_version_
+#### upper(value)
+
+Return true if the variable is uppercased.
+
+```python
+{{ foo is equalto 12 }}
+# => True
+
+{{ foo is equalto 0 }}
+# => False
+
+{{ foo is equalto (3 * 4) }}
+# => True
+
+{{ bar is equalto "baz" }}
+# => True
+
+{{ bar is equalto "zab" }}
+# => False
+
+{{ bar is equalto ("ba" + "z") }}
+# => True
+
+{{ bar is equalto bar }}
+# => True
+
+{{ bar is equalto foo }}
+# => False
+```
+
+
+
 
 #### title
 
