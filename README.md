@@ -2,9 +2,9 @@
 # Ansible Filters
 #### WORK in PROGRESS
 
-# Shortcut Overview
+# Overview
 
-## String Utilities
+### String Utilities
 * [capitalize] (#capitalizestring) - Capitalize a String.
 * [center] (#centervalue-width80) - Centers the value in a field of a given width.
 * [filesizeformat] (#filesizeformatnumber-binaryfalse) - Format file sizes into ‘human-readable’ 
@@ -26,14 +26,14 @@
 * [wordwrap] (#wordwrapstring-width79-break_long_wordstrue-wrapstringnone) - Return a copy of the string passed to the filter wrapped after n characters. 
 * [xmlattr] (#xmlattrdict-autospacetrue) - Create an SGML/XML attribute string based on the items in a dict. 
 
-## Number Utilities 
-* [abs] (#abs) - Return the absolute value of the argument.
+### Number Utilities 
+* [abs] (#absnumber) - Return the absolute value of the argument.
 * [float] (#floatstring-default00--string) - Convert the value into a floating point number.
 * [int] (#intvalue-default0-base10) - Convert the value into an integer.
 * [round] (#roundvalue-precision0-methodcommon) - Round the number to a given precision.
 * [sum] (#sumiterable-attributenone-start0) - Returns the sum of a sequence.
 
-## Collection Utilities
+### Collection Utilities
 * [batch] (#batchsequence-linecount-fill_withnone) - A filter that batches items.
 * [dictsort] (#dictsortdict-case_sensitivefalse-bykey) - Sort a dict and yield (key, value) pairs.
 * [first] (#firstsequence) - Return the first item of a sequence.
@@ -49,11 +49,11 @@
 * [slice] (#select) - Filters a sequence of objects by applying a test to the object and only selecting the ones with the test succeeding.
 * [sort] (#sortvalue-reversefalse-case_sensitivefalse-attributenone) - Sort an iterable.
 
-## Object Utilities
+### Object Utilities
 * [attr] (#attrobj-name) - Get an attribute of an object.
 * [selectattr] (#slicevalue-slices-fill_withnone) - Slice an iterator and return a list of lists containing those items.
 
-## Helper Utilities
+### Helper Utilities
 * [default] (#defaultvalue-default_valueu-booleanfalse) - Set a default value
 * [pprint] (#pprintvalue-verbosefalse) - Pretty print a variable.
 * [reverse] (#reversevalue) - Reverse the object or return an iterator that iterates over it the other way round.
@@ -63,7 +63,7 @@
 
 ## Jinja List of Builtin Functions 
 
-#### [abs] (#abs)(number)
+#### abs(number)
 > jinja built-in
 
 Return the absolute value of the argument. 
