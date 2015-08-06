@@ -1073,6 +1073,303 @@ Return true if the variable is uppercased.
 # => False
 ```
 
+## List of Ansible Built-in Functions 
+
+#### b64encode
+> ansible built-in
+
+Encode Strings with Base64
+
+```python
+{{ 'foo' | b64decode }}
+# => 'Zm9v'
+```
+
+#### b64decode
+> ansible built-in
+
+Decode Base64 encoded Strings
+
+```python
+{{ 'Zm9v' | b64encode }}
+# => 'foo'
+```
+
+#### to_uuid
+> ansible built-in
+
+create a UUID from a string
+
+```python
+{{ hostname | to_uuid }}
+# => '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+```
+
+_new in Ansible version 1.9_
+
+#### to_json
+> ansible built-in
+
+Convert string into json
+
+```python
+{{ some_variable | to_json }}
+# =>
+```
+
+_version_
+
+#### to_nice_json
+> ansible built-in
+
+
+Convert string into human readable json
+
+```python
+{{ some_variable | to_nice_json }}
+# =>
+```
+
+#### from_json
+> ansible built-in
+
+Reading in some already json formatted data
+
+```python
+{{ some_variable | from_json }}
+# =>
+```
+
+#### to_yaml
+> ansible built-in
+
+Reading in some already yaml formatted data
+
+```python
+{{ some_variable | from_yaml }}
+# =>
+```
+
+#### to_nice_yaml
+> ansible built-in
+
+Convert string into human readable yaml
+
+```python
+{{ some_variable | to_nice_yaml }}
+# =>
+```
+
+#### from_yaml
+> ansible built-in
+
+_aliases:_
+
+desc
+
+```python
+
+# =>
+```
+
+_version_
+
+#### bool
+> ansible built-in
+
+_aliases:_
+
+desc
+
+```python
+
+# =>
+```
+
+_version_
+
+#### quote
+> ansible built-in
+
+_aliases:_
+
+desc
+
+```python
+
+# =>
+```
+
+_version_
+
+#### md5
+> ansible built-in
+
+_aliases:_
+
+desc
+
+```python
+
+# =>
+```
+
+_version_
+
+#### sha1
+> ansible built-in
+
+_aliases:_
+
+desc
+
+```python
+
+# =>
+```
+
+_version_
+
+#### checksum
+> ansible built-in
+
+_aliases:_
+
+desc
+
+```python
+
+# =>
+```
+
+_version_
+
+#### password_hash
+> ansible built-in
+
+_aliases:_
+
+desc
+
+```python
+
+# =>
+```
+
+_version_
+
+#### hash
+> ansible built-in
+
+_aliases:_
+
+desc
+
+```python
+
+# =>
+```
+
+_version_
+
+#### fileglob
+> ansible built-in
+
+_aliases:_
+
+desc
+
+```python
+
+# =>
+```
+
+_version_
+
+#### regex_replace
+> ansible built-in
+
+_aliases:_
+
+desc
+
+```python
+
+# =>
+```
+
+_version_
+
+#### regex_escape
+> ansible built-in
+
+_aliases:_
+
+desc
+
+```python
+
+# =>
+```
+
+_version_
+
+#### ternary
+> ansible built-in
+
+_aliases:_
+
+desc
+
+```python
+
+# =>
+```
+
+_version_
+
+#### version_compare
+> ansible built-in
+
+_aliases:_
+
+desc
+
+```python
+
+# =>
+```
+
+_version_
+
+#### random
+> ansible built-in
+
+_aliases:_
+
+desc
+
+```python
+
+# =>
+```
+
+_version_
+
+#### shuffle
+> ansible built-in
+
+_aliases:_
+
+desc
+
+```python
+
+# =>
+```
+
+_version_
+
 # Testing
 
 ```shell
