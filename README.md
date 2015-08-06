@@ -60,6 +60,24 @@
 * [safe] (#safevalue) - Make all potentionally dangerous chars safe. - safety is a illusion, so beware!
 * [striptags] (#striptagsvalue) - Strip SGML/XML tags and replace adjacent whitespace by one space.
 
+### Tests
+* [callable] (#callableobject) - Return whether the object is callable
+* [defined] (#definedvalue) - Return true if the variable is defined
+* [divisibleby] (#divisiblebyvalue-num) - Check if a variable is divisible by a number.
+* [equalto] (#equaltovalue-other) - Check if an object has the same value as another object.
+* [escaped] (#escapedvalue) - Check if the value is escaped.
+* [even] (#evenvalue) - Return true if the variable is even.
+* [iterable] (#iterablevalue) - Check if it’s possible to iterate over an object.
+* [lower] (#lowervalue) - Return true if the variable is lowercased.
+* [mapping] (#mappingvalue) - Return true if the object is a mapping (dict etc.).
+* [none] (#nonevalue) - Return true if the variable is none.
+* [number] (#numbervalue) - Return true if the variable is a number.
+* [odd] (#oddvalue) - Return true if the variable is odd.
+* [sameas] (#sameasvalue-other) - Check if an object points to the same memory address than another object.
+* [sequence] (#sequencevalue) - Return true if the variable is a sequence.
+* [string] (#stringvalue) - Return true if the object is a string.
+* [undefined] (#undefinedvalue) - Like defined() but the other way round.
+* [upper] (#uppervalue) - Return true if the variable is uppercased.
 
 ## Jinja List of Builtin Functions 
 
