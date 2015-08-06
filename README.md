@@ -9,9 +9,10 @@ python -m unittest -v string_utils
 nodemon -e 'py' --exec "python -m unittest -v string_utils"
 ```
 
-### List of Builtin Functions 
+### Jinja List of Builtin Functions 
 
 #### abs(number)
+> jinja built-in
 
 Return the absolute value of the argument. 
 
@@ -21,6 +22,7 @@ Return the absolute value of the argument.
 ```
 
 #### attr(obj, name) 
+> jinja built-in
 
 Get an attribute of an object. foo|attr("bar") works like foo.bar just that always an attribute is returned and items are not looked up.
 
@@ -30,6 +32,7 @@ Get an attribute of an object. foo|attr("bar") works like foo.bar just that alwa
 ```
 
 #### batch(sequence, linecount, fill_with=None) 
+> jinja built-in
 
 A filter that batches items. It works pretty much like slice just the other way round. It returns a list of lists with the given number of items. If you provide a second parameter this is used to fill up missing items. 
 
@@ -42,6 +45,7 @@ A filter that batches items. It works pretty much like slice just the other way 
 ```
 
 #### capitalize(string)
+> jinja built-in
 
 Capitalize a value. The first character will be uppercase, all others lowercase.
 
@@ -51,6 +55,7 @@ Capitalize a value. The first character will be uppercase, all others lowercase.
 ```
 
 #### center(value, width=80)
+> jinja built-in
 
 Centers the value in a field of a given width.
 
@@ -60,6 +65,7 @@ Centers the value in a field of a given width.
 ```
 
 #### default(value, default_value=u'', boolean=False)
+> jinja built-in
 _aliases_: d
 
 If the value is undefined it will return the passed default value, otherwise the value of the variable
@@ -79,6 +85,7 @@ If the value is undefined it will return the passed default value, otherwise the
 ```
 
 #### dictsort(dict, case_sensitive=False, by='key')
+> jinja built-in
 
 Sort a dict and yield (key, value) pairs. Because python dicts are unsorted you may want to use this function to order them by either key or value
 
@@ -94,6 +101,7 @@ Sort a dict and yield (key, value) pairs. Because python dicts are unsorted you 
 ```
 
 #### escape(string)
+> jinja built-in
 _aliases_: e
 
 Convert the characters &, <, >, ‘, and ” in string s to HTML-safe sequences. Use this if you need to display text that might contain such characters in HTML. Marks return value as markup string.
@@ -104,6 +112,7 @@ Convert the characters &, <, >, ‘, and ” in string s to HTML-safe sequences.
 ```
 
 #### filesizeformat(number, binary=False)
+> jinja built-in
 
 Format the value like a ‘human-readable’ file size (i.e. 13 kB, 4.1 MB, 102 Bytes, etc). Per default decimal prefixes are used (Mega, Giga, etc.), if the second parameter is set to True the binary prefixes are used (Mebi, Gibi).
 
@@ -140,6 +149,7 @@ Format the value like a ‘human-readable’ file size (i.e. 13 kB, 4.1 MB, 102 
 ```
 
 #### first(sequence)
+> jinja built-in
 
 Return the first item of a sequence.
 
@@ -149,6 +159,7 @@ Return the first item of a sequence.
 ```
 
 #### float(string, default=0.0) => string
+> jinja built-in
 
 Convert the value into a floating point number. If the conversion doesn’t work it will return 0.0. You can override this default using the first parameter.
 
@@ -164,6 +175,7 @@ Convert the value into a floating point number. If the conversion doesn’t work
 ```
 
 #### forceescape(string) => string
+> jinja built-in
 
 Enforce HTML escaping. This will probably double escape variables.
 
@@ -173,6 +185,7 @@ Enforce HTML escaping. This will probably double escape variables.
 ```
 
 #### format(string, *args, **kwargs) => string
+> jinja built-in
 
 Apply python string formatting on an object:
 
@@ -182,6 +195,7 @@ Apply python string formatting on an object:
 ```
 
 #### groupby(value, attribute)
+> jinja built-in
 
 Group a sequence of objects by a common attribute. 
 
@@ -194,6 +208,7 @@ Group a sequence of objects by a common attribute.
 ```
 
 #### indent(string, width=4, indentfirst=False)
+> jinja built-in
 
 Return a copy of the passed string, each line indented by 4 spaces. The first line is not indented. If you want to change the number of spaces or indent the first line too you can pass additional parameters to the filter
 
@@ -203,6 +218,7 @@ Return a copy of the passed string, each line indented by 4 spaces. The first li
 ```
 
 #### int(value, default=0, base=10)
+> jinja built-in
 
 Convert the value into an integer. If the conversion doesn’t work it will return 0. You can override this default using the first parameter. You can also override the default base (10) in the second parameter, which handles input with prefixes such as 0b, 0o and 0x for bases 2, 8 and 16 respectively.
 
@@ -227,6 +243,7 @@ Convert the value into an integer. If the conversion doesn’t work it will retu
 ```
 
 #### join(value, delimiter='', attribute=None)
+> jinja built-in
 
 Return a string which is the concatenation of the strings in the sequence. The separator between elements is an empty string per default, you can define it with the optional parameter. It is also possible to join certain attributes of an object
 
@@ -242,6 +259,7 @@ Return a string which is the concatenation of the strings in the sequence. The s
 ```
 
 #### last(sequence)
+> jinja built-in
 
 Return the last item of a sequence.
 
@@ -251,6 +269,7 @@ Return the last item of a sequence.
 ```
 
 #### length(object)
+> jinja built-in
 _aliases_: count
 
 Return the number of items of a sequence or mapping.
@@ -261,6 +280,7 @@ Return the number of items of a sequence or mapping.
 ```
 
 #### list(value)
+> jinja built-in
 
 Convert the value into a list. If it was a string the returned list will be a list of characters.
 
@@ -270,6 +290,7 @@ Convert the value into a list. If it was a string the returned list will be a li
 ```
 
 #### lower(string)
+> jinja built-in
 
 Convert a value to lowercase.
 
@@ -279,6 +300,7 @@ Convert a value to lowercase.
 ```
 
 #### map() => list
+> jinja built-in
 _aliases_:
 
 Applies a filter on a sequence of objects or looks up an attribute. This is useful when dealing with lists of objects but you are really only interested in a certain value of it.
@@ -301,6 +323,7 @@ _New in jinja version 2.7._
 
 
 #### pprint(value, verbose=False)
+> jinja built-in
 Pretty print a variable. Useful for debugging.
 
 With Jinja 1.2 onwards you can pass it a parameter. If this parameter is truthy the output will be more verbose (this requires pretty)
@@ -337,6 +360,7 @@ With Jinja 1.2 onwards you can pass it a parameter. If this parameter is truthy 
 ```
 
 #### random(sequence)
+> jinja built-in
 
 Return a random item from the sequence.
 
@@ -349,6 +373,7 @@ Return a random item from the sequence.
 ```
 
 #### reject()
+> jinja built-in
 
 Filters a sequence of objects by applying a test to the object and rejecting the ones with the test succeeding.
 
@@ -360,6 +385,7 @@ Filters a sequence of objects by applying a test to the object and rejecting the
 _New in jinja version 2.7._
 
 #### rejectattr()
+> jinja built-in
 
 Filters a sequence of objects by applying a test to an attribute of an object or the attribute and rejecting the ones with the test succeeding.
 
@@ -371,6 +397,7 @@ Filters a sequence of objects by applying a test to an attribute of an object or
 _New in jinja version 2.7._
 
 #### replace(haystack, neddle, substitute, count=None)
+> jinja built-in
 
 Return a copy of the value with all occurrences of a substring replaced with a new one. The first argument is the substring that should be replaced, the second is the replacement string. If the optional third argument count is given, only the first count occurrences are replaced:
 
@@ -384,6 +411,7 @@ Return a copy of the value with all occurrences of a substring replaced with a n
 ```
 
 #### reverse(value)
+> jinja built-in
 
 Reverse the object or return an iterator that iterates over it the other way round.
 
@@ -393,6 +421,7 @@ Reverse the object or return an iterator that iterates over it the other way rou
 ```
 
 #### round(value, precision=0, method='common')
+> jinja built-in
 
 Round the number to a given precision. The first parameter specifies the precision (default is 0), the second the rounding method:
 
@@ -418,6 +447,7 @@ Note that even if rounded to 0 precision, a float is returned. If you need a rea
 ```
 
 #### safe(value)
+> jinja built-in
 
 Mark the value as safe which means that in an environment with automatic escaping enabled this variable will not be escaped.
 
@@ -431,6 +461,7 @@ Mark the value as safe which means that in an environment with automatic escapin
 ```
 
 #### select()
+> jinja built-in
 
 Filters a sequence of objects by applying a test to the object and only selecting the ones with the test succeeding.
 
@@ -442,6 +473,7 @@ Filters a sequence of objects by applying a test to the object and only selectin
 _New in jinja version 2.7._
 
 #### selectattr()
+> jinja built-in
 
 Filters a sequence of objects by applying a test to an attribute of an object and only selecting the ones with the test succeeding.
 
@@ -452,6 +484,7 @@ Filters a sequence of objects by applying a test to an attribute of an object an
 _New in jinja version 2.7._
 
 #### slice(value, slices, fill_with=None)
+> jinja built-in
 
 Slice an iterator and return a list of lists containing those items. 
 
@@ -466,6 +499,7 @@ Slice an iterator and return a list of lists containing those items.
 If you pass it a second argument it’s used to fill missing values on the last iteration.
 
 #### sort(value, reverse=False, case_sensitive=False, attribute=None)
+> jinja built-in
 
 Sort an iterable. Per default it sorts ascending, if you pass it true as first argument it will reverse the sorting.
 
@@ -487,6 +521,7 @@ If the iterable is made of strings the third parameter can be used to control th
 _Changed in jinja version 2.6: The attribute parameter was added._
 
 #### string(object)
+> jinja built-in
 
 Make a string unicode if it isn’t already. That way a markup string is not converted back to unicode.
 
@@ -496,6 +531,7 @@ Make a string unicode if it isn’t already. That way a markup string is not con
 ```
 
 #### striptags(value)
+> jinja built-in
 
 Strip SGML/XML tags and replace adjacent whitespace by one space.
 
@@ -505,6 +541,7 @@ Strip SGML/XML tags and replace adjacent whitespace by one space.
 ```
 
 #### sum(iterable, attribute=None, start=0)
+> jinja built-in
 
 Returns the sum of a sequence of numbers plus the value of parameter ‘start’ (which defaults to 0). When the sequence is empty it returns start.
 
@@ -518,6 +555,7 @@ It is also possible to sum up only certain attributes:
 _Changed in version 2.6: The attribute parameter was added to allow suming up over attributes. Also the start parameter was moved on to the right._
 
 #### title(string)
+> jinja built-in
 
 Return a titlecased version of the value. I.e. words will start with uppercase letters, all remaining characters are lowercase.
 
@@ -545,6 +583,7 @@ Return a titlecased version of the value. I.e. words will start with uppercase l
 ```
 
 #### trim(value)
+> jinja built-in
 
 Strip leading and trailing whitespace.
 
@@ -560,6 +599,7 @@ Strip leading and trailing whitespace.
 ```
 
 #### truncate(string, length=255, killwords=False, end='...')
+> jinja built-in
 
 Return a truncated copy of the string. The length is specified with the first parameter which defaults to 255. If the second parameter is true the filter will cut the text at length. Otherwise it will discard the last word. If the text was in fact truncated it will append an ellipsis sign ("..."). If you want a different ellipsis sign than "..." you can specify it using the third parameter.
 
@@ -572,6 +612,7 @@ Return a truncated copy of the string. The length is specified with the first pa
 ```
 
 #### upper(string)
+> jinja built-in
 
 Convert a value to uppercase.
 
@@ -581,6 +622,7 @@ Convert a value to uppercase.
 ```
 
 #### urlencode(value)
+> jinja built-in
 
 Escape strings for use in URLs (uses UTF-8 encoding). It accepts both dictionaries and regular strings as well as pairwise iterables.
 
@@ -601,6 +643,7 @@ Escape strings for use in URLs (uses UTF-8 encoding). It accepts both dictionari
 _New in version 2.7._
 
 #### urlize(value, trim_url_limit=None, nofollow=False, target=None)
+> jinja built-in
 
 Converts URLs in plain text into clickable links.
 
@@ -617,6 +660,7 @@ If you pass the filter an additional integer it will shorten the urls to that nu
 _Changed in version 2.8+: The target parameter was added._
 
 #### wordcount(string)
+> jinja built-in
 
 Count the words in that string.
 
@@ -626,6 +670,7 @@ Count the words in that string.
 ```
 
 #### wordwrap(string, width=79, break_long_words=True, wrapstring=None)
+> jinja built-in
 
 Return a copy of the string passed to the filter wrapped after 79 characters. You can override this default using the first parameter. If you set the second parameter to false Jinja will not split words apart if they are longer than width. By default, the newlines will be the default newlines for the environment, but this can be changed using the wrapstring keyword argument.
 
@@ -636,6 +681,7 @@ Return a copy of the string passed to the filter wrapped after 79 characters. Yo
 _New in version 2.7: Added support for the wrapstring parameter._
 
 #### xmlattr(dict, autospace=True)
+> jinja built-in
 
 Create an SGML/XML attribute string based on the items in a dict. All values that are neither none nor undefined are automatically escaped:
 
@@ -647,6 +693,7 @@ Create an SGML/XML attribute string based on the items in a dict. All values tha
 ### List of Builtin Tests 
 
 #### callable(object)
+> jinja built-in
 
 Return whether the object is callable (i.e., some kind of function). Note that classes are callable, as are instances with a __call__() method.
 
@@ -659,6 +706,7 @@ Return whether the object is callable (i.e., some kind of function). Note that c
 ```
 
 #### defined(value)
+> jinja built-in
 
 Return true if the variable is defined:
 
@@ -673,6 +721,7 @@ Return true if the variable is defined:
 _See the -default- filter for a simple way to set undefined variables._
 
 #### divisibleby(value, num)
+> jinja built-in
 
 Check if a variable is divisible by a number.
 
@@ -683,6 +732,7 @@ Check if a variable is divisible by a number.
 ```
 
 #### equalto(value, other)
+> jinja built-in
 
 Check if an object has the same value as another object:
 
@@ -719,6 +769,7 @@ This appears to be a useless test as it does exactly the same as the == operator
 _New in jinja version 2.8._
 
 #### escaped(value)
+> jinja built-in
 
 Check if the value is escaped.
 
@@ -730,6 +781,7 @@ Check if the value is escaped.
 ```
 
 #### even(value)
+> jinja built-in
 
 Return true if the variable is even.
 
@@ -742,6 +794,7 @@ Return true if the variable is even.
 ```
 
 #### iterable(value)
+> jinja built-in
 
 Check if it’s possible to iterate over an object.
 
@@ -754,6 +807,7 @@ Check if it’s possible to iterate over an object.
 ```
 
 #### lower(value)
+> jinja built-in
 
 Return true if the variable is lowercased.
 
@@ -766,6 +820,7 @@ Return true if the variable is lowercased.
 ```
 
 #### mapping(value)
+> jinja built-in
 
 Return true if the object is a mapping (dict etc.).
 
@@ -780,6 +835,7 @@ Return true if the object is a mapping (dict etc.).
 _New in jinja version 2.6._
 
 #### none(value)
+> jinja built-in
 
 Return true if the variable is none.
 
@@ -792,6 +848,7 @@ Return true if the variable is none.
 ```
 
 #### number(value)
+> jinja built-in
 
 Return true if the variable is a number.
 
@@ -810,6 +867,7 @@ Return true if the variable is a number.
 ```
 
 #### odd(value)
+> jinja built-in
 
 Return true if the variable is odd.
 
@@ -822,6 +880,7 @@ Return true if the variable is odd.
 ```
 
 #### sameas(value, other)
+> jinja built-in
 
 Check if an object points to the same memory address than another object
 
@@ -834,6 +893,7 @@ Check if an object points to the same memory address than another object
 ```
 
 #### sequence(value) 
+> jinja built-in
 
 Return true if the variable is a sequence. Sequences are variables that are iterable.
 
@@ -846,6 +906,7 @@ Return true if the variable is a sequence. Sequences are variables that are iter
 ```
 
 #### string(value)
+> jinja built-in
 
 Return true if the object is a string.
 
@@ -857,6 +918,7 @@ Return true if the object is a string.
 ```
 
 #### undefined(value)
+> jinja built-in
 
 Like defined() but the other way round.
 
@@ -869,6 +931,7 @@ Like defined() but the other way round.
 ```
 
 #### upper(value)
+> jinja built-in
 
 Return true if the variable is uppercased.
 
@@ -902,6 +965,7 @@ Return true if the variable is uppercased.
 
 
 #### title
+> jinja built-in
 
 _aliases:_
 
