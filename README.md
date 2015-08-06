@@ -1,6 +1,13 @@
-python -m unittest -v collection
-nodemon -e 'py' --exec "python -m unittest -v string"
 
+# WORK in PROGRESS
+
+
+#### Testing
+
+```shell
+python -m unittest -v string_utils
+nodemon -e 'py' --exec "python -m unittest -v string_utils"
+```
 
 ### List of Builtin Functions 
 
