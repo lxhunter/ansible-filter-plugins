@@ -1,13 +1,8 @@
 
-# WORK in PROGRESS
+# Ansible Filters
+#### WORK in PROGRESS
 
-
-#### Testing
-
-```shell
-python -m unittest -v string_utils
-nodemon -e 'py' --exec "python -m unittest -v string_utils"
-```
+# Shortcut Overview
 
 ## String Utilities
 
@@ -1017,81 +1012,9 @@ Return true if the variable is uppercased.
 # => False
 ```
 
+#### Testing
 
-#### title
-> jinja built-in
-
-_aliases:_
-
-desc
-
-```python
-
-# =>
+```shell
+python -m unittest -v string_utils
+nodemon -e 'py' --exec "python -m unittest -v string_utils"
 ```
-
-_version_
-
-
-### List of Custom Functions 
-#### camelize
-#### chars
-#### clean
-#### count
-#### dasherize
-#### ends_with
-#### humanize
-#### includes 
-#### insert
-#### lines
-#### splice
-#### starts_with
-#### successor
-#### swap_case
-#### transliterate
-#### underscore
-
-
-### could have functions
-#### numberFormat 
-#### levenshtein
-#### dedent
-#### truncate
-#### prune
-#### toSentence
-#### toSentenceSerial
-#### dedent
-
-### should have functions
-#### decapitalize (check)
-#### chop 
-#### escapeHTML
-#### unescapeHTML
-#### pad
-#### lpad
-#### rpad
-#### lrpad
-#### strRight
-#### strRightBack
-#### strLeft
-#### strLeftBack
-#### repeat
-#### slugify
-#### naturalCmp
-
-### must have functions
-#### replaceAll
-#### isBlank (check)
-#### join (check)
-#### predecessor
-#### classify
-#### rtrim (check)
-#### ltrim (check)
-#### words (check)
-#### sprintf
-#### toNumber
-#### stripTags
-#### surround
-#### quote
-#### unquote
-#### toBoolean
