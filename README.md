@@ -5,83 +5,86 @@
 # Overview
 
 ### String Utilities
-* [capitalize] (#capitalizestring) - Capitalize a String.
-* [center] (#centervalue-width80) - Centers the value in a field of a given width.
-* [filesizeformat] (#filesizeformatnumber-binaryfalse) - Format file sizes into ‘human-readable’ 
-* [escape] (#escapestring) - Convert the chars to HTML-safe sequences.
-* [forceescape] (#forceescapestring--string) - Enforce HTML escaping.
-* [format] (#formatstring-args-kwargs--string) - Apply python string formatting on an object.
-* [indent] (#indentstring-width4-indentfirstfalse) - Indent a string.
-* [list] (#listvalue) - Convert the value into a list.
-* [lower] (#lowerstring) - Convert a value to lowercase.
-* [replace] (#replacehaystack-neddle-substitute-countnone) - Search for needle in haystack and replace it with substitute.
-* [string] (#stringobject) - Make a string unicode.
-* [title] (#titlestring) - Return a titlecased version of the value.
-* [trim] (#trimvalue) - Strip leading and trailing whitespace.
-* [truncate] (#truncatestring-length255-killwordsfalse-end) - Return a truncated copy of the string.
-* [upper] (#upperstring) - Convert a value to uppercase.
-* [urlencode] (#urlencodevalue) - Escape strings for use in URLs.
-* [urlize] (#urlizevalue-trim_url_limitnone-nofollowfalse-targetnone) - Converts URLs in plain text into clickable links.
-* [wordcount] (#wordcountstring) - Count the words in that string.
-* [wordwrap] (#wordwrapstring-width79-break_long_wordstrue-wrapstringnone) - Return a copy of the string passed to the filter wrapped after n characters. 
-* [xmlattr] (#xmlattrdict-autospacetrue) - Create an SGML/XML attribute string based on the items in a dict. 
+* [capitalize] (#capitalize) - Capitalize a String.
+* [center] (#center) - Centers the value in a field of a given width.
+* [filesizeformat] (#filesizeformat) - Format file sizes into ‘human-readable’ 
+* [escape] (#escape) - Convert the chars to HTML-safe sequences.
+* [forceescape] (#forceescape) - Enforce HTML escaping.
+* [format] (#format) - Apply python string formatting on an object.
+* [indent] (#indent) - Indent a string.
+* [list] (#list) - Convert the value into a list.
+* [lower] (#lower) - Convert a value to lowercase.
+* [replace] (#replace) - Search for needle in haystack and replace it with substitute.
+* [string] (#string) - Make a string unicode.
+* [title] (#title) - Return a titlecased version of the value.
+* [trim] (#trim) - Strip leading and trailing whitespace.
+* [truncate] (#truncate) - Return a truncated copy of the string.
+* [upper] (#upper) - Convert a value to uppercase.
+* [urlencode] (#urlencode) - Escape strings for use in URLs.
+* [urlize] (#urlize) - Converts URLs in plain text into clickable links.
+* [wordcount] (#wordcount) - Count the words in that string.
+* [wordwrap] (#wordwrap) - Return a copy of the string passed to the filter wrapped after n characters. 
+* [xmlattr] (#xmlattr) - Create an SGML/XML attribute string based on the items in a dict. 
 
 ### Number Utilities 
-* [abs] (#absnumber) - Return the absolute value of the argument.
-* [float] (#floatstring-default00--string) - Convert the value into a floating point number.
-* [int] (#intvalue-default0-base10) - Convert the value into an integer.
-* [round] (#roundvalue-precision0-methodcommon) - Round the number to a given precision.
-* [sum] (#sumiterable-attributenone-start0) - Returns the sum of a sequence.
+* [abs] (#abs) - Return the absolute value of the argument.
+* [float] (#float) - Convert the value into a floating point number.
+* [int] (#int) - Convert the value into an integer.
+* [round] (#round) - Round the number to a given precision.
+* [sum] (#sum) - Returns the sum of a sequence.
 
 ### Collection Utilities
-* [batch] (#batchsequence-linecount-fill_withnone) - A filter that batches items.
-* [dictsort] (#dictsortdict-case_sensitivefalse-bykey) - Sort a dict and yield (key, value) pairs.
-* [first] (#firstsequence) - Return the first item of a sequence.
-* [groupby] (#groupbyvalue-attribute) - Group a sequence of objects by a common attribute.
-* [join] (#joinvalue-delimiter-attributenone) - Return a string which is the concatenation of the strings in the sequence.
-* [last] (#lastsequence) - Return the last item of a sequence.
-* [length] (#lengthobject) - Return the number of items of a sequence or mapping.
-* [map] (#map--list) - Applies a filter on a sequence of objects or looks up an attribute.
-* [random] (#randomsequence) - Return a random item from the sequence.
+* [batch] (#batch) - A filter that batches items.
+* [dictsort] (#dictsort) - Sort a dict and yield (key, value) pairs.
+* [first] (#first) - Return the first item of a sequence.
+* [groupby] (#groupby) - Group a sequence of objects by a common attribute.
+* [join] (#join) - Return a string which is the concatenation of the strings in the sequence.
+* [last] (#last) - Return the last item of a sequence.
+* [length] (#length) - Return the number of items of a sequence or mapping.
+* [map] (#map) - Applies a filter on a sequence of objects or looks up an attribute.
+* [random] (#random) - Return a random item from the sequence.
 * [reject] (#reject) - Filters a sequence of objects by applying a test to the object and rejecting the ones with the test succeeding.
 * [rejectattr] (#rejectattr) - Filters a sequence of objects by applying a test to an attribute of an object or the attribute and rejecting the ones with the test succeeding.
 * [select] (#select) - Filters a sequence of objects by applying a test to the object and only selecting the ones with the test succeeding.
-* [slice] (#slicevalue-slices-fill_withnone) - Filters a sequence of objects by applying a test to the object and only selecting the ones with the test succeeding.
-* [sort] (#sortvalue-reversefalse-case_sensitivefalse-attributenone) - Sort an iterable.
+* [slice] (#slice) - Filters a sequence of objects by applying a test to the object and only selecting the ones with the test succeeding.
+* [sort] (#sort) - Sort an iterable.
+
+### Hashing Utilities
 
 ### Object Utilities
-* [attr] (#attrobj-name) - Get an attribute of an object.
+* [attr] (#attr) - Get an attribute of an object.
 * [selectattr] (#selectattr) - Slice an iterator and return a list of lists containing those items.
 
 ### Helper Utilities
-* [default] (#defaultvalue-default_valueu-booleanfalse) - Set a default value
-* [pprint] (#pprintvalue-verbosefalse) - Pretty print a variable.
-* [reverse] (#reversevalue) - Reverse the object or return an iterator that iterates over it the other way round.
-* [safe] (#safevalue) - Make all potentionally dangerous chars safe. - safety is a illusion, so beware!
-* [striptags] (#striptagsvalue) - Strip SGML/XML tags and replace adjacent whitespace by one space.
+* [default] (#default) - Set a default value
+* [pprint] (#pprint) - Pretty print a variable.
+* [reverse] (#reverse) - Reverse the object or return an iterator that iterates over it the other way round.
+* [safe] (#safe) - Make all potentionally dangerous chars safe. - safety is a illusion, so beware!
+* [striptags] (#striptags) - Strip SGML/XML tags and replace adjacent whitespace by one space.
 
 ### Tests
-* [callable] (#callableobject) - Return whether the object is callable
-* [defined] (#definedvalue) - Return true if the variable is defined
-* [divisibleby] (#divisiblebyvalue-num) - Check if a variable is divisible by a number.
-* [equalto] (#equaltovalue-other) - Check if an object has the same value as another object.
-* [escaped] (#escapedvalue) - Check if the value is escaped.
-* [even] (#evenvalue) - Return true if the variable is even.
-* [iterable] (#iterablevalue) - Check if it’s possible to iterate over an object.
-* [lower] (#lowervalue) - Return true if the variable is lowercased.
-* [mapping] (#mappingvalue) - Return true if the object is a mapping (dict etc.).
-* [none] (#nonevalue) - Return true if the variable is none.
-* [number] (#numbervalue) - Return true if the variable is a number.
-* [odd] (#oddvalue) - Return true if the variable is odd.
-* [sameas] (#sameasvalue-other) - Check if an object points to the same memory address than another object.
-* [sequence] (#sequencevalue) - Return true if the variable is a sequence.
-* [string] (#stringvalue) - Return true if the object is a string.
-* [undefined] (#undefinedvalue) - Like defined() but the other way round.
-* [upper] (#uppervalue) - Return true if the variable is uppercased.
+* [callable] (#callable) - Return whether the object is callable
+* [defined] (#defined) - Return true if the variable is defined
+* [divisibleby] (#divisibleby) - Check if a variable is divisible by a number.
+* [equalto] (#equalto) - Check if an object has the same value as another object.
+* [escaped] (#escaped) - Check if the value is escaped.
+* [even] (#even) - Return true if the variable is even.
+* [iterable] (#iterable) - Check if it’s possible to iterate over an object.
+* [lower] (#lower) - Return true if the variable is lowercased.
+* [mapping] (#mapping) - Return true if the object is a mapping (dict etc.).
+* [none] (#none) - Return true if the variable is none.
+* [number] (#number) - Return true if the variable is a number.
+* [odd] (#odd) - Return true if the variable is odd.
+* [sameas] (#sameas) - Check if an object points to the same memory address than another object.
+* [sequence] (#sequence) - Return true if the variable is a sequence.
+* [string] (#string) - Return true if the object is a string.
+* [undefined] (#undefined) - Like defined() but the other way round.
+* [upper] (#upper) - Return true if the variable is uppercased.
 
 ## Jinja List of Builtin Functions 
 
-#### abs(number)
+#### abs
+###### method: abs(number)
 > jinja built-in
 
 Return the absolute value of the argument. 
@@ -91,7 +94,8 @@ Return the absolute value of the argument.
 # => 1
 ```
 
-#### attr(obj, name) 
+#### attr
+###### method: attr(obj, name) 
 > jinja built-in
 
 
@@ -102,7 +106,8 @@ Get an attribute of an object. foo|attr("bar") works like foo.bar just that alwa
 # => 'quux'
 ```
 
-#### batch(sequence, linecount, fill_with=None) 
+#### batch
+###### method: batch(sequence, linecount, fill_with=None) 
 > jinja built-in
 
 
@@ -116,7 +121,8 @@ A filter that batches items. It works pretty much like slice just the other way 
 # => [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9, 'X', 'X']]
 ```
 
-#### capitalize(string)
+#### capitalize
+###### method: capitalize(string)
 > jinja built-in
 
 
@@ -127,7 +133,8 @@ Capitalize a string. The first character will be uppercase, all others lowercase
 # => 'Foo bar'
 ```
 
-#### center(value, width=80)
+#### center
+###### method: center(value, width=80)
 > jinja built-in
 
 
@@ -138,7 +145,8 @@ Centers the value in a field of a given width.
 # => '   foo   '
 ```
 
-#### default(value, default_value=u'', boolean=False)
+#### default
+###### method: default(value, default_value=u'', boolean=False)
 > jinja built-in
 
 _aliases_: d
@@ -159,7 +167,8 @@ If the value is undefined it will return the passed default value, otherwise the
 # => 'yes'
 ```
 
-#### dictsort(dict, case_sensitive=False, by='key')
+#### dictsort
+###### method: dictsort(dict, case_sensitive=False, by='key')
 > jinja built-in
 
 
@@ -176,7 +185,8 @@ Sort a dict and yield (key, value) pairs. Because python dicts are unsorted you 
 # => [('aa', 0), ('b', 1), ('c', 2), ('AB', 3)]
 ```
 
-#### escape(string)
+#### escape
+###### method: escape(string)
 > jinja built-in
 
 _aliases_: e
@@ -188,7 +198,8 @@ Convert the characters &, <, >, ‘, and ” in string s to HTML-safe sequences.
 # => '&lt;&#34;&gt;&amp;'
 ```
 
-#### filesizeformat(number, binary=False)
+#### filesizeformat
+###### method: filesizeformat(number, binary=False)
 > jinja built-in
 
 
@@ -226,7 +237,8 @@ Format the value like a ‘human-readable’ file size (i.e. 13 kB, 4.1 MB, 102 
 # => 931.3 GiB
 ```
 
-#### first(sequence)
+#### first
+###### method: first(sequence)
 > jinja built-in
 
 
@@ -237,7 +249,8 @@ Return the first item of a sequence.
 # => 0
 ```
 
-#### float(string, default=0.0) => string
+#### float
+###### method: float(string, default=0.0) => string
 > jinja built-in
 
 
@@ -254,7 +267,8 @@ Convert the value into a floating point number. If the conversion doesn’t work
 # => 32.32
 ```
 
-#### forceescape(string) => string
+#### forceescape
+###### method: forceescape(string) => string
 > jinja built-in
 
 
@@ -265,7 +279,8 @@ Enforce HTML escaping. This will probably double escape variables.
 # => '&lt;div /&gt;'
 ```
 
-#### format(string, *args, **kwargs) => string
+#### format
+###### method: format(string, *args, **kwargs) => string
 > jinja built-in
 
 
@@ -276,7 +291,8 @@ Apply python string formatting on an object:
 # => Hello? - Foo!
 ```
 
-#### groupby(value, attribute)
+#### groupby
+###### method: groupby(value, attribute)
 > jinja built-in
 
 
@@ -290,7 +306,8 @@ Group a sequence of objects by a common attribute.
 # => 'a:1:2|b:1|'
 ```
 
-#### indent(string, width=4, indentfirst=False)
+#### indent
+###### method: indent(string, width=4, indentfirst=False)
 > jinja built-in
 
 
@@ -301,7 +318,8 @@ Return a copy of the passed string, each line indented by 4 spaces. The first li
 # => '  indent by two spaces and indent the first line too.'
 ```
 
-#### int(value, default=0, base=10)
+#### int
+###### method: int(value, default=0, base=10)
 > jinja built-in
 
 
@@ -327,7 +345,8 @@ Convert the value into an integer. If the conversion doesn’t work it will retu
 # => 0
 ```
 
-#### join(value, delimiter='', attribute=None)
+#### join
+###### method: join(value, delimiter='', attribute=None)
 > jinja built-in
 
 
@@ -344,7 +363,8 @@ Return a string which is the concatenation of the strings in the sequence. The s
 # => 'foo, bar'
 ```
 
-#### last(sequence)
+#### last
+###### method: last(sequence)
 > jinja built-in
 
 
@@ -355,7 +375,8 @@ Return the last item of a sequence.
 # => 9
 ```
 
-#### length(object)
+#### length
+###### method: length(object)
 > jinja built-in
 
 _aliases_: count
@@ -367,7 +388,8 @@ Return the number of items of a sequence or mapping.
 # => 11
 ```
 
-#### list(value)
+#### list
+###### method: list(value)
 > jinja built-in
 
 
@@ -378,7 +400,8 @@ Convert the value into a list. If it was a string the returned list will be a li
 # => ['H', 'e', 'l', 'l', 'o']
 ```
 
-#### lower(string)
+#### lower
+###### method: lower(string)
 > jinja built-in
 
 
@@ -389,7 +412,8 @@ Convert a value to lowercase.
 # => 'foo'
 ```
 
-#### map() => list
+#### map
+###### method: map() => list
 > jinja built-in
 
 Applies a filter on a sequence of objects or looks up an attribute. This is useful when dealing with lists of objects but you are really only interested in a certain value of it.
@@ -411,7 +435,8 @@ Alternatively you can let it invoke a filter by passing the name of the filter a
 _New in jinja version 2.7._
 
 
-#### pprint(value, verbose=False)
+#### pprint
+###### method: pprint(value, verbose=False)
 > jinja built-in
 
 Pretty print a variable. Useful for debugging.
@@ -449,7 +474,8 @@ With Jinja 1.2 onwards you can pass it a parameter. If this parameter is truthy 
 #   'h': 'H'})]
 ```
 
-#### random(sequence)
+#### random
+###### method: random(sequence)
 > jinja built-in
 
 
@@ -463,7 +489,8 @@ Return a random item from the sequence.
 # => 'Mike'
 ```
 
-#### reject()
+#### reject
+###### method: reject()
 > jinja built-in
 
 
@@ -476,7 +503,8 @@ Filters a sequence of objects by applying a test to the object and rejecting the
 
 _New in jinja version 2.7._
 
-#### rejectattr()
+#### rejectattr
+###### method: rejectattr()
 > jinja built-in
 
 
@@ -489,7 +517,8 @@ Filters a sequence of objects by applying a test to an attribute of an object or
 
 _New in jinja version 2.7._
 
-#### replace(haystack, neddle, substitute, count=None)
+#### replace
+###### method: replace(haystack, neddle, substitute, count=None)
 > jinja built-in
 
 
@@ -504,7 +533,8 @@ Return a copy of the value with all occurrences of a substring replaced with a n
 
 ```
 
-#### reverse(value)
+#### reverse
+###### method: reverse(value)
 > jinja built-in
 
 
@@ -515,7 +545,8 @@ Reverse the object or return an iterator that iterates over it the other way rou
 # => 'raboof|[3, 2, 1]'
 ```
 
-#### round(value, precision=0, method='common')
+#### round
+###### method: round(value, precision=0, method='common')
 > jinja built-in
 
 
@@ -542,7 +573,8 @@ Note that even if rounded to 0 precision, a float is returned. If you need a rea
 # => 43
 ```
 
-#### safe(value)
+#### safe
+###### method: safe(value)
 > jinja built-in
 
 
@@ -557,7 +589,8 @@ Mark the value as safe which means that in an environment with automatic escapin
 
 ```
 
-#### select()
+#### select
+###### method: select()
 > jinja built-in
 
 
@@ -570,7 +603,8 @@ Filters a sequence of objects by applying a test to the object and only selectin
 
 _New in jinja version 2.7._
 
-#### selectattr()
+#### selectattr
+###### method: selectattr()
 > jinja built-in
 
 
@@ -582,7 +616,8 @@ Filters a sequence of objects by applying a test to an attribute of an object an
 ```
 _New in jinja version 2.7._
 
-#### slice(value, slices, fill_with=None)
+#### slice
+###### method: slice(value, slices, fill_with=None)
 > jinja built-in
 
 
@@ -598,7 +633,8 @@ Slice an iterator and return a list of lists containing those items.
 
 If you pass it a second argument it’s used to fill missing values on the last iteration.
 
-#### sort(value, reverse=False, case_sensitive=False, attribute=None)
+#### sort
+###### method: sort(value, reverse=False, case_sensitive=False, attribute=None)
 > jinja built-in
 
 
@@ -621,7 +657,8 @@ If the iterable is made of strings the third parameter can be used to control th
 ```
 _Changed in jinja version 2.6: The attribute parameter was added._
 
-#### string(object)
+#### string
+###### method: string(object)
 > jinja built-in
 
 
@@ -632,7 +669,8 @@ Make a string unicode if it isn’t already. That way a markup string is not con
 # => '12345'
 ```
 
-#### striptags(value)
+#### striptags
+###### method: striptags(value)
 > jinja built-in
 
 
@@ -643,7 +681,8 @@ Strip SGML/XML tags and replace adjacent whitespace by one space.
 # => 'just a small example link to a webpage'
 ```
 
-#### sum(iterable, attribute=None, start=0)
+#### sum
+###### method: sum(iterable, attribute=None, start=0)
 > jinja built-in
 
 
@@ -658,7 +697,8 @@ It is also possible to sum up only certain attributes:
 
 _Changed in version 2.6: The attribute parameter was added to allow suming up over attributes. Also the start parameter was moved on to the right._
 
-#### title(string)
+#### title
+###### method: title(string)
 > jinja built-in
 
 
@@ -687,7 +727,8 @@ Return a titlecased version of the value. I.e. words will start with uppercase l
 # => "Foo\tBar"
 ```
 
-#### trim(value)
+#### trim
+###### method: trim(value)
 > jinja built-in
 
 
@@ -704,7 +745,8 @@ Strip leading and trailing whitespace.
 # => "foo bar"
 ```
 
-#### truncate(string, length=255, killwords=False, end='...')
+#### truncate
+###### method: truncate(string, length=255, killwords=False, end='...')
 > jinja built-in
 
 
@@ -718,7 +760,8 @@ Return a truncated copy of the string. The length is specified with the first pa
 # => "foo ba..."
 ```
 
-#### upper(string)
+#### upper
+###### method: upper(string)
 > jinja built-in
 
 
@@ -729,7 +772,8 @@ Convert a value to uppercase.
 # => "FOO"
 ```
 
-#### urlencode(value)
+#### urlencode
+###### method: urlencode(value)
 > jinja built-in
 
 
@@ -751,7 +795,8 @@ Escape strings for use in URLs (uses UTF-8 encoding). It accepts both dictionari
 
 _New in version 2.7._
 
-#### urlize(value, trim_url_limit=None, nofollow=False, target=None)
+#### urlize
+###### method: urlize(value, trim_url_limit=None, nofollow=False, target=None)
 > jinja built-in
 
 
@@ -769,7 +814,8 @@ If you pass the filter an additional integer it will shorten the urls to that nu
 
 _Changed in version 2.8+: The target parameter was added._
 
-#### wordcount(string)
+#### wordcount
+###### method: wordcount(string)
 > jinja built-in
 
 
@@ -780,7 +826,8 @@ Count the words in that string.
 # => 3
 ```
 
-#### wordwrap(string, width=79, break_long_words=True, wrapstring=None)
+#### wordwrap
+###### method: wordwrap(string, width=79, break_long_words=True, wrapstring=None)
 > jinja built-in
 
 
@@ -792,7 +839,8 @@ Return a copy of the string passed to the filter wrapped after 79 characters. Yo
 
 _New in version 2.7: Added support for the wrapstring parameter._
 
-#### xmlattr(dict, autospace=True)
+#### xmlattr
+###### method: xmlattr(dict, autospace=True)
 > jinja built-in
 
 
@@ -805,7 +853,8 @@ Create an SGML/XML attribute string based on the items in a dict. All values tha
 
 ## List of Jinja Builtin Tests 
 
-#### callable(object)
+#### callable
+###### method: callable(object)
 > jinja built-in
 
 
@@ -819,7 +868,8 @@ Return whether the object is callable (i.e., some kind of function). Note that c
 # => False
 ```
 
-#### defined(value)
+#### defined
+###### method: defined(value)
 > jinja built-in
 
 
@@ -835,7 +885,8 @@ Return true if the variable is defined:
 
 _See the -default- filter for a simple way to set undefined variables._
 
-#### divisibleby(value, num)
+#### divisibleby
+###### method: divisibleby(value, num)
 > jinja built-in
 
 
@@ -847,7 +898,8 @@ Check if a variable is divisible by a number.
 # => True
 ```
 
-#### equalto(value, other)
+#### equalto
+###### method: equalto(value, other)
 > jinja built-in
 
 
@@ -885,7 +937,8 @@ This appears to be a useless test as it does exactly the same as the == operator
 
 _New in jinja version 2.8._
 
-#### escaped(value)
+#### escaped
+###### method: escaped(value)
 > jinja built-in
 
 
@@ -898,7 +951,8 @@ Check if the value is escaped.
 # => True
 ```
 
-#### even(value)
+#### even
+###### method: even(value)
 > jinja built-in
 
 
@@ -912,7 +966,8 @@ Return true if the variable is even.
 # => True
 ```
 
-#### iterable(value)
+#### iterable
+###### method: iterable(value)
 > jinja built-in
 
 
@@ -926,7 +981,8 @@ Check if it’s possible to iterate over an object.
 # => False
 ```
 
-#### lower(value)
+#### lower
+###### method: lower(value)
 > jinja built-in
 
 
@@ -940,7 +996,8 @@ Return true if the variable is lowercased.
 # => False
 ```
 
-#### mapping(value)
+#### mapping
+###### method: mapping(value)
 > jinja built-in
 
 
@@ -956,7 +1013,8 @@ Return true if the object is a mapping (dict etc.).
 
 _New in jinja version 2.6._
 
-#### none(value)
+#### none
+###### method: none(value)
 > jinja built-in
 
 
@@ -970,7 +1028,8 @@ Return true if the variable is none.
 # => False
 ```
 
-#### number(value)
+#### number
+###### method: number(value)
 > jinja built-in
 
 
@@ -990,7 +1049,8 @@ Return true if the variable is a number.
 # => True
 ```
 
-#### odd(value)
+#### odd
+###### method: odd(value)
 > jinja built-in
 
 
@@ -1004,7 +1064,8 @@ Return true if the variable is odd.
 # => False
 ```
 
-#### sameas(value, other)
+#### sameas
+###### method: sameas(value, other)
 > jinja built-in
 
 
@@ -1018,7 +1079,8 @@ Check if an object points to the same memory address than another object
 # => False
 ```
 
-#### sequence(value) 
+#### sequence
+###### method: sequence(value) 
 > jinja built-in
 
 
@@ -1032,7 +1094,8 @@ Return true if the variable is a sequence. Sequences are variables that are iter
 # => True
 ```
 
-#### string(value)
+#### string
+###### method: string(value)
 > jinja built-in
 
 
@@ -1045,7 +1108,8 @@ Return true if the object is a string.
 # => True
 ```
 
-#### undefined(value)
+#### undefined
+###### method: undefined(value)
 > jinja built-in
 
 
@@ -1059,7 +1123,8 @@ Like defined() but the other way round.
 # => True
 ```
 
-#### upper(value)
+#### upper
+###### method: upper(value)
 > jinja built-in
 
 
@@ -1076,6 +1141,7 @@ Return true if the variable is uppercased.
 ## List of Ansible Built-in Functions 
 
 #### b64encode
+###### method: b64encode
 > ansible built-in
 
 Encode Strings with Base64
@@ -1086,6 +1152,7 @@ Encode Strings with Base64
 ```
 
 #### b64decode
+###### method: b64decode
 > ansible built-in
 
 Decode Base64 encoded Strings
@@ -1096,6 +1163,7 @@ Decode Base64 encoded Strings
 ```
 
 #### to_uuid
+###### method: to_uuid
 > ansible built-in
 
 create a UUID from a string
@@ -1108,6 +1176,7 @@ create a UUID from a string
 _new in Ansible version 1.9_
 
 #### to_json
+###### method: to_json
 > ansible built-in
 
 Convert value into JSON
@@ -1123,6 +1192,7 @@ Convert value into JSON
 ```
 
 #### to_nice_json
+###### method: to_nice_json
 > ansible built-in
 
 Convert string into human readable JSON
@@ -1141,6 +1211,7 @@ Convert string into human readable JSON
 ```
 
 #### from_json
+###### method: from_json
 > ansible built-in
 
 Reading in some JSON formatted data
@@ -1148,6 +1219,7 @@ Reading in some JSON formatted data
 [Here is an example](https://gist.github.com/lxhunter/45fb119c0128600158d8) 
 
 #### to_yaml
+###### method: to_yaml
 > ansible built-in
 
 Convert value into YAML
@@ -1163,6 +1235,7 @@ Convert value into YAML
 ```
 
 #### to_nice_yaml
+###### method: to_nice_yaml
 > ansible built-in
 
 Convert value into human readable YAML
@@ -1179,6 +1252,7 @@ Convert value into human readable YAML
 ```
 
 #### from_yaml
+###### method: from_yaml
 > ansible built-in
 
 Reading in YAML formatted data
@@ -1186,6 +1260,7 @@ Reading in YAML formatted data
 [Here is an example for JSON, just adapt it YAML](https://gist.github.com/lxhunter/45fb119c0128600158d8) 
 
 #### bool
+###### method: bool
 > ansible built-in
 
 Check if the value is a boolean
@@ -1211,6 +1286,7 @@ Check if the value is a boolean
 ```
 
 #### quote
+###### method: quote
 > ansible built-in
 
 Add quotes for shell usage
@@ -1222,173 +1298,354 @@ Add quotes for shell usage
 # => '{\"a\": 1, \"b\": 2}'
 ```
 
-#### md5
+#### hash
+###### method: hash(data, hashtype='sha1')
 > ansible built-in
 
-_aliases:_
+Get the hash of a string
 
-desc
-
-```python
-
-# =>
-```
-
-_version_
-
-#### sha1
-> ansible built-in
-
-_aliases:_
-
-desc
+Options:
+- 'md5'
+- 'sha1'
+- 'sha224'
+- 'sha256'
+- 'sha384'
+- 'sha512'
+Platform dependend:
+- 'blowfish'
 
 ```python
+{{ 'foo'|hash('md5') }}
+# => acbd18db4cc2f85cedef654fccc4a4d8
 
-# =>
+{{ 'foo'|hash('sha1') }}
+# => 0beec7b5ea3f0fdbc95d0dd47f3c5bc275da8a33
+
+{{ 'foo'|hash('sha224') }}
+# => 0808f64e60d58979fcb676c96ec938270dea42445aeefcd3a4e6f8db
+
+{{ 'foo'|hash('sha256') }}
+# => 2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae
+
+{{ 'foo'|hash('sha384') }}
+# => 98c11ffdfdd540676b1a137cb1a22b2a70350c9a44171d6b1180c6be5cbb2ee3f79d532c8a1dd9ef2e8e08e752a3babb
+
+{{ 'foo'|hash('sha512') }}
+# => f7fbba6e0636f890e56fbbf3283e524c6fa3204ae298382d624741d0dc6638326e282c41be5e4254d8820772c5518a2c5a8c0c7f7eda19594a7eb539453e1ed7
+
+{{ 'foo'|hash('blowfish') }}
+# is platform dependend 
 ```
 
-_version_
+_New in ansible version 1.9._
 
 #### checksum
+###### method: checksum
 > ansible built-in
 
-_aliases:_
-
-desc
+Get a checksum for a string
 
 ```python
+{{ 'foo'|checksum }}
 
-# =>
+# => 0beec7b5ea3f0fdbc95d0dd47f3c5bc275da8a33
 ```
 
-_version_
+_New in ansible version 1.9._
 
 #### password_hash
+###### method: password_hash(password, hashtype='sha512', salt=None)
 > ansible built-in
 
-_aliases:_
+Get a password hash from a String
 
-desc
-
-```python
-
-# =>
-```
-
-_version_
-
-#### hash
-> ansible built-in
-
-_aliases:_
-
-desc
+Options:
+- 'md5'
+- 'sha256'
+- 'sha512'
+Platform dependend:
+- 'blowfish'
 
 ```python
+{{ 'fooosecretbar'|password_hash('md5') }}
+# => $1$QalF8sBf$uTmJo0xCVPBKrdEsAPjuV0
 
-# =>
+{{ 'fooosecretbar'|password_hash('sha256') }}
+# => $5$SSkuLCmtvlQ2kT2I$2Y5F2gPPXXtNaSY5FrHhm8ggtBEcjuPODxHS1Lsvy31
+
+{{ 'fooosecretbar'|password_hash('sha512') }}
+# => $6$8XFFhlPGyfY3V9qm$.Rc4GnmfwO3y.RtfL9c.X6gtrh6rkE33KlfdI2u55RMa8aWYf/K6S/W2knO07EAndV.kADM1Fin75osI4oEtO1
+
+{{ 'fooosecretbar'|password_hash('blowfish') }}
+# => is platform dependend 
 ```
 
-_version_
-
-#### fileglob
-> ansible built-in
-
-_aliases:_
-
-desc
-
-```python
-
-# =>
-```
-
-_version_
+_New in ansible version 1.9._
 
 #### regex_replace
+###### method: regex_replace(value='', pattern='', replacement='', ignorecase=False)
 > ansible built-in
 
-_aliases:_
+Replace text in a string with a regex
 
-desc
+_Caution: If “regex_replace” filter is used with variables inside YAML arguments (as opposed to simpler ‘key=value’ arguments), then you need to escape backreferences (e.g. \\1) with 4 backslashes (\\\\\\\\) instead of 2 (\\\\)._
 
 ```python
+{{ 'ansible' | regex_replace('^a.*i(.*)$', 'a\\\\1') }}
+# => able
 
-# =>
+{{ 'foobar' | regex_replace('^f.*o(.*)$', '\\\\1') }}
+# => bar
 ```
 
-_version_
+_New in ansible version 1.6._
 
 #### regex_escape
+###### method: regex_escape
 > ansible built-in
 
-_aliases:_
-
-desc
+Escape special characters within a regex
 
 ```python
-
-# =>
+{{ '^f.*o(.*)$' | regex_escape() }}
+# => \\^f\\.\\*o\\(\\.\\*\\)\\$
 ```
 
-_version_
+_New in ansible version 1.6._
 
 #### ternary
+###### method: ternary(value, true_val, false_val)
+
 > ansible built-in
 
-_aliases:_
-
-desc
+Use one value on true and another on false
 
 ```python
+{{ True | ternary('true_case','false_case') }}
+# => true_case
 
-# =>
+{{ False | ternary('true_case','false_case') }}
+# => false_case
 ```
 
-_version_
+_New in ansible version 1.9._
 
 #### version_compare
+###### method: (value, version, operator='eq', strict=False)
 > ansible built-in
-
-_aliases:_
 
 desc
 
 ```python
+{{ '12.04' | version_compare('12.04', '<') }}
+# => False
 
-# =>
+{{ '12.03' | version_compare('12.04', '<') }}
+# => True
+
+{{ '12.05' | version_compare('12.04', '<') }}
+# => False
 ```
 
-_version_
+_New in ansible version 1.6._
 
 #### random
+###### method: random(end, start=None, step=None))
 > ansible built-in
 
-_aliases:_
+This filter can be used similar to the default jinja2 random filter (returning a random item from a sequence of items), but can also generate a random number based on a range.
 
-desc
+To get a random item from a list:
 
 ```python
-
-# =>
+{{ ['a','b','c']|random }}
+# => c
 ```
 
-_version_
+To get a random number from 0 to supplied end:
+
+```python
+{{ 59 |random(step=10) }}
+# => 35
+```
+
+Get a random number from 0 to 100 but in steps of 10:
+
+```python
+{{ 100 |random(step=10) }} 
+# => 60
+```
+
+Get a random number from 1 to 100 in steps of 10:
+
+```python
+{{ 100 |random(1, 10) }}
+# => 31
+
+{{ 100 |random(start=1, step=10) }} 
+# => 51
+```
+
+_New in ansible version 1.6._
 
 #### shuffle
+###### method: shuffle(list)
 > ansible built-in
 
-_aliases:_
-
-desc
+Randomize an existing list, giving a different order every invocation.
 
 ```python
+{{ ['a','b','c']|shuffle }} 
+# => ['c','a','b']
 
-# =>
+{{ ['a','b','c']|shuffle }} 
+# => ['b','c','a']
 ```
 
-_version_
+_New in ansible version 1.8._
+
+#### isnan
+###### method: isnan(value)
+> ansible built-in
+
+To see if something is actually a number:
+
+_caution: somehow the filter always returns false_
+
+```python
+{{ 1 | isnan }}
+# => False
+
+{{ 'foo' | isnan }}
+# => False
+
+{{ True | isnan }}
+# => False
+
+{{ False | isnan }}
+# => False
+
+{{ '1' | isnan }}
+# => False
+
+{{ None | isnan }}
+# => False
+
+```
+
+_New in ansible version 1.9._
+
+#### log
+###### method: log(value, base=math.e)
+> ansible built-in
+
+Get the logarithm:
+
+```python
+{{ 50 | log }}
+# => 3.91202300543
+```
+
+Get the base 10 logarithm:
+
+```python
+{{ 50 | log(10) }}
+# => 1.69897000434
+```
+
+_New in ansible version 1.9._
+
+#### pow
+###### method: pow(value, y)
+> ansible built-in
+
+the power of n
+
+```python
+{{ 50 | pow(2) }}
+# => 2500.0
+
+{{ 50 | pow(5) }}
+# => 312500000.0
+```
+
+_New in ansible version 1.9._
+
+#### root
+###### method: root(value, base=2)
+> ansible built-in
+
+Square root or root
+
+```python
+{{ myvar | root }}
+# => 7.07106781187
+
+{{ myvar | root(5) }}
+# => 2.18672414789
+```
+
+_New in ansible version 1.9._
+
+#### ipaddr
+###### method:
+> ansible built-in
+
+_caution: needs python-netaddr_
+
+To test if a string is a valid IP address
+
+```python
+{{ '192.168.0.1' | ipaddr }}
+# => 192.168.0.1
+
+{{ 50 | ipaddr }}
+# => 0.0.0.50
+
+{{ 'foo' | ipaddr }}
+# => false
+
+{{ '255.255.255.255' | ipaddr }}
+# => 255.255.255.255
+
+{{ '2001:0db8:85a3:08d3:1319:8a2e:0370:7344' | ipaddr }}
+# => 2001:0db8:85a3:08d3:1319:8a2e:0370:7344
+```
+
+_New in ansible version 1.9._
+
+
+#### ipv4
+###### method: ipv4(value, query = '')
+> ansible built-in
+
+To test if a string is a valid IPv4 address
+
+```python
+{{ '192.168.0.1' | ipv4 }}
+# => 192.168.0.1
+
+{{ '2001:0db8:85a3:08d3:1319:8a2e:0370:7344' | ipv4 }}
+# => False
+```
+
+_New in ansible version 1.9._
+
+#### ipv6
+###### method: ipv6(value, query = '')
+> ansible built-in
+
+To test if a string is a valid IPv6 address
+
+```python
+{{ '192.168.0.1' | ipv4 }}
+# => False
+
+{{ '2001:0db8:85a3:08d3:1319:8a2e:0370:7344' | ipv4 }}
+# => 2001:0db8:85a3:08d3:1319:8a2e:0370:7344
+```
+
+_New in ansible version 1.9._
 
 # Testing
 
