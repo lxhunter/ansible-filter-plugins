@@ -1101,8 +1101,8 @@ Decode Base64 encoded Strings
 create a UUID from a string
 
 ```python
-{{ hostname | to_uuid }}
-# => '38400000-8cf0-11bd-b23e-10b96e4ef00d'
+{{ 'hostname' | to_uuid }}
+# => '333bb031-dca6-57ec-895a-259d66ca7c36'
 ```
 
 _new in Ansible version 1.9_
@@ -1110,40 +1110,42 @@ _new in Ansible version 1.9_
 #### to_json
 > ansible built-in
 
-Convert string into json
+Convert value into json
 
 ```python
-{{ some_variable | to_json }}
-# =>
-```
+# vars:
+#   users:
+#     - bob
+#     - joe
 
-_version_
+{{ users | to_json }}
+# => ["bob","joe"]
+```
 
 #### to_nice_json
 > ansible built-in
 
-
 Convert string into human readable json
 
 ```python
-{{ some_variable | to_nice_json }}
-# =>
+{{ users | to_nice_json }}
+# => [
+#   "bob",
+#   "joe"
+# ]
 ```
 
 #### from_json
 > ansible built-in
 
-Reading in some already json formatted data
+Reading in some json formatted data
 
-```python
-{{ some_variable | from_json }}
-# =>
-```
+[Here is an example](https://gist.github.com/halberom/e276aed3e99ae7df143c) 
 
 #### to_yaml
 > ansible built-in
 
-Reading in some already yaml formatted data
+Convert string into yaml
 
 ```python
 {{ some_variable | from_yaml }}
@@ -1163,9 +1165,7 @@ Convert string into human readable yaml
 #### from_yaml
 > ansible built-in
 
-_aliases:_
-
-desc
+Reading in some already yaml formatted data
 
 ```python
 
