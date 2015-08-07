@@ -1314,6 +1314,7 @@ Options:
 - 'sha256'
 - 'sha384'
 - 'sha512'
+
 Platform dependend:
 - 'blowfish'
 
@@ -1366,6 +1367,7 @@ Options:
 - 'md5'
 - 'sha256'
 - 'sha512'
+
 Platform dependend:
 - 'blowfish'
 
