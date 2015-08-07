@@ -1210,21 +1210,17 @@ Check if the value is a boolean
 # => False
 ```
 
-_version_
-
 #### quote
 > ansible built-in
 
-_aliases:_
-
-desc
+Add quotes for shell usage
 
 ```python
+#  using single quotes ' and escaping with two single quotes ''
+'{{ ''{"a": 1, "b": 2}'' | quote }}'
 
-# =>
+# => '{\"a\": 1, \"b\": 2}'
 ```
-
-_version_
 
 #### md5
 > ansible built-in
