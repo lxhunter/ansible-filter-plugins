@@ -1140,7 +1140,7 @@ Convert string into human readable json
 
 Reading in some json formatted data
 
-[Here is an example](https://gist.github.com/halberom/e276aed3e99ae7df143c) 
+[Here is an example](https://gist.github.com/lxhunter/45fb119c0128600158d8) 
 
 #### to_yaml
 > ansible built-in
