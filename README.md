@@ -50,9 +50,9 @@
 * [sort] (#sort) - Sort an iterable.
 
 ### Hashing Utilities
-* [hash] (#hash) - Get the hash of a string
+* [hash] (#hash) - Get the hash (md5, sha1, sha224, sha256, sha384, sha512) of a string
 * [checksum] (#checksum) - Get a checksum for a string
-* [password_hash] (#password_hash) - Get a password_hash for a string
+* [password_hash] (#password_hash) - Get a password hash (md5, sha256, sha512) for a string
 
 ### Object Utilities
 * [attr] (#attr) - Get an attribute of an object.
