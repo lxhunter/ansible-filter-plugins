@@ -1128,6 +1128,11 @@ Convert value into json
 Convert string into human readable json
 
 ```python
+# vars:
+#   users:
+#     - bob
+#     - joe
+
 {{ users | to_nice_json }}
 # => [
 #   "bob",
@@ -1145,17 +1150,22 @@ Reading in some json formatted data
 #### to_yaml
 > ansible built-in
 
-Convert string into yaml
+Convert value into yaml
 
 ```python
-{{ some_variable | from_yaml }}
-# =>
+# vars:
+#   users:
+#     - bob
+#     - joe
+
+{{ users | to_yaml }}
+# => 
 ```
 
 #### to_nice_yaml
 > ansible built-in
 
-Convert string into human readable yaml
+Convert value into human readable yaml
 
 ```python
 {{ some_variable | to_nice_yaml }}
