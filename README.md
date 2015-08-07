@@ -1110,7 +1110,7 @@ _new in Ansible version 1.9_
 #### to_json
 > ansible built-in
 
-Convert value into json
+Convert value into JSON
 
 ```python
 # vars:
@@ -1125,7 +1125,7 @@ Convert value into json
 #### to_nice_json
 > ansible built-in
 
-Convert string into human readable json
+Convert string into human readable JSON
 
 ```python
 # vars:
@@ -1143,14 +1143,14 @@ Convert string into human readable json
 #### from_json
 > ansible built-in
 
-Reading in some json formatted data
+Reading in some JSON formatted data
 
 [Here is an example](https://gist.github.com/lxhunter/45fb119c0128600158d8) 
 
 #### to_yaml
 > ansible built-in
 
-Convert value into yaml
+Convert value into YAML
 
 ```python
 # vars:
@@ -1159,41 +1159,55 @@ Convert value into yaml
 #     - joe
 
 {{ users | to_yaml }}
-# => 
+# => ["bob","joe"]
 ```
 
 #### to_nice_yaml
 > ansible built-in
 
-Convert value into human readable yaml
+Convert value into human readable YAML
 
 ```python
-{{ some_variable | to_nice_yaml }}
-# =>
+# vars:
+#   users:
+#     - bob
+#     - joe  
+
+{{ users | to_nice_yaml }}
+# => - bob
+#    - joe
 ```
 
 #### from_yaml
 > ansible built-in
 
-Reading in some already yaml formatted data
+Reading in YAML formatted data
 
-```python
-
-# =>
-```
-
-_version_
+[Here is an example for JSON, just adapt it YAML](https://gist.github.com/lxhunter/45fb119c0128600158d8) 
 
 #### bool
 > ansible built-in
 
-_aliases:_
-
-desc
+Check if the value is a boolean
 
 ```python
+{{ True | bool }}
+# => True
 
-# =>
+{{ 'True' | bool }}
+# => True
+
+{{ 1 | bool }}
+# => True
+
+{{ False | bool }}
+# => False
+
+{{ 'False' | bool }}
+# => False
+
+{{ 0 | bool }}
+# => False
 ```
 
 _version_
