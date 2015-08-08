@@ -5,8 +5,8 @@
 # Overview
 
 ### String Utilities
-* [capitalize] (#capitalize) - Capitalize a String.
-* [center] (#center) - Centers the value in a field of a given width.
+* [capitalize] (docs/jinja_functions.md#capitalize) - Capitalize a String.
+* [center] (docs/jinja_functions.md#center) - Centers the value in a field of a given width.
 * [escape] (#escape) - Convert the chars to HTML-safe sequences.
 * [filesizeformat] (#filesizeformat) - Format file sizes into ‘human-readable’ 
 * [forceescape] (#forceescape) - Enforce HTML escaping.
@@ -28,7 +28,7 @@
 * [xmlattr] (#xmlattr) - Create an SGML/XML attribute string based on the items in a dict. 
 
 ### Number / Math Utilities 
-* [abs] (#abs) - Return the absolute value of the argument.
+* [abs] (docs/jinja_functions.md#abs) - Return the absolute value of the argument.
 * [float] (#float) - Convert the value into a floating point number.
 * [int] (#int) - Convert the value into an integer.
 * [log] (#log) - Get the logarithm
@@ -38,7 +38,7 @@
 * [sum] (#sum) - Returns the sum of a sequence.
 
 ### Collection Utilities
-* [batch] (#batch) - A filter that batches items.
+* [batch] (docs/jinja_functions.md#batch) - A filter that batches items.
 * [dictsort] (#dictsort) - Sort a dict and yield (key, value) pairs.
 * [first] (#first) - Return the first item of a sequence.
 * [groupby] (#groupby) - Group a sequence of objects by a common attribute.
@@ -60,13 +60,13 @@
 * [password_hash] (#password_hash) - Get a password hash (md5, sha256, sha512) for a string
 
 ### Object Utilities
-* [attr] (#attr) - Get an attribute of an object.
+* [attr] (docs/jinja_functions.md#attr) - Get an attribute of an object.
 * [selectattr] (#selectattr) - Slice an iterator and return a list of lists containing those items.
 
 ### Helper Utilities
 * [b64decode] (#b64decode) - Decode a Base64 encoded string.
 * [b64encode] (#b64encode) - Encode a string use Base64.
-* [default] (#default) - Set a default value
+* [default] (docs/jinja_functions.md#default) - Set a default value
 * [from_json] (#from_json) - Reading in some JSON formatted data
 * [from_yaml] (#from_yaml) - Reading in YAML formatted data
 * [pprint] (#pprint) - Pretty print a variable.
