@@ -7,8 +7,8 @@
 ### String Utilities
 * [capitalize] (#capitalize) - Capitalize a String.
 * [center] (#center) - Centers the value in a field of a given width.
-* [filesizeformat] (#filesizeformat) - Format file sizes into ‘human-readable’ 
 * [escape] (#escape) - Convert the chars to HTML-safe sequences.
+* [filesizeformat] (#filesizeformat) - Format file sizes into ‘human-readable’ 
 * [forceescape] (#forceescape) - Enforce HTML escaping.
 * [format] (#format) - Apply python string formatting on an object.
 * [indent] (#indent) - Indent a string.
@@ -31,11 +31,11 @@
 * [abs] (#abs) - Return the absolute value of the argument.
 * [float] (#float) - Convert the value into a floating point number.
 * [int] (#int) - Convert the value into an integer.
-* [round] (#round) - Round the number to a given precision.
-* [sum] (#sum) - Returns the sum of a sequence.
 * [log] (#log) - Get the logarithm
 * [pow] (#pow) - Get the power of
 * [root] (#root) - Square root or root
+* [round] (#round) - Round the number to a given precision.
+* [sum] (#sum) - Returns the sum of a sequence.
 
 ### Collection Utilities
 * [batch] (#batch) - A filter that batches items.
@@ -50,13 +50,13 @@
 * [reject] (#reject) - Filters a sequence of objects by applying a test to the object and rejecting the ones with the test succeeding.
 * [rejectattr] (#rejectattr) - Filters a sequence of objects by applying a test to an attribute of an object or the attribute and rejecting the ones with the test succeeding.
 * [select] (#select) - Filters a sequence of objects by applying a test to the object and only selecting the ones with the test succeeding.
+* [shuffle] (#shuffle) - Randomize an existing list, giving a different order every invocation.
 * [slice] (#slice) - Filters a sequence of objects by applying a test to the object and only selecting the ones with the test succeeding.
 * [sort] (#sort) - Sort an iterable.
-* [shuffle] (#shuffle) - Randomize an existing list, giving a different order every invocation.
 
 ### Hashing Utilities
-* [hash] (#hash) - Get the hash (md5, sha1, sha224, sha256, sha384, sha512) of a string
 * [checksum] (#checksum) - Get a checksum for a string
+* [hash] (#hash) - Get the hash (md5, sha1, sha224, sha256, sha384, sha512) of a string
 * [password_hash] (#password_hash) - Get a password hash (md5, sha256, sha512) for a string
 
 ### Object Utilities
@@ -64,23 +64,23 @@
 * [selectattr] (#selectattr) - Slice an iterator and return a list of lists containing those items.
 
 ### Helper Utilities
+* [b64decode] (#b64decode) - Decode a Base64 encoded string.
+* [b64encode] (#b64encode) - Encode a string use Base64.
 * [default] (#default) - Set a default value
+* [from_json] (#from_json) - Reading in some JSON formatted data
+* [from_yaml] (#from_yaml) - Reading in YAML formatted data
 * [pprint] (#pprint) - Pretty print a variable.
+* [regex_escape] (#regex_escape) - Escape special characters within a regex
+* [regex_replace] (#regex_replace) - Replace text in a string with a regex
 * [reverse] (#reverse) - Reverse the object or return an iterator that iterates over it the other way round.
 * [safe] (#safe) - Make all potentionally dangerous chars safe. - safety is a illusion, so beware!
 * [striptags] (#striptags) - Strip SGML/XML tags and replace adjacent whitespace by one space.
-* [b64encode] (#b64encode) - Encode Strings with Base64
-* [b64decode] (#b64decode) - Decode Base64 encoded Strings
-* [to_uuid] (#to_uuid) - Create a UUID from a string
+* [ternary] (#ternary) - Use one value on true and another on false
 * [to_json] (#to_json) - Convert value into JSON
 * [to_nice_json] (#to_nice_json) - Convert string into human readable JSON
-* [from_json] (#from_json) - Reading in some JSON formatted data
-* [to_yaml] (#to_yaml) - Convert value into YAML
 * [to_nice_yaml] (#to_nice_yaml) - Convert value into human readable YAML
-* [from_yaml] (#from_yaml) - Reading in YAML formatted data
-* [regex_replace] (#regex_replace) - Replace text in a string with a regex
-* [regex_escape] (#regex_escape) - Escape special characters within a regex
-* [ternary] (#ternary) - Use one value on true and another on false
+* [to_uuid] (#to_uuid) - Create a UUID from a string
+* [to_yaml] (#to_yaml) - Convert value into YAML
 * [version_compare] (#version_compare) - To compare a version number
 
 ### Tests
@@ -91,6 +91,7 @@
 * [equalto] (#equalto) - Check if an object has the same value as another object.
 * [escaped] (#escaped) - Check if the value is escaped.
 * [even] (#even) - Return true if the variable is even.
+* [isnan] (#isnan) - To see if something is actually a number
 * [iterable] (#iterable) - Check if it’s possible to iterate over an object.
 * [lower] (#lower) - Return true if the variable is lowercased.
 * [mapping] (#mapping) - Return true if the object is a mapping (dict etc.).
@@ -102,7 +103,6 @@
 * [string] (#string) - Return true if the object is a string.
 * [undefined] (#undefined) - Like defined() but the other way round.
 * [upper] (#upper) - Return true if the variable is uppercased.
-* [isnan] (#isnan) - To see if something is actually a number
 
 ## Jinja List of Builtin Functions 
 
