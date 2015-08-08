@@ -14,6 +14,7 @@
 * [indent] (#indent) - Indent a string.
 * [list] (#list) - Convert the value into a list.
 * [lower] (#lower) - Convert a value to lowercase.
+* [quote] (#quote) - Add quotes for shell usage
 * [replace] (#replace) - Search for needle in haystack and replace it with substitute.
 * [string] (#string) - Make a string unicode.
 * [title] (#title) - Return a titlecased version of the value.
@@ -26,12 +27,15 @@
 * [wordwrap] (#wordwrap) - Return a copy of the string passed to the filter wrapped after n characters. 
 * [xmlattr] (#xmlattr) - Create an SGML/XML attribute string based on the items in a dict. 
 
-### Number Utilities 
+### Number / Math Utilities 
 * [abs] (#abs) - Return the absolute value of the argument.
 * [float] (#float) - Convert the value into a floating point number.
 * [int] (#int) - Convert the value into an integer.
 * [round] (#round) - Round the number to a given precision.
 * [sum] (#sum) - Returns the sum of a sequence.
+* [log] (#log) - Get the logarithm
+* [pow] (#pow) - Get the power of
+* [root] (#root) - Square root or root
 
 ### Collection Utilities
 * [batch] (#batch) - A filter that batches items.
@@ -48,6 +52,7 @@
 * [select] (#select) - Filters a sequence of objects by applying a test to the object and only selecting the ones with the test succeeding.
 * [slice] (#slice) - Filters a sequence of objects by applying a test to the object and only selecting the ones with the test succeeding.
 * [sort] (#sort) - Sort an iterable.
+* [shuffle] (#shuffle) - Randomize an existing list, giving a different order every invocation.
 
 ### Hashing Utilities
 * [hash] (#hash) - Get the hash (md5, sha1, sha224, sha256, sha384, sha512) of a string
@@ -64,8 +69,22 @@
 * [reverse] (#reverse) - Reverse the object or return an iterator that iterates over it the other way round.
 * [safe] (#safe) - Make all potentionally dangerous chars safe. - safety is a illusion, so beware!
 * [striptags] (#striptags) - Strip SGML/XML tags and replace adjacent whitespace by one space.
+* [b64encode] (#b64encode) - Encode Strings with Base64
+* [b64decode] (#b64decode) - Decode Base64 encoded Strings
+* [to_uuid] (#to_uuid) - Create a UUID from a string
+* [to_json] (#to_json) - Convert value into JSON
+* [to_nice_json] (#to_nice_json) - Convert string into human readable JSON
+* [from_json] (#from_json) - Reading in some JSON formatted data
+* [to_yaml] (#to_yaml) - Convert value into YAML
+* [to_nice_yaml] (#to_nice_yaml) - Convert value into human readable YAML
+* [from_yaml] (#from_yaml) - Reading in YAML formatted data
+* [regex_replace] (#regex_replace) - Replace text in a string with a regex
+* [regex_escape] (#regex_escape) - Escape special characters within a regex
+* [ternary] (#ternary) - Use one value on true and another on false
+* [version_compare] (#version_compare) - To compare a version number
 
 ### Tests
+* [bool] (#bool) - Check if the value is a boolean
 * [callable] (#callable) - Return whether the object is callable
 * [defined] (#defined) - Return true if the variable is defined
 * [divisibleby] (#divisibleby) - Check if a variable is divisible by a number.
@@ -83,6 +102,7 @@
 * [string] (#string) - Return true if the object is a string.
 * [undefined] (#undefined) - Like defined() but the other way round.
 * [upper] (#upper) - Return true if the variable is uppercased.
+* [isnan] (#isnan) - To see if something is actually a number
 
 ## Jinja List of Builtin Functions 
 
@@ -1439,7 +1459,7 @@ _New in ansible version 1.9._
 ###### method: (value, version, operator='eq', strict=False)
 > ansible built-in
 
-desc
+To compare a version number
 
 ```python
 {{ '12.04' | version_compare('12.04', '<') }}
