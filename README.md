@@ -137,9 +137,17 @@ Overview
 Credit
 ==========
 
-Builtin Jinja filters:
-[Documentation] (http://jinja.pocoo.org/docs/dev/templates/#builtin-filters)
-[Filter Test] (https://github.com/mitsuhiko/jinja2/blob/master/tests/test_filters.py)
+Builtin Jinja functions:
+- [Documentation] (http://jinja.pocoo.org/docs/dev/templates/#builtin-filters)
+- [Filter Test] (https://github.com/mitsuhiko/jinja2/blob/master/tests/test_filters.py)
+- [Test Tests] (https://github.com/mitsuhiko/jinja2/blob/master/tests/test_tests.py)
+
+Builtin Ansible functions:
+- [Documentation] (http://docs.ansible.com/ansible/playbooks_filters.html)
+- [Developing Plugins] (http://docs.ansible.com/ansible/developing_plugins.html)
+- [Math Filter] (https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/filter/mathstuff.py)
+- [Ipaddr Filter Documentation] (http://docs.ansible.com/ansible/playbooks_filters_ipaddr.html)
+- [Ipaddr Filter Tests] (https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/filter/ipaddr.py)
 
 Quote
 ==========
