@@ -24,7 +24,7 @@ Decode Base64 encoded Strings
 
 #### to_uuid
 ###### method: to_uuid
-> ansible built-in
+> ansible built-in - _new in Ansible version 1.9_
 
 create a UUID from a string
 
@@ -32,8 +32,6 @@ create a UUID from a string
 {{ 'hostname' | to_uuid }}
 # => '333bb031-dca6-57ec-895a-259d66ca7c36'
 ```
-
-_new in Ansible version 1.9_
 
 #### to_json
 ###### method: to_json
@@ -160,7 +158,7 @@ Add quotes for shell usage
 
 #### hash
 ###### method: hash(data, hashtype='sha1')
-> ansible built-in
+> ansible built-in - _New in ansible version 1.9._
 
 Get the hash of a string
 
@@ -198,11 +196,9 @@ Platform dependend:
 # is platform dependend 
 ```
 
-_New in ansible version 1.9._
-
 #### checksum
 ###### method: checksum
-> ansible built-in
+> ansible built-in - _New in ansible version 1.9._
 
 Get a checksum for a string
 
@@ -212,11 +208,9 @@ Get a checksum for a string
 # => 0beec7b5ea3f0fdbc95d0dd47f3c5bc275da8a33
 ```
 
-_New in ansible version 1.9._
-
 #### password_hash
 ###### method: password_hash(password, hashtype='sha512', salt=None)
-> ansible built-in
+> ansible built-in - _New in ansible version 1.9._
 
 Get a password hash from a String
 
@@ -242,11 +236,9 @@ Platform dependend:
 # => is platform dependend 
 ```
 
-_New in ansible version 1.9._
-
 #### regex_replace
 ###### method: regex_replace(value='', pattern='', replacement='', ignorecase=False)
-> ansible built-in
+> ansible built-in - _New in ansible version 1.6._
 
 Replace text in a string with a regex
 
@@ -260,11 +252,9 @@ _Caution: If “regex_replace” filter is used with variables inside YAML argum
 # => bar
 ```
 
-_New in ansible version 1.6._
-
 #### regex_escape
 ###### method: regex_escape
-> ansible built-in
+> ansible built-in - _New in ansible version 1.6._
 
 Escape special characters within a regex
 
@@ -273,12 +263,10 @@ Escape special characters within a regex
 # => \\^f\\.\\*o\\(\\.\\*\\)\\$
 ```
 
-_New in ansible version 1.6._
-
 #### ternary
 ###### method: ternary(value, true_val, false_val)
 
-> ansible built-in
+> ansible built-in - _New in ansible version 1.9._
 
 Use one value on true and another on false
 
@@ -290,11 +278,9 @@ Use one value on true and another on false
 # => false_case
 ```
 
-_New in ansible version 1.9._
-
 #### version_compare
 ###### method: (value, version, operator='eq', strict=False)
-> ansible built-in
+> ansible built-in - _New in ansible version 1.6._
 
 To compare a version number
 
@@ -309,11 +295,9 @@ To compare a version number
 # => False
 ```
 
-_New in ansible version 1.6._
-
 #### random
 ###### method: random(end, start=None, step=None))
-> ansible built-in
+> ansible built-in - _New in ansible version 1.6._
 
 This filter can be used similar to the default jinja2 random filter (returning a random item from a sequence of items), but can also generate a random number based on a range.
 
@@ -348,11 +332,9 @@ Get a random number from 1 to 100 in steps of 10:
 # => 51
 ```
 
-_New in ansible version 1.6._
-
 #### shuffle
 ###### method: shuffle(list)
-> ansible built-in
+> ansible built-in - _New in ansible version 1.8._
 
 Randomize an existing list, giving a different order every invocation.
 
@@ -364,11 +346,9 @@ Randomize an existing list, giving a different order every invocation.
 # => ['b','c','a']
 ```
 
-_New in ansible version 1.8._
-
 #### isnan
 ###### method: isnan(value)
-> ansible built-in
+> ansible built-in - _New in ansible version 1.9._
 
 To see if something is actually a number:
 
@@ -395,11 +375,9 @@ _caution: somehow the filter always returns false_
 
 ```
 
-_New in ansible version 1.9._
-
 #### log
 ###### method: log(value, base=math.e)
-> ansible built-in
+> ansible built-in - _New in ansible version 1.9._
 
 Get the logarithm:
 
@@ -415,11 +393,9 @@ Get the base 10 logarithm:
 # => 1.69897000434
 ```
 
-_New in ansible version 1.9._
-
 #### pow
 ###### method: pow(value, y)
-> ansible built-in
+> ansible built-in - _New in ansible version 1.9._
 
 the power of n
 
@@ -431,11 +407,9 @@ the power of n
 # => 312500000.0
 ```
 
-_New in ansible version 1.9._
-
 #### root
 ###### method: root(value, base=2)
-> ansible built-in
+> ansible built-in - _New in ansible version 1.9._
 
 Square root or root
 
@@ -447,12 +421,9 @@ Square root or root
 # => 2.18672414789
 ```
 
-_New in ansible version 1.9._
-
-
 #### unique
 ###### method: unique(list)
-> ansible built-in
+> ansible built-in - _New in Ansible version 1.4._
 
 Get a unique set from a list
 
@@ -461,12 +432,9 @@ Get a unique set from a list
 # => ['foo','bar','baz']
 ```
 
-_New in Ansible version 1.4._
-
-
 #### union
 ###### method: union(list_a, list_b)
-> ansible built-in
+> ansible built-in - _New in Ansible version 1.4._
 
 Get a union of two lists
 
@@ -475,12 +443,9 @@ Get a union of two lists
 # => ['foo','bar','baz','quux']
 ```
 
-_New in Ansible version 1.4._
-
-
 #### intersect
 ###### method: intersect(list_a, list_b)
-> ansible built-in
+> ansible built-in - _New in Ansible version 1.4._
 
 Get the intersection of 2 lists (unique list of all items in both)
 
@@ -489,12 +454,9 @@ Get the intersection of 2 lists (unique list of all items in both)
 # => ['foo']
 ```
 
-_New in Ansible version 1.4._
-
-
 #### difference
 ###### method: difference(list_a, list_b)
-> ansible built-in
+> ansible built-in - _New in Ansible version 1.4._
 
 To get the difference of 2 lists (items in 1 that don’t exist in 2)
 
@@ -503,12 +465,9 @@ To get the difference of 2 lists (items in 1 that don’t exist in 2)
 # => ['bar']
 ```
 
-_New in Ansible version 1.4._
-
-
 #### symmetric_difference
 ###### method: symmetric_difference(list_a, list_b)
-> ansible built-in
+> ansible built-in - _New in Ansible version 1.4._
 
 To get the symmetric difference of 2 lists (items exclusive to each list)
 
@@ -516,8 +475,6 @@ To get the symmetric difference of 2 lists (items exclusive to each list)
 {{ ['foo','bar'] | symmetric_difference(['foo','baz','quux']) }}
 # => ["bar","baz","quux"]
 ```
-
-_New in Ansible version 1.4._
 
 #### basename
 ###### method: basename(path)
@@ -529,7 +486,6 @@ Return the base name of pathname path. This is the second element of the pair re
 {{ '/foo/bar' | basename }}
 # => 'bar'
 ```
-
 
 #### dirname
 ###### method: dirname(path)
@@ -544,7 +500,7 @@ Return the directory name of pathname path. This is the first element of the pai
 
 #### expanduser
 ###### method: expanduser(path)
-> ansible built-in
+> ansible built-in - _new in ansible 1.5 version_
 
 Expand a path containing a tilde (~) character 
 
@@ -564,11 +520,9 @@ If the expansion fails or if the path does not begin with a tilde, the path is r
 # => '/foo/bar'
 ```
 
-_new in ansible 1.5 version_
-
 #### realpath
 ###### method: realpath(path)
-> ansible built-in
+> ansible built-in - _new in ansible 1.8 version_
 
 Get the real path of a link. Return the canonical path of the specified filename, eliminating any symbolic links encountered in the path (if they are supported by the operating system).
 
@@ -577,11 +531,9 @@ Get the real path of a link. Return the canonical path of the specified filename
 # => '/home/kitchen/foo'
 ```
 
-_new in ansible 1.8 version_
-
 #### relpath
 ###### method: relpath(path, start_point)
-> ansible built-in
+> ansible built-in - _new in ansible 1.7 version_
 
  Get the relative path of a link, from a start point. Return a relative filepath to path either from the current directory or from an optional start directory. This is a path computation: the filesystem is not accessed to confirm the existence or nature of path or start.
 
@@ -590,11 +542,9 @@ _new in ansible 1.8 version_
 # => '../tmp/foo'
 ```
 
-_new in ansible 1.7 version_
-
 #### splitext
 ###### method: splitext(path)
-> ansible built-in
+> ansible built-in - _new in ansible 2.0 version_
 
 To get the root and extension of a path or filename. Split the pathname path into a pair (root, ext) such that root + ext == path, and ext is empty or begins with a period and contains at most one period. Leading periods on the basename are ignored; splitext('.cshrc') returns ('.cshrc', '').
 
@@ -602,11 +552,10 @@ To get the root and extension of a path or filename. Split the pathname path int
 {{ 'foo.bar' | splitext }}
 # => ['foo','.bar']
 ```
-_new in ansible 2.0 version_
 
 #### ipaddr
 ###### method:
-> ansible built-in
+> ansible built-in - _New in ansible version 1.9._
 
 _caution: needs python-netaddr_
 
@@ -629,12 +578,9 @@ To test if a string is a valid IP address
 # => 2001:0db8:85a3:08d3:1319:8a2e:0370:7344
 ```
 
-_New in ansible version 1.9._
-
-
 #### ipv4
 ###### method: ipv4(value, query = '')
-> ansible built-in
+> ansible built-in - _New in ansible version 1.9._
 
 To test if a string is a valid IPv4 address
 
@@ -646,11 +592,9 @@ To test if a string is a valid IPv4 address
 # => False
 ```
 
-_New in ansible version 1.9._
-
 #### ipv6
 ###### method: ipv6(value, query = '')
-> ansible built-in
+> ansible built-in - _New in ansible version 1.9._
 
 To test if a string is a valid IPv6 address
 
@@ -661,5 +605,3 @@ To test if a string is a valid IPv6 address
 {{ '2001:0db8:85a3:08d3:1319:8a2e:0370:7344' | ipv4 }}
 # => 2001:0db8:85a3:08d3:1319:8a2e:0370:7344
 ```
-
-_New in ansible version 1.9._
