@@ -70,8 +70,10 @@ Overview
 ### Collection Utilities
 * [batch] (docs/jinja_functions.md#batch) - A filter that batches items.
 * [dictsort] (docs/jinja_functions.md#dictsort) - Sort a dict and yield (key, value) pairs.
+* [difference] (docs/ansible_functions.md#difference) - To get the difference of 2 lists.
 * [first] (docs/jinja_functions.md#first) - Return the first item of a sequence.
 * [groupby] (docs/jinja_functions.md#groupby) - Group a sequence of objects by a common attribute.
+* [intersect] (docs/ansible_functions.md#intersect) - Get the intersection of 2 lists
 * [join] (docs/jinja_functions.md#join) - Return a string which is the concatenation of the strings in the sequence.
 * [last] (docs/jinja_functions.md#last) - Return the last item of a sequence.
 * [length] (docs/jinja_functions.md#length) - Return the number of items of a sequence or mapping.
@@ -82,6 +84,9 @@ Overview
 * [shuffle] (docs/ansible_functions.md#shuffle) - Randomize an existing list, giving a different order every invocation.
 * [slice] (docs/jinja_functions.md#slice) - Filters a sequence of objects by applying a test to the object and only selecting the ones with the test succeeding.
 * [sort] (docs/jinja_functions.md#sort) - Sort an iterable.
+* [symmetric_difference] (docs/ansible_functions.md#symmetric_difference) - To get the symmetric difference of 2 lists
+* [union] (docs/ansible_functions.md#union) - Get a union of two lists
+* [unique] (docs/ansible_functions.md#unique) - Get a unique set from a list
 
 ### Hashing Utilities
 * [checksum] (docs/ansible_functions.md#checksum) - Get a checksum for a string
