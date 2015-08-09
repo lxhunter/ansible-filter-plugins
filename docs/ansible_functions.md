@@ -500,7 +500,7 @@ Return the directory name of pathname path. This is the first element of the pai
 
 #### expanduser
 ###### method: expanduser(path)
-> ansible built-in - _new in ansible 1.5 version_
+> ansible built-in - _new in 1.5_
 
 Expand a path containing a tilde (~) character 
 
@@ -522,7 +522,7 @@ If the expansion fails or if the path does not begin with a tilde, the path is r
 
 #### realpath
 ###### method: realpath(path)
-> ansible built-in - _new in ansible 1.8 version_
+> ansible built-in - _new in 1.8_
 
 Get the real path of a link. Return the canonical path of the specified filename, eliminating any symbolic links encountered in the path (if they are supported by the operating system).
 
@@ -533,7 +533,7 @@ Get the real path of a link. Return the canonical path of the specified filename
 
 #### relpath
 ###### method: relpath(path, start_point)
-> ansible built-in - _new in ansible 1.7 version_
+> ansible built-in - _new in 1.7_
 
  Get the relative path of a link, from a start point. Return a relative filepath to path either from the current directory or from an optional start directory. This is a path computation: the filesystem is not accessed to confirm the existence or nature of path or start.
 
@@ -544,7 +544,7 @@ Get the real path of a link. Return the canonical path of the specified filename
 
 #### splitext
 ###### method: splitext(path)
-> ansible built-in - _new in ansible 2.0 version_
+> ansible built-in - _new in 2.0_
 
 To get the root and extension of a path or filename. Split the pathname path into a pair (root, ext) such that root + ext == path, and ext is empty or begins with a period and contains at most one period. Leading periods on the basename are ignored; splitext('.cshrc') returns ('.cshrc', '').
 
