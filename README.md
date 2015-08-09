@@ -1,8 +1,23 @@
 
 # Ansible Filters
-#### WORK in PROGRESS
 
-# Overview
+Description
+===========
+
+Testing
+===========
+
+```shell
+python -m unittest -v string_utils
+nodemon -e 'py' --exec "python -m unittest -v string_utils"
+```
+
+Requirements
+===========
+
+
+Overview
+===========
 
 ### String Utilities
 * [capitalize] (docs/jinja_functions.md#capitalize) - Capitalize a String.
@@ -49,7 +64,7 @@
 * [random] (docs/jinja_functions.md#random) - Return a random item from the sequence.
 * [reject] (docs/jinja_functions.md#reject) - Filters a sequence of objects by applying a test to the object and rejecting the ones with the test succeeding.
 * [select] (docs/jinja_functions.md#select) - Filters a sequence of objects by applying a test to the object and only selecting the ones with the test succeeding.
-* [shuffle] (#shuffle) - Randomize an existing list, giving a different order every invocation.
+* [shuffle] (docs/ansible_functions.md#shuffle) - Randomize an existing list, giving a different order every invocation.
 * [slice] (docs/jinja_functions.md#slice) - Filters a sequence of objects by applying a test to the object and only selecting the ones with the test succeeding.
 * [sort] (docs/jinja_functions.md#sort) - Sort an iterable.
 
@@ -104,10 +119,31 @@
 * [undefined] (docs/jinja_tests.md#undefined) - Like defined() but the other way round.
 * [upper] (docs/jinja_tests.md#upper) - Return true if the variable is uppercased.
 
+Quote
+==========
+"I want to know God's thoughts; the rest are details."
+- Albert Einstein
 
-# Testing
+Contribute
+==========
 
-```shell
-python -m unittest -v string_utils
-nodemon -e 'py' --exec "python -m unittest -v string_utils"
-```
+[Tutorial](http://kbroman.github.io/github_tutorial/pages/fork.html)
+
+License and Author
+==================
+
+Author:: [Alexander Jäger](https://github.com/lxhunter)
+
+Copyright 2014
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
