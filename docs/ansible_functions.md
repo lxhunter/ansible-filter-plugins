@@ -24,7 +24,7 @@ Decode Base64 encoded Strings
 
 #### to_uuid
 ###### method: to_uuid
-> ansible built-in - _new in Ansible version 1.9_
+> ansible built-in - _new in 1.9_
 
 create a UUID from a string
 
@@ -158,7 +158,7 @@ Add quotes for shell usage
 
 #### hash
 ###### method: hash(data, hashtype='sha1')
-> ansible built-in - _New in ansible version 1.9._
+> ansible built-in - _New in 1.9._
 
 Get the hash of a string
 
@@ -198,7 +198,7 @@ Platform dependend:
 
 #### checksum
 ###### method: checksum
-> ansible built-in - _New in ansible version 1.9._
+> ansible built-in - _New in 1.9._
 
 Get a checksum for a string
 
@@ -210,7 +210,7 @@ Get a checksum for a string
 
 #### password_hash
 ###### method: password_hash(password, hashtype='sha512', salt=None)
-> ansible built-in - _New in ansible version 1.9._
+> ansible built-in - _New in 1.9._
 
 Get a password hash from a String
 
@@ -238,7 +238,7 @@ Platform dependend:
 
 #### regex_replace
 ###### method: regex_replace(value='', pattern='', replacement='', ignorecase=False)
-> ansible built-in - _New in ansible version 1.6._
+> ansible built-in - _New in 1.6._
 
 Replace text in a string with a regex
 
@@ -254,7 +254,7 @@ _Caution: If “regex_replace” filter is used with variables inside YAML argum
 
 #### regex_escape
 ###### method: regex_escape
-> ansible built-in - _New in ansible version 1.6._
+> ansible built-in - _New in 1.6._
 
 Escape special characters within a regex
 
@@ -266,7 +266,7 @@ Escape special characters within a regex
 #### ternary
 ###### method: ternary(value, true_val, false_val)
 
-> ansible built-in - _New in ansible version 1.9._
+> ansible built-in - _New in 1.9._
 
 Use one value on true and another on false
 
@@ -280,7 +280,7 @@ Use one value on true and another on false
 
 #### version_compare
 ###### method: (value, version, operator='eq', strict=False)
-> ansible built-in - _New in ansible version 1.6._
+> ansible built-in - _New in 1.6._
 
 To compare a version number
 
@@ -297,7 +297,7 @@ To compare a version number
 
 #### random
 ###### method: random(end, start=None, step=None))
-> ansible built-in - _New in ansible version 1.6._
+> ansible built-in - _New in 1.6._
 
 This filter can be used similar to the default jinja2 random filter (returning a random item from a sequence of items), but can also generate a random number based on a range.
 
@@ -334,7 +334,7 @@ Get a random number from 1 to 100 in steps of 10:
 
 #### shuffle
 ###### method: shuffle(list)
-> ansible built-in - _New in ansible version 1.8._
+> ansible built-in - _New in 1.8._
 
 Randomize an existing list, giving a different order every invocation.
 
@@ -348,7 +348,7 @@ Randomize an existing list, giving a different order every invocation.
 
 #### isnan
 ###### method: isnan(value)
-> ansible built-in - _New in ansible version 1.9._
+> ansible built-in - _New in 1.9._
 
 To see if something is actually a number:
 
@@ -377,7 +377,7 @@ _caution: somehow the filter always returns false_
 
 #### log
 ###### method: log(value, base=math.e)
-> ansible built-in - _New in ansible version 1.9._
+> ansible built-in - _New in 1.9._
 
 Get the logarithm:
 
@@ -395,7 +395,7 @@ Get the base 10 logarithm:
 
 #### pow
 ###### method: pow(value, y)
-> ansible built-in - _New in ansible version 1.9._
+> ansible built-in - _New in 1.9._
 
 the power of n
 
@@ -409,7 +409,7 @@ the power of n
 
 #### root
 ###### method: root(value, base=2)
-> ansible built-in - _New in ansible version 1.9._
+> ansible built-in - _New in 1.9._
 
 Square root or root
 
@@ -423,7 +423,7 @@ Square root or root
 
 #### unique
 ###### method: unique(list)
-> ansible built-in - _New in Ansible version 1.4._
+> ansible built-in - _New in 1.4._
 
 Get a unique set from a list
 
@@ -434,7 +434,7 @@ Get a unique set from a list
 
 #### union
 ###### method: union(list_a, list_b)
-> ansible built-in - _New in Ansible version 1.4._
+> ansible built-in - _New in 1.4._
 
 Get a union of two lists
 
@@ -445,7 +445,7 @@ Get a union of two lists
 
 #### intersect
 ###### method: intersect(list_a, list_b)
-> ansible built-in - _New in Ansible version 1.4._
+> ansible built-in - _New in 1.4._
 
 Get the intersection of 2 lists (unique list of all items in both)
 
@@ -456,7 +456,7 @@ Get the intersection of 2 lists (unique list of all items in both)
 
 #### difference
 ###### method: difference(list_a, list_b)
-> ansible built-in - _New in Ansible version 1.4._
+> ansible built-in - _New in 1.4._
 
 To get the difference of 2 lists (items in 1 that don’t exist in 2)
 
@@ -467,7 +467,7 @@ To get the difference of 2 lists (items in 1 that don’t exist in 2)
 
 #### symmetric_difference
 ###### method: symmetric_difference(list_a, list_b)
-> ansible built-in - _New in Ansible version 1.4._
+> ansible built-in - _New in 1.4._
 
 To get the symmetric difference of 2 lists (items exclusive to each list)
 
@@ -555,7 +555,7 @@ To get the root and extension of a path or filename. Split the pathname path int
 
 #### ipaddr
 ###### method:
-> ansible built-in - _New in ansible version 1.9._
+> ansible built-in - _New in 1.9._
 
 _caution: needs python-netaddr_
 
@@ -580,7 +580,7 @@ To test if a string is a valid IP address
 
 #### ipv4
 ###### method: ipv4(value, query = '')
-> ansible built-in - _New in ansible version 1.9._
+> ansible built-in - _New in 1.9._
 
 To test if a string is a valid IPv4 address
 
@@ -594,7 +594,7 @@ To test if a string is a valid IPv4 address
 
 #### ipv6
 ###### method: ipv6(value, query = '')
-> ansible built-in - _New in ansible version 1.9._
+> ansible built-in - _New in 1.9._
 
 To test if a string is a valid IPv6 address
 
