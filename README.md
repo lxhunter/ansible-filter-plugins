@@ -18,11 +18,18 @@ $ nodemon -e 'py' --exec "python -m unittest -v string_utils"
 Requirements
 ===========
 
-For the ip address filters you need the python 'netaddr' package:
+For the ip address utilites you need the python `netaddr` package:
 
 ```shell
 $ pip install netaddr
 ```
+
+For pprint you will need the python `pretty` package:
+
+```shell
+$ pip install pretty
+```
+
 
 Overview
 ===========
