@@ -506,20 +506,103 @@ To get the difference of 2 lists (items in 1 that don’t exist in 2)
 _New in Ansible version 1.4._
 
 
-#### title
-###### method:
+#### symmetric_difference
+###### method: symmetric_difference(list_a, list_b)
 > ansible built-in
 
-_aliases:_
-
-desc
+To get the symmetric difference of 2 lists (items exclusive to each list)
 
 ```python
-
-# =>
+{{ ['foo','bar'] | symmetric_difference(['foo','baz','quux']) }}
+# => ["bar","baz","quux"]
 ```
 
 _New in Ansible version 1.4._
+
+#### basename
+###### method: basename(path)
+> ansible built-in
+
+Return the base name of pathname path. This is the second element of the pair returned by passing path to the function split(). Note that the result of this function is different from the Unix basename program; where basename for `/foo/bar/` returns 'bar', the basename() function returns an empty string ('').
+
+```python
+{{ '/foo/bar' | basename }}
+# => 'bar'
+```
+
+
+#### dirname
+###### method: dirname(path)
+> ansible built-in
+
+Return the directory name of pathname path. This is the first element of the pair returned by passing path to the function split().
+
+```python
+{{ '/foo/bar' | dirname }}
+# => '/foo'
+```
+
+#### expanduser
+###### method: expanduser(path)
+> ansible built-in
+
+Expand a path containing a tilde (~) character 
+
+On Unix and Windows, return the argument with an initial component of ~ or ~user replaced by that user‘s home directory.
+
+On Unix, an initial ~ is replaced by the environment variable HOME if it is set; otherwise the current user’s home directory is looked up in the password directory through the built-in module pwd. An initial ~user is looked up directly in the password directory.
+
+On Windows, HOME and USERPROFILE will be used if set, otherwise a combination of HOMEPATH and HOMEDRIVE will be used. An initial ~user is handled by stripping the last directory component from the created user path derived above.
+
+If the expansion fails or if the path does not begin with a tilde, the path is returned unchanged.
+
+```python
+{{ '~/bin' | expanduser }}
+# => /home/kitchen/bin
+
+{{ '/foo/bar' | expanduser }}
+# => '/foo/bar'
+```
+
+_new in ansible 1.5 version_
+
+#### realpath
+###### method: realpath(path)
+> ansible built-in
+
+Get the real path of a link. Return the canonical path of the specified filename, eliminating any symbolic links encountered in the path (if they are supported by the operating system).
+
+```python
+{{ '/tmp/foo' | realpath }}
+# => '/home/kitchen/foo'
+```
+
+_new in ansible 1.8 version_
+
+#### relpath
+###### method: relpath(path, start_point)
+> ansible built-in
+
+ Get the relative path of a link, from a start point. Return a relative filepath to path either from the current directory or from an optional start directory. This is a path computation: the filesystem is not accessed to confirm the existence or nature of path or start.
+
+```python
+{{ '/tmp/foo' | relpath('/etc') }}
+# => '../tmp/foo'
+```
+
+_new in ansible 1.7 version_
+
+#### splitext
+###### method: splitext(path)
+> ansible built-in
+
+To get the root and extension of a path or filename. Split the pathname path into a pair (root, ext) such that root + ext == path, and ext is empty or begins with a period and contains at most one period. Leading periods on the basename are ignored; splitext('.cshrc') returns ('.cshrc', '').
+
+```python
+{{ 'foo.bar' | splitext }}
+# => ['foo','.bar']
+```
+_new in ansible 2.0 version_
 
 #### ipaddr
 ###### method:

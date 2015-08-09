@@ -118,6 +118,14 @@ Overview
 * [to_yaml] (docs/ansible_functions.md#to_yaml) - Convert value into YAML
 * [version_compare] (docs/ansible_functions.md#version_compare) - To compare a version number
 
+### Path Utilities
+* [basename] (docs/ansible_functions.md#basename) - Return the base name of pathname path.
+* [dirname] (docs/ansible_functions.md#dirname) - Return the directory name of pathname path.
+* [expanduser] (docs/ansible_functions.md#expanduser) - Expand a path containing a tilde (~) character 
+* [realpath] (docs/ansible_functions.md#realpath) - Get the real path of a link
+* [relpath] (docs/ansible_functions.md#relpath) - Get the relative path of a link, from a start point.
+* [splitext] (docs/ansible_functions.md#splitext) - To get the root and extension of a path or filename.
+
 ### Tests
 * [bool] (docs/ansible_functions.md#bool) - Check if the value is a boolean
 * [callable] (docs/jinja_tests.md#callable) - Return whether the object is callable
