@@ -449,6 +449,78 @@ Square root or root
 
 _New in ansible version 1.9._
 
+
+#### unique
+###### method: unique(list)
+> ansible built-in
+
+Get a unique set from a list
+
+```python
+{{ ['foo','foo','baz','bar','baz'] | unique }}
+# => ['foo','bar','baz']
+```
+
+_New in Ansible version 1.4._
+
+
+#### union
+###### method: union(list_a, list_b)
+> ansible built-in
+
+Get a union of two lists
+
+```python
+{{ ['foo','bar'] | union(['baz','quux']) }}
+# => ['foo','bar','baz','quux']
+```
+
+_New in Ansible version 1.4._
+
+
+#### intersect
+###### method: intersect(list_a, list_b)
+> ansible built-in
+
+Get the intersection of 2 lists (unique list of all items in both)
+
+```python
+{{ ['foo','foo','baz','bar','baz'] | intersect(['foo','bar']) }}
+# => ['foo']
+```
+
+_New in Ansible version 1.4._
+
+
+#### difference
+###### method: difference(list_a, list_b)
+> ansible built-in
+
+To get the difference of 2 lists (items in 1 that don’t exist in 2)
+
+```python
+{{ ['foo','bar'] | difference(['foo','baz','quux']) }}
+# => ['bar']
+```
+
+_New in Ansible version 1.4._
+
+
+#### title
+###### method:
+> ansible built-in
+
+_aliases:_
+
+desc
+
+```python
+
+# =>
+```
+
+_New in Ansible version 1.4._
+
 #### ipaddr
 ###### method:
 > ansible built-in
