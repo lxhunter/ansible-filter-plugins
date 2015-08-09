@@ -4,17 +4,25 @@
 Description
 ===========
 
+
+
 Testing
 ===========
 
 ```shell
-python -m unittest -v string_utils
-nodemon -e 'py' --exec "python -m unittest -v string_utils"
+$ python -m unittest -v string_utils
+# or
+$ nodemon -e 'py' --exec "python -m unittest -v string_utils"
 ```
 
 Requirements
 ===========
 
+For the ip address filters you need the python 'netaddr' package:
+
+```shell
+$ pip install netaddr
+```
 
 Overview
 ===========
@@ -119,9 +127,16 @@ Overview
 * [undefined] (docs/jinja_tests.md#undefined) - Like defined() but the other way round.
 * [upper] (docs/jinja_tests.md#upper) - Return true if the variable is uppercased.
 
+Credit
+==========
+
+Builtin Jinja filters:
+[Documentation] (http://jinja.pocoo.org/docs/dev/templates/#builtin-filters)
+[Filter Test] (https://github.com/mitsuhiko/jinja2/blob/master/tests/test_filters.py)
+
 Quote
 ==========
-"I want to know God's thoughts; the rest are details."
+> Look deep into nature, and then you will understand everything better.
 - Albert Einstein
 
 Contribute
