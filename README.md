@@ -34,26 +34,42 @@ Overview
 ===========
 
 ### String Utilities
+* [camelize] - to be included
 * [capitalize] (docs/jinja_functions.md#capitalize) - Capitalize a String.
 * [center] (docs/jinja_functions.md#center) - Centers the value in a field of a given width.
+* [chars] - See [list] (docs/jinja_functions.md#list) 
+* [clean] - to be included
+* [count] - to be included
+* [dasherize] - to be included
+* [ends_with] - to be included
 * [escape] (docs/jinja_functions.md#escape) - Convert the chars to HTML-safe sequences.
 * [filesizeformat] (docs/jinja_functions.md#filesizeformat) - Format file sizes into ‘human-readable’ 
 * [forceescape] (docs/jinja_functions.md#forceescape) - Enforce HTML escaping.
 * [format] (docs/jinja_functions.md#format) - Apply python string formatting on an object.
+* [humanize] - to be included
+* [include] - to be included
 * [indent] (docs/jinja_functions.md#indent) - Indent a string.
+* [insert] - to be included
 * [list] (docs/jinja_functions.md#list) - Convert the value into a list.
 * [lower] (docs/jinja_functions.md#lower) - Convert a value to lowercase.
 * [quote] (docs/ansible_functions.md#quote) - Add quotes for shell usage
 * [regex_escape] (docs/ansible_functions.md#regex_escape) - Escape special characters within a regex
 * [regex_replace] (docs/ansible_functions.md#regex_replace) - Replace text in a string with a regex
 * [replace] (docs/jinja_functions.md#replace) - Search for needle in haystack and replace it with substitute.
+* [replaceAll] - See [replace] (docs/jinja_functions.md#replace)
 * [reverse] (docs/jinja_functions.md#reverse) - Reverse the object or return an iterator that iterates over it the other way round.
 * [safe] (docs/jinja_functions.md#safe) - Make all potentionally dangerous chars safe. - safety is a illusion, so beware!
+* [splice] - to be included
+* [starts_with] - to be included
 * [string] (docs/jinja_functions.md#string) - Make a string unicode.
 * [striptags] (docs/jinja_functions.md#striptags) - Strip SGML/XML tags and replace adjacent whitespace by one space.
+* [successor] - to be included
+* [swap_case] - to be included
 * [title] (docs/jinja_functions.md#title) - Return a titlecased version of the value.
+* [transliterate] - to be included
 * [trim] (docs/jinja_functions.md#trim) - Strip leading and trailing whitespace.
 * [truncate] (docs/jinja_functions.md#truncate) - Return a truncated copy of the string.
+* [underscore] - to be included
 * [upper] (docs/jinja_functions.md#upper) - Convert a value to uppercase.
 * [urlencode] (docs/jinja_functions.md#urlencode) - Escape strings for use in URLs.
 * [urlize] (docs/jinja_functions.md#urlize) - Converts URLs in plain text into clickable links.
@@ -81,6 +97,7 @@ Overview
 * [join] (docs/jinja_functions.md#join) - Return a string which is the concatenation of the strings in the sequence.
 * [last] (docs/jinja_functions.md#last) - Return the last item of a sequence.
 * [length] (docs/jinja_functions.md#length) - Return the number of items of a sequence or mapping.
+* [lines] - to be included
 * [map] (docs/jinja_functions.md#map) - Applies a filter on a sequence of objects or looks up an attribute.
 * [random] (docs/jinja_functions.md#random) - Return a random item from the sequence.
 * [reject] (docs/jinja_functions.md#reject) - Filters a sequence of objects by applying a test to the object and rejecting the ones with the test succeeding.
