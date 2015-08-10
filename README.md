@@ -111,9 +111,12 @@ Overview
 * [to_yaml] (docs/ansible_functions.md#to_yaml) - Convert value into YAML
 
 ### IP Utilities
+* [hwaddr] (docs/ansible_functions.md#hwaddr) - Check if a given string is a MAC address or convert it between various formats.
 * [ipaddr] (docs/ansible_functions.md#ipaddr) - Returns the input value if a query is True, and False if query is False.
+* [ipsubnet] (docs/ansible_functions.md#ipsubnet) - Can be used to manipulate network subnets in several ways.
 * [ipv4] (docs/ansible_functions.md#ipv4) - To test if a string is a valid IPv4 address.
 * [ipv6] (docs/ansible_functions.md#ipv6) - To test if a string is a valid ipv6 address.
+* [ipwrap] (docs/ansible_functions.md#ipwrap) - Some configuration files require IPv6 addresses to be “wrapped” in square brackets ([ ]).
 
 ### Object Utilities
 * [attr] (docs/jinja_functions.md#attr) - Get an attribute of an object.

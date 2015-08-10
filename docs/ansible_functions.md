@@ -656,18 +656,6 @@ As you can see, even though some values had a host address with a CIDR prefix, i
 # => ['192.24.2.1/32', '::1/128', 'fe80::100/10']
 ```
 
-Filtering by IP address types also works:
-
-```python
-# test_list = ['192.24.2.1', 'host.fqdn', '::1', '192.168.32.0/24', 'fe80::100/10', True, '', '42540766412265424405338506004571095040/64']
-
- {{ test_list | ipv4('address') }}
-# => ['192.24.2.1']
-
-{{ test_list | ipv6('address') }}
-# => ['::1', 'fe80::100']
-```
-
 You can check if IP addresses or network ranges are accessible on a public Internet, or if they are in private networks:
 
 ```python
@@ -804,24 +792,6 @@ If needed, you can extract subnet and prefix information from ‘host/prefix’ 
 
 ##### IP address conversion
 
-You can convert IPv4 addresses into IPv6 addresses:
-
-```python
-# test_list = ['192.24.2.1', 'host.fqdn', '::1', '192.168.32.0/24', 'fe80::100/10', True, '', '42540766412265424405338506004571095040/64']
-
-{{ test_list | ipv4('ipv6') }}
-# => ['::ffff:192.24.2.1/128', '::ffff:192.168.32.0/120']
-```
-
-Converting from IPv6 to IPv4 works very rarely:
-
-```python
-# test_list = ['192.24.2.1', 'host.fqdn', '::1', '192.168.32.0/24', 'fe80::100/10', True, '', '42540766412265424405338506004571095040/64']
-
-{{ test_list | ipv6('ipv4') }}
-# => ['0.0.0.1/32']
-```
-
 But we can make double conversion if needed:
 
 ```python
@@ -868,7 +838,9 @@ To convert your IPv4 address, just send it through `6to4` filter. It will be aut
 # => 2002:c100:0200::1/48
 ```
 
-##### Subnet manipulation
+#### ipsubnet
+###### method: ipsubnet(value, query = '', index = 'x'):
+> ansible built-in - _New in 1.9._
 
 `ipsubnet` filter can be used to manipulate network subnets in several ways.
 
@@ -893,47 +865,20 @@ Second argument of ipsubnet() filter is an index number; by specifying it you ca
 
 ```python
 # First subnet
-{{ subnet | ipsubnet(20, 0) }}
+{{ '192.168.0.0/16' | ipsubnet(20, 0) }}
 # => 192.168.0.0/20
 
 # Last subnet
-{{ subnet | ipsubnet(20, -1) }}
+{{ '192.168.0.0/16' | ipsubnet(20, -1) }}
 # => 192.168.240.0/20
 
 # Fifth subnet
-{{ subnet | ipsubnet(20, 5) }}
+{{ '192.168.0.0/16'| ipsubnet(20, 5) }}
 # => 192.168.80.0/20
 
 # Fifth to last subnet
-{{ subnet | ipsubnet(20, -5) }}
+{{ '192.168.0.0/16' | ipsubnet(20, -5) }}
 # => 192.168.176.0/20
-```
-
-If you specify an IP address instead of a subnet, and give a subnet size as a first argument, `ipsubnet` filter will instead return biggest subnet that contains a given IP address:
-
-```python
-{{ '192.168.144.5' | ipsubnet(20) }}
-# => 192.168.128.0/18
-```
-
-By specifying an index number as a second argument, you can select smaller and smaller subnets:
-
-```python
-# First subnet
-{{ subnet | ipsubnet(18, 0) }}
-#=> 192.168.128.0/18
-
-# Last subnet
-{{ subnet | ipsubnet(18, -1) }}
-# => 192.168.144.4/31
-
-# Fifth subnet
-{{ subnet | ipsubnet(18, 5) }}
-# => 192.168.144.0/23
-
-# Fifth to last subnet
-{{ subnet | ipsubnet(18, -5) }}
-# => 192.168.144.0/27
 ```
 
 You can use `ipsubnet` filter with `ipaddr` filter to for example split given `/48` prefix into smaller, `/64` subnets:
@@ -945,10 +890,13 @@ You can use `ipsubnet` filter with `ipaddr` filter to for example split given `/
 
 Because of the size of IPv6 subnets, iteration over all of them to find the correct one may take some time on slower computers, depending on the size difference between subnets.
 
-##### MAC address filter
+#### hwaddr
+###### method: hwaddr(value, query = '', alias = 'hwaddr')
+> ansible built-in - _New in 1.9._
 
-You can use `hwaddr` filter to check if a given string is a MAC address or convert it between various formats. Examples:
+You can use `hwaddr` filter to check if a given string is a MAC address or convert it between various formats. 
 
+Examples:
 ```python
 
 # Check if given string is a MAC address
@@ -992,6 +940,24 @@ To test if a string is a valid IPv4 address
 # => ['192.24.2.1', '192.168.32.0/24']
 ```
 
+Converting from IPv6 to IPv4 works very rarely:
+
+```python
+# test_list = ['192.24.2.1', 'host.fqdn', '::1', '192.168.32.0/24', 'fe80::100/10', True, '', '42540766412265424405338506004571095040/64']
+
+{{ test_list | ipv6('ipv4') }}
+# => ['0.0.0.1/32']
+```
+
+Filtering by IP address types also works:
+
+```python
+# test_list = ['192.24.2.1', 'host.fqdn', '::1', '192.168.32.0/24', 'fe80::100/10', True, '', '42540766412265424405338506004571095040/64']
+
+ {{ test_list | ipv4('address') }}
+# => ['192.24.2.1']
+```
+
 #### ipv6
 ###### method: ipv6(value, query = '')
 > ansible built-in - _New in 1.9._
@@ -1024,6 +990,24 @@ To test if a string is a valid IPv6 address
 
 {{ test_list | ipv6 }}
 # => ['::1', 'fe80::100/10', '2001:db8:32c:faad::/64']
+```
+
+You can convert IPv4 addresses into IPv6 addresses:
+
+```python
+# test_list = ['192.24.2.1', 'host.fqdn', '::1', '192.168.32.0/24', 'fe80::100/10', True, '', '42540766412265424405338506004571095040/64']
+
+{{ test_list | ipv4('ipv6') }}
+# => ['::ffff:192.24.2.1/128', '::ffff:192.168.32.0/120']
+```
+
+Filtering by IP address types also works:
+
+```python
+# test_list = ['192.24.2.1', 'host.fqdn', '::1', '192.168.32.0/24', 'fe80::100/10', True, '', '42540766412265424405338506004571095040/64']
+
+{{ test_list | ipv6('address') }}
+# => ['::1', 'fe80::100']
 ```
 
 #### ipwrap
