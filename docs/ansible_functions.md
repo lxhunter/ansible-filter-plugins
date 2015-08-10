@@ -1030,16 +1030,3 @@ As you can see, `ipwrap()` did not filter out non-IP address values, which is us
 {{ test_list | ipaddr | ipwrap }}
 # => ['192.24.2.1', '[::1]', '192.168.32.0/24', '[fe80::100]/10', '[2001:db8:32c:faad::]/64']
 ```
-
-#### title
-###### method:
-> ansible built-in - _version_
-
-_aliases:_
-
-desc
-
-```python
-
-# =>
-```
