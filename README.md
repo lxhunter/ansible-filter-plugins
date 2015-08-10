@@ -32,63 +32,10 @@ $ pip install pretty
 
 Overview
 ===========
-
-### String Utilities
-* [camelize] - to be included
-* [capitalize] (docs/jinja_functions.md#capitalize) - Capitalize a String.
-* [center] (docs/jinja_functions.md#center) - Centers the value in a field of a given width.
-* [chars] - See [list] (docs/jinja_functions.md#list) 
-* [clean] - to be included
-* [count] - to be included
-* [dasherize] - to be included
-* [ends_with] - to be included
-* [escape] (docs/jinja_functions.md#escape) - Convert the chars to HTML-safe sequences.
-* [filesizeformat] (docs/jinja_functions.md#filesizeformat) - Format file sizes into ‘human-readable’ 
-* [forceescape] (docs/jinja_functions.md#forceescape) - Enforce HTML escaping.
-* [format] (docs/jinja_functions.md#format) - Apply python string formatting on an object.
-* [humanize] - to be included
-* [include] - to be included
-* [indent] (docs/jinja_functions.md#indent) - Indent a string.
-* [insert] - to be included
-* [list] (docs/jinja_functions.md#list) - Convert the value into a list.
-* [lower] (docs/jinja_functions.md#lower) - Convert a value to lowercase.
-* [quote] (docs/ansible_functions.md#quote) - Add quotes for shell usage
-* [regex_escape] (docs/ansible_functions.md#regex_escape) - Escape special characters within a regex
-* [regex_replace] (docs/ansible_functions.md#regex_replace) - Replace text in a string with a regex
-* [replace] (docs/jinja_functions.md#replace) - Search for needle in haystack and replace it with substitute.
-* [replaceAll] - See [replace] (docs/jinja_functions.md#replace)
-* [reverse] (docs/jinja_functions.md#reverse) - Reverse the object or return an iterator that iterates over it the other way round.
-* [safe] (docs/jinja_functions.md#safe) - Make all potentionally dangerous chars safe. - safety is a illusion, so beware!
-* [splice] - to be included
-* [starts_with] - to be included
-* [string] (docs/jinja_functions.md#string) - Make a string unicode.
-* [striptags] (docs/jinja_functions.md#striptags) - Strip SGML/XML tags and replace adjacent whitespace by one space.
-* [successor] - to be included
-* [swap_case] - to be included
-* [title] (docs/jinja_functions.md#title) - Return a titlecased version of the value.
-* [transliterate] - to be included
-* [trim] (docs/jinja_functions.md#trim) - Strip leading and trailing whitespace.
-* [truncate] (docs/jinja_functions.md#truncate) - Return a truncated copy of the string.
-* [underscore] - to be included
-* [upper] (docs/jinja_functions.md#upper) - Convert a value to uppercase.
-* [urlencode] (docs/jinja_functions.md#urlencode) - Escape strings for use in URLs.
-* [urlize] (docs/jinja_functions.md#urlize) - Converts URLs in plain text into clickable links.
-* [wordcount] (docs/jinja_functions.md#wordcount) - Count the words in that string.
-* [wordwrap] (docs/jinja_functions.md#wordwrap) - Return a copy of the string passed to the filter wrapped after n characters. 
-* [xmlattr] (docs/jinja_functions.md#xmlattr) - Create an SGML/XML attribute string based on the items in a dict. 
-
-### Number / Math Utilities 
-* [abs] (docs/jinja_functions.md#abs) - Return the absolute value of the argument.
-* [float] (docs/jinja_functions.md#float) - Convert the value into a floating point number.
-* [int] (docs/jinja_functions.md#int) - Convert the value into an integer.
-* [log] (docs/ansible_functions.md#log) - Get the logarithm
-* [pow] (docs/ansible_functions.md#pow) - Get the power of
-* [root] (docs/ansible_functions.md#root) - Square root or root
-* [round] (docs/jinja_functions.md#round) - Round the number to a given precision.
-* [sum] (docs/jinja_functions.md#sum) - Returns the sum of a sequence.
-
 ### Collection Utilities
 * [batch] (docs/jinja_functions.md#batch) - A filter that batches items.
+* [chop] - see [batch] (docs/jinja_functions.md#batch)
+* [decapitalize]
 * [dictsort] (docs/jinja_functions.md#dictsort) - Sort a dict and yield (key, value) pairs.
 * [difference] (docs/ansible_functions.md#difference) - To get the difference of 2 lists.
 * [first] (docs/jinja_functions.md#first) - Return the first item of a sequence.
@@ -97,8 +44,9 @@ Overview
 * [join] (docs/jinja_functions.md#join) - Return a string which is the concatenation of the strings in the sequence.
 * [last] (docs/jinja_functions.md#last) - Return the last item of a sequence.
 * [length] (docs/jinja_functions.md#length) - Return the number of items of a sequence or mapping.
-* [lines] - to be included
+* [lines]
 * [map] (docs/jinja_functions.md#map) - Applies a filter on a sequence of objects or looks up an attribute.
+* [naturalCmp] - see either [sort] (docs/jinja_functions.md#sort) or [dictsort] (docs/jinja_functions.md#dictsort)
 * [random] (docs/jinja_functions.md#random) - Return a random item from the sequence.
 * [reject] (docs/jinja_functions.md#reject) - Filters a sequence of objects by applying a test to the object and rejecting the ones with the test succeeding.
 * [reverse] (docs/jinja_functions.md#reverse) - Reverse the object or return an iterator that iterates over it the other way round.
@@ -135,6 +83,16 @@ Overview
 * [ipv6] (docs/ansible_functions.md#ipv6) - To test if a string is a valid ipv6 address.
 * [ipwrap] (docs/ansible_functions.md#ipwrap) - Some configuration files require IPv6 addresses to be “wrapped” in square brackets ([ ]).
 
+### Number / Math Utilities 
+* [abs] (docs/jinja_functions.md#abs) - Return the absolute value of the argument.
+* [float] (docs/jinja_functions.md#float) - Convert the value into a floating point number.
+* [int] (docs/jinja_functions.md#int) - Convert the value into an integer.
+* [log] (docs/ansible_functions.md#log) - Get the logarithm
+* [pow] (docs/ansible_functions.md#pow) - Get the power of
+* [root] (docs/ansible_functions.md#root) - Square root or root
+* [round] (docs/jinja_functions.md#round) - Round the number to a given precision.
+* [sum] (docs/jinja_functions.md#sum) - Returns the sum of a sequence.
+
 ### Object Utilities
 * [attr] (docs/jinja_functions.md#attr) - Get an attribute of an object.
 * [default] (docs/jinja_functions.md#default) - Set a default value
@@ -149,6 +107,76 @@ Overview
 * [relpath] (docs/ansible_functions.md#relpath) - Get the relative path of a link, from a start point.
 * [splitext] (docs/ansible_functions.md#splitext) - To get the root and extension of a path or filename.
 
+### String Utilities
+* [camelize]
+* [capitalize] (docs/jinja_functions.md#capitalize) - Capitalize a String.
+* [center] (docs/jinja_functions.md#center) - Centers the value in a field of a given width.
+* [chars] - See [list] (docs/jinja_functions.md#list) 
+* [classify]
+* [clean]
+* [count]
+* [dasherize]
+* [decapitalize]
+* [dedent]
+* [ends_with]
+* [escape] (docs/jinja_functions.md#escape) - Convert the chars to HTML-safe sequences.
+* [escapeHTML]
+* [filesizeformat] (docs/jinja_functions.md#filesizeformat) - Format file sizes into ‘human-readable’ 
+* [forceescape] (docs/jinja_functions.md#forceescape) - Enforce HTML escaping.
+* [format] (docs/jinja_functions.md#format) - Apply python string formatting on an object.
+* [humanize]
+* [include]
+* [indent] (docs/jinja_functions.md#indent) - Indent a string.
+* [insert]
+* [list] (docs/jinja_functions.md#list) - Convert the value into a list.
+* [lower] (docs/jinja_functions.md#lower) - Convert a value to lowercase.
+* [lpad]
+* [lrpad]
+* [ltrim]
+* [pad]
+* [predecessor]
+* [prune] - see [truncate] (docs/jinja_functions.md#truncate)
+* [quote] (docs/ansible_functions.md#quote) - Add quotes for shell usage
+* [regex_escape] (docs/ansible_functions.md#regex_escape) - Escape special characters within a regex
+* [regex_replace] (docs/ansible_functions.md#regex_replace) - Replace text in a string with a regex
+* [repeat]
+* [replace] (docs/jinja_functions.md#replace) - Search for needle in haystack and replace it with substitute.
+* [replaceAll] - See [replace] (docs/jinja_functions.md#replace)
+* [reverse] (docs/jinja_functions.md#reverse) - Reverse the object or return an iterator that iterates over it the other way round.
+* [rpad]
+* [rtrim] 
+* [safe] (docs/jinja_functions.md#safe) - Make all potentionally dangerous chars safe. - safety is a illusion, so beware!
+* [slugify]
+* [splice]
+* [sprintf] - see [format] (docs/jinja_functions.md#format)
+* [starts_with]
+* [string] (docs/jinja_functions.md#string) - Make a string unicode.
+* [striptags] (docs/jinja_functions.md#striptags) - Strip SGML/XML tags and replace adjacent whitespace by one space.
+* [strLeft]
+* [strLeftBack]
+* [strRight]
+* [strRightBack]
+* [successor]
+* [surround]
+* [swap_case]
+* [title] (docs/jinja_functions.md#title) - Return a titlecased version of the value.
+* [toSentence]
+* [toSentenceSerial]
+* [transliterate]
+* [trim] (docs/jinja_functions.md#trim) - Strip leading and trailing whitespace.
+* [truncate] (docs/jinja_functions.md#truncate) - Return a truncated copy of the string.
+* [underscore]
+* [unescapeHTML]
+* [unquote]
+* [upper] (docs/jinja_functions.md#upper) - Convert a value to uppercase.
+* [urlencode] (docs/jinja_functions.md#urlencode) - Escape strings for use in URLs.
+* [urlize] (docs/jinja_functions.md#urlize) - Converts URLs in plain text into clickable links.
+* [wordcount] (docs/jinja_functions.md#wordcount) - Count the words in that string.
+* [words]
+* [wordwrap] (docs/jinja_functions.md#wordwrap) - Return a copy of the string passed to the filter wrapped after n characters. 
+* [xmlattr] (docs/jinja_functions.md#xmlattr) - Create an SGML/XML attribute string based on the items in a dict.
+
+
 ### Tests
 * [bool] (docs/ansible_functions.md#bool) - Check if the value is a boolean
 * [callable] (docs/jinja_tests.md#callable) - Return whether the object is callable
@@ -157,6 +185,7 @@ Overview
 * [equalto] (docs/jinja_tests.md#equalto) - Check if an object has the same value as another object.
 * [escaped] (docs/jinja_tests.md#escaped) - Check if the value is escaped.
 * [even] (docs/jinja_tests.md#even) - Return true if the variable is even.
+* [isBlank]
 * [isnan] (docs/ansible_functions.md#isnan) - To see if something is actually a number
 * [iterable] (docs/jinja_tests.md#iterable) - Check if it’s possible to iterate over an object.
 * [lower] (docs/jinja_tests.md#lower) - Return true if the variable is lowercased.
@@ -167,10 +196,14 @@ Overview
 * [sameas] (docs/jinja_tests.md#sameas) - Check if an object points to the same memory address than another object.
 * [sequence] (docs/jinja_tests.md#sequence) - Return true if the variable is a sequence.
 * [string] (docs/jinja_tests.md#string) - Return true if the object is a string.
+* [ternary] (docs/ansible_functions.md#ternary) - Use one value on true and another on false
 * [undefined] (docs/jinja_tests.md#undefined) - Like defined() but the other way round.
 * [upper] (docs/jinja_tests.md#upper) - Return true if the variable is uppercased.
-* [ternary] (docs/ansible_functions.md#ternary) - Use one value on true and another on false
 * [version_compare] (docs/ansible_functions.md#version_compare) - To compare a version number
+
+### Type Conversion Utilities
+* [toBoolean]
+* [toNumber]
 
 Credit
 ==========
