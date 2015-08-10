@@ -30,7 +30,6 @@ For pprint you will need the python `pretty` package:
 $ pip install pretty
 ```
 
-
 Overview
 ===========
 
@@ -45,8 +44,13 @@ Overview
 * [list] (docs/jinja_functions.md#list) - Convert the value into a list.
 * [lower] (docs/jinja_functions.md#lower) - Convert a value to lowercase.
 * [quote] (docs/ansible_functions.md#quote) - Add quotes for shell usage
+* [regex_escape] (docs/ansible_functions.md#regex_escape) - Escape special characters within a regex
+* [regex_replace] (docs/ansible_functions.md#regex_replace) - Replace text in a string with a regex
 * [replace] (docs/jinja_functions.md#replace) - Search for needle in haystack and replace it with substitute.
+* [reverse] (docs/jinja_functions.md#reverse) - Reverse the object or return an iterator that iterates over it the other way round.
+* [safe] (docs/jinja_functions.md#safe) - Make all potentionally dangerous chars safe. - safety is a illusion, so beware!
 * [string] (docs/jinja_functions.md#string) - Make a string unicode.
+* [striptags] (docs/jinja_functions.md#striptags) - Strip SGML/XML tags and replace adjacent whitespace by one space.
 * [title] (docs/jinja_functions.md#title) - Return a titlecased version of the value.
 * [trim] (docs/jinja_functions.md#trim) - Strip leading and trailing whitespace.
 * [truncate] (docs/jinja_functions.md#truncate) - Return a truncated copy of the string.
@@ -80,6 +84,7 @@ Overview
 * [map] (docs/jinja_functions.md#map) - Applies a filter on a sequence of objects or looks up an attribute.
 * [random] (docs/jinja_functions.md#random) - Return a random item from the sequence.
 * [reject] (docs/jinja_functions.md#reject) - Filters a sequence of objects by applying a test to the object and rejecting the ones with the test succeeding.
+* [reverse] (docs/jinja_functions.md#reverse) - Reverse the object or return an iterator that iterates over it the other way round.
 * [select] (docs/jinja_functions.md#select) - Filters a sequence of objects by applying a test to the object and only selecting the ones with the test succeeding.
 * [shuffle] (docs/ansible_functions.md#shuffle) - Randomize an existing list, giving a different order every invocation.
 * [slice] (docs/jinja_functions.md#slice) - Filters a sequence of objects by applying a test to the object and only selecting the ones with the test succeeding.
@@ -88,35 +93,33 @@ Overview
 * [union] (docs/ansible_functions.md#union) - Get a union of two lists
 * [unique] (docs/ansible_functions.md#unique) - Get a unique set from a list
 
-### Hashing Utilities
+### Debug Utilities
+* [pprint] (docs/jinja_functions.md#pprint) - Pretty print a variable.
+* [to_nice_json] (docs/ansible_functions.md#to_nice_json) - Convert string into human readable JSON
+* [to_nice_yaml] (docs/ansible_functions.md#to_nice_yaml) - Convert value into human readable YAML
+
+### Hashing / encoding / ID generation Utilities
+* [b64decode] (docs/ansible_functions.md#b64decode) - Decode a Base64 encoded string.
+* [b64encode] (docs/ansible_functions.md#b64encode) - Encode a string use Base64.
 * [checksum] (docs/ansible_functions.md#checksum) - Get a checksum for a string
+* [from_json] (docs/ansible_functions.md#from_json) - Reading in some JSON formatted data
+* [from_yaml] (docs/ansible_functions.md#from_yaml) - Reading in YAML formatted data
 * [hash] (docs/ansible_functions.md#hash) - Get the hash (md5, sha1, sha224, sha256, sha384, sha512) of a string
 * [password_hash] (docs/ansible_functions.md#password_hash) - Get a password hash (md5, sha256, sha512) for a string
+* [to_json] (docs/ansible_functions.md#to_json) - Convert value into JSON
+* [to_uuid] (docs/ansible_functions.md#to_uuid) - Create a UUID from a string
+* [to_yaml] (docs/ansible_functions.md#to_yaml) - Convert value into YAML
+
+### IP Utilities
+* [ipaddr] (docs/ansible_functions.md#ipaddr) - Returns the input value if a query is True, and False if query is False.
+* [ipv4] (docs/ansible_functions.md#ipv4) - To test if a string is a valid IPv4 address.
+* [ipv6] (docs/ansible_functions.md#ipv6) - To test if a string is a valid ipv6 address.
 
 ### Object Utilities
 * [attr] (docs/jinja_functions.md#attr) - Get an attribute of an object.
+* [default] (docs/jinja_functions.md#default) - Set a default value
 * [rejectattr] (docs/jinja_functions.md#rejectattr) - Filters a sequence of objects by applying a test to an attribute of an object or the attribute and rejecting the ones with the test succeeding.
 * [selectattr] (docs/jinja_functions.md#selectattr) - Slice an iterator and return a list of lists containing those items.
-
-### Helper Utilities
-* [b64decode] (docs/ansible_functions.md#b64decode) - Decode a Base64 encoded string.
-* [b64encode] (docs/ansible_functions.md#b64encode) - Encode a string use Base64.
-* [default] (docs/jinja_functions.md#default) - Set a default value
-* [from_json] (docs/ansible_functions.md#from_json) - Reading in some JSON formatted data
-* [from_yaml] (docs/ansible_functions.md#from_yaml) - Reading in YAML formatted data
-* [pprint] (docs/jinja_functions.md#pprint) - Pretty print a variable.
-* [regex_escape] (docs/ansible_functions.md#regex_escape) - Escape special characters within a regex
-* [regex_replace] (docs/ansible_functions.md#regex_replace) - Replace text in a string with a regex
-* [reverse] (docs/jinja_functions.md#reverse) - Reverse the object or return an iterator that iterates over it the other way round.
-* [safe] (docs/jinja_functions.md#safe) - Make all potentionally dangerous chars safe. - safety is a illusion, so beware!
-* [striptags] (docs/jinja_functions.md#striptags) - Strip SGML/XML tags and replace adjacent whitespace by one space.
-* [ternary] (docs/ansible_functions.md#ternary) - Use one value on true and another on false
-* [to_json] (docs/ansible_functions.md#to_json) - Convert value into JSON
-* [to_nice_json] (docs/ansible_functions.md#to_nice_json) - Convert string into human readable JSON
-* [to_nice_yaml] (docs/ansible_functions.md#to_nice_yaml) - Convert value into human readable YAML
-* [to_uuid] (docs/ansible_functions.md#to_uuid) - Create a UUID from a string
-* [to_yaml] (docs/ansible_functions.md#to_yaml) - Convert value into YAML
-* [version_compare] (docs/ansible_functions.md#version_compare) - To compare a version number
 
 ### Path Utilities
 * [basename] (docs/ansible_functions.md#basename) - Return the base name of pathname path.
@@ -146,6 +149,8 @@ Overview
 * [string] (docs/jinja_tests.md#string) - Return true if the object is a string.
 * [undefined] (docs/jinja_tests.md#undefined) - Like defined() but the other way round.
 * [upper] (docs/jinja_tests.md#upper) - Return true if the variable is uppercased.
+* [ternary] (docs/ansible_functions.md#ternary) - Use one value on true and another on false
+* [version_compare] (docs/ansible_functions.md#version_compare) - To compare a version number
 
 Credit
 ==========
