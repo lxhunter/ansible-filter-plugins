@@ -108,17 +108,17 @@ Overview
 * [splitext] (docs/ansible_functions.md#splitext) - To get the root and extension of a path or filename.
 
 ### String Utilities
-* [camelize]
+* [camelize] (docs/underscore_string_functions.md#camelize) - Converts underscored or dasherized string to a camelized one.
 * [capitalize] (docs/jinja_functions.md#capitalize) - Capitalize a String.
 * [center] (docs/jinja_functions.md#center) - Centers the value in a field of a given width.
 * [chars] - See [list] (docs/jinja_functions.md#list) 
 * [classify]
-* [clean]
-* [count]
-* [dasherize]
-* [decapitalize]
-* [dedent]
-* [ends_with]
+* [clean] (docs/underscore_string_functions.md#clean) - Trim and replace multiple spaces with a single space.
+* [count] (docs/underscore_string_functions.md#count) - Counts the number of times needle is in haystack.
+* [dasherize] (docs/underscore_string_functions.md#dasherize) - Converts a underscored or camelized string into an dasherized one.
+* [decapitalize] (docs/underscore_string_functions.md#decapitalize) - Converts first letter of the string to lowercase.
+* [dedent] (docs/underscore_string_functions.md#dedent) - Converts first letter of the string to lowercase.
+* [ends_with] (docs/underscore_string_functions.md#ends_with) - Dedent unnecessary indentation.
 * [escape] (docs/jinja_functions.md#escape) - Convert the chars to HTML-safe sequences.
 * [escapeHTML]
 * [filesizeformat] (docs/jinja_functions.md#filesizeformat) - Format file sizes into ‘human-readable’ 

@@ -3,6 +3,7 @@
 import unittest
 import re
 import unicodedata
+import textwrap
 
 def string_sanity_check(string):
     if string is None:
@@ -20,12 +21,6 @@ def camelize(string, uppercase_first_letter=True):
         return re.sub(r"(?:^|[-_\s]+)(.)", lambda m: m.group(1).upper(), string)
     else:
         return string[0].lower() + camelize(string)[1:]
-
-''' Seperates each in char in a list '''
-def chars(string):
-    list = []
-    list[:0] = string
-    return list
 
 ''' Trim and replace multiple spaces with a single space. '''
 def clean(string):
@@ -49,6 +44,21 @@ def dasherize(string):
     string = re.sub(r'^-', r'', string)
     string = string.lower()
     return string
+
+''' Converts first letter of the string to lowercase. '''
+def decapitalize(string):
+    string = string_sanity_check(string)
+    if string is '' or string is None:
+        return ''
+    return string[0].lower() + string[1:]
+
+
+''' Dedent unnecessary indentation. '''
+def dedent(string):
+    string = string_sanity_check(string)
+    if string is '' or string is None:
+        return ''
+    return textwrap.dedent(string)
 
 ''' Checks whether the string ends with needle at position (default: haystack.length). '''
 def ends_with(haystack, needle, beg=0, end=None):
@@ -132,10 +142,10 @@ class FilterModule(object):
     def filters(self):
         return {
             'camelize': camelize,
-            'chars': chars,
             'clean': clean,
             'count': count,
             'dasherize': dasherize,
+            'decapitalize': decapitalize,
             'ends_with': ends_with,
             'humanize': humanize,
             'includes': includes,
@@ -167,13 +177,6 @@ class TestStringUtlisFunctions(unittest.TestCase):
         self.assertEqual(camelize("_som eWeird---name"), 'SomEWeirdName');
         self.assertEqual(camelize(''), '', 'Camelize empty string returns empty string');
         self.assertEqual(camelize(None), '', 'Camelize null returns empty string');
-        self.assertEqual(camelize(123), '123');
-
-    def test_chars(self):
-        self.assertEqual(chars("Hello"),['H', 'e', 'l', 'l', 'o'])
-        self.assertNotEqual(chars("Hello"),['h', 'e', 'l', 'l', 'o'])        
-        self.assertEqual(camelize(''), '', 'Chars empty string returns empty string');
-        self.assertEqual(camelize(None), '', 'Chars null returns empty string');
         self.assertEqual(camelize(123), '123');
 
     def test_clean(self):
@@ -212,6 +215,31 @@ class TestStringUtlisFunctions(unittest.TestCase):
         self.assertEqual(dasherize(''), '');
         self.assertEqual(dasherize(None), '');
         self.assertEqual(dasherize(123), '123');
+
+    def test_decapitalize(self):
+        self.assertEqual(decapitalize('Fabio'), 'fabio', 'First letter is lower case');
+        self.assertEqual(decapitalize('Fabio'), 'fabio', 'First letter is lower case');
+        self.assertEqual(decapitalize('FOO'), 'fOO', 'Other letters unchanged');
+        self.assertEqual(decapitalize(123), '123', 'Non string');
+        self.assertEqual(decapitalize(''), '', 'Decapitalizing empty string returns empty string');
+        self.assertEqual(decapitalize(None), '', 'Decapitalizing null returns empty string');
+
+    def test_dedent(self):
+        self.assertEqual(dedent('Hello\nWorld'), 'Hello\nWorld');
+        self.assertEqual(dedent('Hello\t\nWorld'), 'Hello\t\nWorld');
+        self.assertEqual(dedent('Hello \nWorld'), 'Hello \nWorld');
+        self.assertEqual(dedent('Hello\n  World'), 'Hello\n  World');
+        self.assertEqual(dedent('    Hello\n  World'), '  Hello\nWorld');
+        self.assertEqual(dedent('  Hello\nWorld'), '  Hello\nWorld');
+        self.assertEqual(dedent('  Hello World'), 'Hello World');
+        self.assertEqual(dedent('  Hello\n  World'), 'Hello\nWorld');
+        self.assertEqual(dedent('  Hello\n    World'), 'Hello\n  World');
+        self.assertEqual(dedent('\t\tHello\tWorld'), 'Hello\tWorld');
+        self.assertEqual(dedent('\t\tHello\n\t\tWorld'), 'Hello\nWorld');
+        self.assertEqual(dedent('Hello\n\t\tWorld'), 'Hello\n\t\tWorld');
+        self.assertEqual(dedent('\t\tHello\n\t\t\t\tWorld'), 'Hello\n\t\tWorld');
+        self.assertEqual(dedent('\t\tHello\r\n\t\t\t\tWorld'), 'Hello\r\n\t\tWorld');
+        self.assertEqual(dedent('\t\tHello\n\n\n\n\t\t\t\tWorld'), 'Hello\n\n\n\n\t\tWorld');
 
     def test_ends_with(self):
         self.assertEqual(ends_with('image.gif', 'gif'), True)        
