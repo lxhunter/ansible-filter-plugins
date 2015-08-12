@@ -112,7 +112,7 @@ Overview
 * [capitalize] (docs/jinja_functions.md#capitalize) - Capitalize a String.
 * [center] (docs/jinja_functions.md#center) - Centers the value in a field of a given width.
 * [chars] - See [list] (docs/jinja_functions.md#list) 
-* [classify]
+* [classify] (docs/underscore_string_functions.md#classify) - Converts string to camelized class name. First letter is always upper case.
 * [clean] (docs/underscore_string_functions.md#clean) - Trim and replace multiple spaces with a single space.
 * [count] (docs/underscore_string_functions.md#count) - Counts the number of times needle is in haystack.
 * [dasherize] (docs/underscore_string_functions.md#dasherize) - Converts a underscored or camelized string into an dasherized one.
@@ -120,7 +120,7 @@ Overview
 * [dedent] (docs/underscore_string_functions.md#dedent) - Converts first letter of the string to lowercase.
 * [ends_with] (docs/underscore_string_functions.md#ends_with) - Dedent unnecessary indentation.
 * [escape] (docs/jinja_functions.md#escape) - Convert the chars to HTML-safe sequences.
-* [escapeHTML]
+* [escape_html] (docs/underscore_string_functions.md#escape_html) - Converts HTML special characters to their entity equivalents.
 * [filesizeformat] (docs/jinja_functions.md#filesizeformat) - Format file sizes into ‘human-readable’ 
 * [forceescape] (docs/jinja_functions.md#forceescape) - Enforce HTML escaping.
 * [format] (docs/jinja_functions.md#format) - Apply python string formatting on an object.

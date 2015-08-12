@@ -22,6 +22,13 @@ def camelize(string, uppercase_first_letter=True):
     else:
         return string[0].lower() + camelize(string)[1:]
 
+''' '''
+def classify(string):
+    string = string_sanity_check(string)
+    string = re.sub(r"(?:^|[\.]+)(.)", lambda m: m.group(1).upper(), string)
+    string = camelize(string)
+    return string 
+
 ''' Trim and replace multiple spaces with a single space. '''
 def clean(string):
     string = string_sanity_check(string)
@@ -64,10 +71,24 @@ def dedent(string):
 def ends_with(haystack, needle, beg=0, end=None):
     haystack = string_sanity_check(haystack)
     needle = string_sanity_check(needle)
-
     if end is None:
         end = len(haystack)
     return haystack.endswith(needle, beg, end)
+
+''' Converts HTML special characters to their entity equivalents. This function supports cent, yen, euro, pound, lt, gt, copy, reg, quote, amp, apos. '''
+def escape_html(haystack):
+    haystack = string_sanity_check(haystack)
+    return haystack.replace('&' , '&amp;') \
+    .replace('¢' , '&cent;') \
+    .replace('£' , '&pound;') \
+    .replace('¥' , '&yen;') \
+    .replace('€' , '&euro;') \
+    .replace('©' , '&copy;') \
+    .replace('®' , '&reg;') \
+    .replace('<' , '&lt;') \
+    .replace('>' , '&gt;') \
+    .replace('"' , '&quot;') \
+    .replace("'" , '&#39;')
 
 ''' Converts an underscored, camelized, or dasherized string into a humanized one. Also removes beginning and ending whitespace, and removes the postfix '_id'. '''
 def humanize(string):
@@ -136,17 +157,38 @@ def underscore(string):
     string = string.replace("-", "_")
     return string.lower()
 
+''' Converts entity characters to HTML equivalents. This function supports cent, yen, euro, pound, lt, gt, copy, reg, quote, amp, apos, nbsp. '''
+def unescape_html(haystack):
+    haystack = string_sanity_check(haystack)
+    return haystack.replace('&#39;',"'") \
+    .replace('&cent;', '¢') \
+    .replace('&pound;','£') \
+    .replace('&yen;','¥') \
+    .replace('&euro;','€') \
+    .replace('&copy;','©') \
+    .replace('&reg;','®') \
+    .replace('&lt;','<') \
+    .replace('&gt;','>') \
+    .replace('&quot;','"') \
+    .replace('&apos;', "'") \
+    .replace('&#0039;', "'") \
+    .replace('&nbsp;', ' ') \
+    .replace('&amp;','&')
+
 # ---
 
 class FilterModule(object):
     def filters(self):
         return {
             'camelize': camelize,
+            'classify': classify,
             'clean': clean,
             'count': count,
             'dasherize': dasherize,
             'decapitalize': decapitalize,
+            'dedent': dedent,
             'ends_with': ends_with,
+            'escape_html': escape_html,
             'humanize': humanize,
             'includes': includes,
             'insert': insert,
@@ -156,7 +198,8 @@ class FilterModule(object):
             'successor': successor,
             'swap_case': swap_case,
             'transliterate': transliterate,
-            'underscore': underscore
+            'underscore': underscore,
+            'unescape_html': unescape_html
         }
 
 # ---
@@ -178,6 +221,17 @@ class TestStringUtlisFunctions(unittest.TestCase):
         self.assertEqual(camelize(''), '', 'Camelize empty string returns empty string');
         self.assertEqual(camelize(None), '', 'Camelize null returns empty string');
         self.assertEqual(camelize(123), '123');
+
+    def test_classify(self):
+        self.assertEqual(classify(1), '1');
+        self.assertEqual(classify('some_class_name'), 'SomeClassName');
+        self.assertEqual(classify('my wonderfull class_name'), 'MyWonderfullClassName');
+        self.assertEqual(classify('my wonderfull.class.name'), 'MyWonderfullClassName');
+        self.assertEqual(classify('myLittleCamel'), 'MyLittleCamel');
+        self.assertEqual(classify('myLittleCamel.class.name'), 'MyLittleCamelClassName');
+        self.assertEqual(classify(123), '123');
+        self.assertEqual(classify(''), '');
+        self.assertEqual(classify(None), '');
 
     def test_clean(self):
         self.assertEqual(clean(' foo    bar   '), 'foo bar');
@@ -240,6 +294,16 @@ class TestStringUtlisFunctions(unittest.TestCase):
         self.assertEqual(dedent('\t\tHello\n\t\t\t\tWorld'), 'Hello\n\t\tWorld');
         self.assertEqual(dedent('\t\tHello\r\n\t\t\t\tWorld'), 'Hello\r\n\t\tWorld');
         self.assertEqual(dedent('\t\tHello\n\n\n\n\t\t\t\tWorld'), 'Hello\n\n\n\n\t\tWorld');
+
+    def test_escape_html(self):
+        self.assertEqual(escape_html('<div>Blah & "blah" & \'blah\'</div>'), '&lt;div&gt;Blah &amp; &quot;blah&quot; &amp; &#39;blah&#39;&lt;/div&gt;')
+        self.assertEqual(escape_html('&lt;'), '&amp;lt;')
+        self.assertEqual(escape_html(' '), ' ')
+        self.assertEqual(escape_html('¢'), '&cent;')
+        self.assertEqual(escape_html('¢ £ ¥ € © ®'), '&cent; &pound; &yen; &euro; &copy; &reg;')
+        self.assertEqual(escape_html(5), '5');
+        self.assertEqual(escape_html(''), '');
+        self.assertEqual(escape_html(None), '');
 
     def test_ends_with(self):
         self.assertEqual(ends_with('image.gif', 'gif'), True)        
@@ -318,6 +382,26 @@ class TestStringUtlisFunctions(unittest.TestCase):
 
     def test_underscore(self):
         self.assertEqual(underscore('FooBar'), 'foo_bar')
+
+    def test_unescape_html(self):
+        self.assertEqual(unescape_html('&lt;div&gt;Blah &amp; &quot;blah&quot; &amp; &#39;blah&#39;&lt;/div&gt;'),'<div>Blah & "blah" & \'blah\'</div>')
+        self.assertEqual(unescape_html('&amp;lt;'), '&lt;')
+        self.assertEqual(unescape_html('&apos;'), '\'')
+        self.assertEqual(unescape_html('&#39;'), '\'')
+        self.assertEqual(unescape_html('&#0039;'), '\'')
+        self.assertEqual(unescape_html('&#X4A;'), '&#X4A;')
+        self.assertEqual(unescape_html('&_#39;'), '&_#39;')
+        self.assertEqual(unescape_html('&#39_;'), '&#39_;')
+        self.assertEqual(unescape_html('&amp;#38;'), '&#38;')
+        self.assertEqual(unescape_html('&#39;'), "'")
+        self.assertEqual(unescape_html(''), '')
+        self.assertEqual(unescape_html('&nbsp;'), ' ')
+        self.assertEqual(unescape_html('what is the &yen; to &pound; to &euro; conversion process?'), 'what is the ¥ to £ to € conversion process?')
+        self.assertEqual(unescape_html('&reg; trademark'), '® trademark')
+        self.assertEqual(unescape_html('&copy; 1992. License available for 50 &cent;'), '© 1992. License available for 50 ¢')
+        self.assertEqual(unescape_html('&nbsp;'), ' ')
+        self.assertEqual(unescape_html('&nbsp;'), ' ')
+        self.assertEqual(unescape_html(None), '')
 
 if __name__ == '__main__':
     unittest.main()          
