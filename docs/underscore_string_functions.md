@@ -175,4 +175,104 @@ Converts HTML special characters to their entity equivalents. This function supp
 # => '<div>Blah & \"blah\" & 'blah'</div>'
 ```
 
+#### humanize
+###### method: humanize(string)
+> custom implementation / needs to be installed
 
+Converts an underscored, camelized, or dasherized string into a humanized one. Also removes beginning and ending whitespace, and removes the postfix '_id'. 
+
+```python
+{{ 'the_humanize_string_method' | humanize }}
+# => 'The humanize string method'
+
+{{ 'ThehumanizeStringMethod' | humanize }}
+# => 'Thehumanize string method'
+
+{{ 'the humanize_id string method_id' | humanize }}
+# => 'Thehumanize string method'
+
+{{ '   capitalize dash-CamelCase_underscore trim  ' | humanize }}
+# => 'Capitalize dash camel case underscore trim'
+```
+
+#### includes
+###### method: includes(haystack, needle)
+> custom implementation / needs to be installed
+
+Tests if string contains a substring.
+
+```python
+{{ 'foobar' | includes('ob') }}
+# => True
+
+{{ 'foobar' | includes('qux') }}
+# => False
+
+{{ 'foobar' | includes('bar') }}
+# => True
+
+{{ 'foobar' | includes('buzz') }}
+# => False
+
+{{ 12345 | includes(34) }}
+# => True
+```
+
+#### insert
+###### method: insert(string, index, substring)
+> custom implementation / needs to be installed
+
+Insert word in string at the defined position.
+
+```python
+{{ 'foo ' | insert(4, 'bar') }}
+# => 'foo bar'
+
+{{ 'Hello ' | insert(6, 'Jessy') }}
+# => 'Hello Jessy'
+
+{{ 'Hello ' | insert(100, 'Jessy') }}
+# => 'Hello Jessy'
+```
+
+#### lpad
+###### method: lpad(width[, fillchar])
+> custom implementation / needs to be installed
+
+_Using Python Standard Library string rjust_
+
+Return the string left justified in a string of length width. Padding is done using the specified fillchar (default is a space). The original string is returned if width is less than or equal to len(s).
+
+```python
+{{ '1' | lpad(8) }}
+# => '       1'
+       
+{{ 1 | lpad(8) }}
+# => '       1'
+
+{{ '1' | lpad(8, '0') }}
+# => '00000001'
+
+```
+
+#### ltrim
+###### method: lpad(width[, fillchar])
+> custom implementation / needs to be installed
+
+_Using Python Standard Library string lstrip_
+
+Return a copy of the string with leading characters removed. The chars argument is a string specifying the set of characters to be removed. If omitted or None, the chars argument defaults to removing whitespace.
+
+```python
+{{ ' foo' | ltrim }}
+# => 'foo'
+
+{{ '    foo' | ltrim }}
+# => 'foo'
+
+{{ 'foo ' | ltrim }}
+# => 'foo '
+
+{{ ' foo ' | ltrim }}
+# => 'foo '
+```

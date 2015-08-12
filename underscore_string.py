@@ -124,6 +124,17 @@ def lines(string):
     string = string_sanity_check(string)
     return re.split('\r\n?|\n', string)
 
+''' Return the string left justified in a string of length width. '''
+def lpad(string, width, fillchar=' '):
+    string = string_sanity_check(string)
+    return string.rjust(width, fillchar)
+
+def ltrim(string,chars=None):
+    string = string_sanity_check(string)
+    if isinstance( chars, int):
+        chars = str(chars)
+    return string.lstrip(chars)
+
 ''' Replace string in string '''
 def splice(string, index, how_many, substring):
     return string[:index] + substring + string[index + how_many:]
@@ -144,6 +155,7 @@ def successor(string):
 
 ''' Returns a copy of the string in which all the case-based characters have had their case swapped.'''
 def swap_case(string):
+    string = string_sanity_check(string)
     return string.swapcase()
 
 def transliterate(string):
@@ -193,6 +205,8 @@ class FilterModule(object):
             'includes': includes,
             'insert': insert,
             'lines': lines,
+            'lpad': lpad,
+            'ltrim': ltrim,
             'splice': splice,
             'starts_with': starts_with,
             'successor': successor,
@@ -361,6 +375,26 @@ class TestStringUtlisFunctions(unittest.TestCase):
         self.assertEqual(len(lines('Hello\r\rWorld')), 3);
         self.assertEqual(len(lines(123)), 1);
     
+    def test_lpad(self):
+        self.assertEqual(lpad('1', 8), '       1');
+        self.assertEqual(lpad(1, 8), '       1');
+        self.assertEqual(lpad('1', 8, '0'), '00000001');
+        self.assertEqual(lpad('', 2), '  ');
+        self.assertEqual(lpad(None, 2), '  ');
+
+    def test_ltrim(self):
+        self.assertEqual(ltrim(' foo'), 'foo');
+        self.assertEqual(ltrim('    foo'), 'foo');
+        self.assertEqual(ltrim('foo '), 'foo ');
+        self.assertEqual(ltrim(' foo '), 'foo ');
+        self.assertEqual(ltrim(''), '', 'ltrim empty string should return empty string');
+        self.assertEqual(ltrim(None), '', 'ltrim null should return empty string');
+        self.assertEqual(ltrim('ffoo', 'f'), 'oo');
+        self.assertEqual(ltrim('ooff', 'f'), 'ooff');
+        self.assertEqual(ltrim('ffooff', 'f'), 'ooff');
+        self.assertEqual(ltrim('_-foobar-_', '_-'), 'foobar-_');
+        self.assertEqual(ltrim(123, 1), '23');
+
     def test_splice(self):
         self.assertEqual(splice('http://github.com/lxhunter/string', 18, 8, 'awesome'),
                          'http://github.com/awesome/string')

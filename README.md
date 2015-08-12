@@ -124,14 +124,13 @@ Overview
 * [filesizeformat] (docs/jinja_functions.md#filesizeformat) - Format file sizes into ‘human-readable’ 
 * [forceescape] (docs/jinja_functions.md#forceescape) - Enforce HTML escaping.
 * [format] (docs/jinja_functions.md#format) - Apply python string formatting on an object.
-* [humanize]
-* [include]
+* [humanize] (docs/underscore_string_functions.md#humanize) - Converts an underscored, camelized, or dasherized string into a humanized one.
 * [indent] (docs/jinja_functions.md#indent) - Indent a string.
-* [insert]
+* [insert] (docs/underscore_string_functions.md#insert) - Insert word in string at the defined position.
 * [list] (docs/jinja_functions.md#list) - Convert the value into a list.
 * [lower] (docs/jinja_functions.md#lower) - Convert a value to lowercase.
-* [lpad]
-* [lrpad]
+* [lpad] (docs/underscore_string_functions.md#lpad) - Return the string left justified in a string of length width.
+* [lrpad] - See [center] (docs/jinja_functions.md#center) 
 * [ltrim]
 * [pad]
 * [predecessor]
@@ -185,6 +184,7 @@ Overview
 * [equalto] (docs/jinja_tests.md#equalto) - Check if an object has the same value as another object.
 * [escaped] (docs/jinja_tests.md#escaped) - Check if the value is escaped.
 * [even] (docs/jinja_tests.md#even) - Return true if the variable is even.
+* [includes] (docs/underscore_string_functions.md#includes) - Tests if string contains a substring.
 * [isBlank]
 * [isnan] (docs/ansible_functions.md#isnan) - To see if something is actually a number
 * [iterable] (docs/jinja_tests.md#iterable) - Check if it’s possible to iterate over an object.
