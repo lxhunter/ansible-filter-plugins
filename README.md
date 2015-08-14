@@ -131,24 +131,23 @@ Overview
 * [lower] (docs/jinja_functions.md#lower) - Convert a value to lowercase.
 * [lpad] (docs/underscore_string_functions.md#lpad) - Return the string left justified in a string of length width.
 * [lrpad] - See [center] (docs/jinja_functions.md#center) 
-* [ltrim]
-* [pad]
-* [predecessor]
+* [ltrim] (docs/underscore_string_functions.md#ltrim) - Return a copy of the string with leading characters removed.
+* [predecessor] - do not know how to implement this
 * [prune] - see [truncate] (docs/jinja_functions.md#truncate)
 * [quote] (docs/ansible_functions.md#quote) - Add quotes for shell usage
 * [regex_escape] (docs/ansible_functions.md#regex_escape) - Escape special characters within a regex
 * [regex_replace] (docs/ansible_functions.md#regex_replace) - Replace text in a string with a regex
-* [repeat]
+* [repeat] (docs/underscore_string_functions.md#repeat) - Repeats a string count times, can be seperated by separator.
 * [replace] (docs/jinja_functions.md#replace) - Search for needle in haystack and replace it with substitute.
 * [replaceAll] - See [replace] (docs/jinja_functions.md#replace)
 * [reverse] (docs/jinja_functions.md#reverse) - Reverse the object or return an iterator that iterates over it the other way round.
-* [rpad]
-* [rtrim] 
+* [rpad] (docs/underscore_string_functions.md#rpad) - Return the string right justified in a string of length width.
+* [rtrim] (docs/underscore_string_functions.md#rtrim) - Return a copy of the string with trailing characters removed.
 * [safe] (docs/jinja_functions.md#safe) - Make all potentionally dangerous chars safe. - safety is a illusion, so beware!
-* [slugify]
-* [splice]
+* [slugify] (docs/underscore_string_functions.md#slugify) - Transform text into an ascii slug which can be used in safely in URLs.
+* [splice] (docs/underscore_string_functions.md#splice) - Return the string right justified in a string of length width.
 * [sprintf] - see [format] (docs/jinja_functions.md#format)
-* [starts_with]
+* [starts_with] (docs/underscore_string_functions.md#starts_with) - 
 * [string] (docs/jinja_functions.md#string) - Make a string unicode.
 * [striptags] (docs/jinja_functions.md#striptags) - Strip SGML/XML tags and replace adjacent whitespace by one space.
 * [strLeft]

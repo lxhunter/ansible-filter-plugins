@@ -4,6 +4,7 @@ import unittest
 import re
 import unicodedata
 import textwrap
+from slugify import slugify
 
 def string_sanity_check(string):
     if string is None:
@@ -15,24 +16,23 @@ def string_sanity_check(string):
 
 ''' Converts underscored or dasherized string to a camelized one. Begins with a lower case letter unless it starts with an underscore, dash or an upper case letter. '''
 def camelize(string, uppercase_first_letter=True):
-    string = string_sanity_check(string)
-    string = re.sub(r"^[-_\s]+", "", string)
+    sanitzed_string = string_sanity_check(string)
+    replaced = re.sub(r"^[-_\s]+", "", sanitzed_string)
     if uppercase_first_letter:
-        return re.sub(r"(?:^|[-_\s]+)(.)", lambda m: m.group(1).upper(), string)
+        return re.sub(r"(?:^|[-_\s]+)(.)", lambda m: m.group(1).upper(), replaced)
     else:
-        return string[0].lower() + camelize(string)[1:]
+        return replaced[0].lower() + camelize(replaced)[1:]
 
 ''' '''
 def classify(string):
-    string = string_sanity_check(string)
-    string = re.sub(r"(?:^|[\.]+)(.)", lambda m: m.group(1).upper(), string)
-    string = camelize(string)
-    return string 
+    sanitzed_string = string_sanity_check(string)
+    replaced = re.sub(r"(?:^|[\.]+)(.)", lambda m: m.group(1).upper(), sanitzed_string)
+    return camelize(replaced) 
 
 ''' Trim and replace multiple spaces with a single space. '''
 def clean(string):
-    string = string_sanity_check(string)
-    return " ".join(string.split())
+    sanitzed_string = string_sanity_check(string)
+    return " ".join(sanitzed_string.split())
 
 ''' Counts the number of times needle is in haystack '''
 def count(haystack, needle):
@@ -44,28 +44,27 @@ def count(haystack, needle):
 
 ''' Converts a underscored or camelized string into an dasherized one '''
 def dasherize(string):
-    string = string_sanity_check(string)
-    string = string.strip()
-    string = re.sub(r'([A-Z])', r'-\1', string)
-    string = re.sub(r'[-_\s]+', r'-', string)
-    string = re.sub(r'^-', r'', string)
-    string = string.lower()
-    return string
+    sanitzed_string = string_sanity_check(string)
+    striped = sanitzed_string.strip()
+    replaced = re.sub(r'([A-Z])', r'-\1', striped)
+    replaced = re.sub(r'[-_\s]+', r'-', replaced)
+    replaced = re.sub(r'^-', r'', replaced)
+    return replaced.lower()
 
 ''' Converts first letter of the string to lowercase. '''
 def decapitalize(string):
-    string = string_sanity_check(string)
-    if string is '' or string is None:
+    sanitzed_string = string_sanity_check(string)
+    if sanitzed_string is '' or sanitzed_string is None:
         return ''
-    return string[0].lower() + string[1:]
+    return sanitzed_string[0].lower() + sanitzed_string[1:]
 
 
 ''' Dedent unnecessary indentation. '''
 def dedent(string):
-    string = string_sanity_check(string)
-    if string is '' or string is None:
+    sanitzed_string = string_sanity_check(string)
+    if sanitzed_string is '' or sanitzed_string is None:
         return ''
-    return textwrap.dedent(string)
+    return textwrap.dedent(sanitzed_string)
 
 ''' Checks whether the string ends with needle at position (default: haystack.length). '''
 def ends_with(haystack, needle, beg=0, end=None):
@@ -94,15 +93,14 @@ def escape_html(haystack):
 def humanize(string):
     if string is '' or string is None:
         return ''
-    string = string_sanity_check(string)
-    string = underscore(string)
-    string = re.sub('_id$', '', string)
-    string = string.replace("_", ' ')
-    string = string.replace("-", ' ')
-    string = string.strip()
-    string = string[0].upper() + string[1:]
-    string = re.sub(' +',' ', string)
-    return string
+    sanitzed_string = string_sanity_check(string)
+    underscored = underscore(sanitzed_string)
+    replaced = re.sub('_id$', '', underscored)
+    replaced = replaced.replace("_", ' ')
+    replaced = replaced.replace("-", ' ')
+    striped = replaced.strip()
+    firstUp = striped[0].upper() + striped[1:]
+    return re.sub(' +',' ', firstUp)
 
 ''' Tests if string contains a substring. '''
 def includes(haystack, needle):
@@ -115,29 +113,61 @@ def includes(haystack, needle):
 
 ''' Insert word in string at the defined position ''' 
 def insert(string, index, substring):
-    string = string_sanity_check(string)
-    substring = string_sanity_check(substring)
-    return string[:index] + substring + string[index:]
+    sanitzed_string = string_sanity_check(string)
+    sanitzed_substring = string_sanity_check(substring)
+    return sanitzed_string[:index] + sanitzed_substring + sanitzed_string[index:]
 
 ''' Returns split lines as an array '''
 def lines(string):
-    string = string_sanity_check(string)
-    return re.split('\r\n?|\n', string)
+    sanitzed_string = string_sanity_check(string)
+    return re.split('\r\n?|\n', sanitzed_string)
 
 ''' Return the string left justified in a string of length width. '''
 def lpad(string, width, fillchar=' '):
-    string = string_sanity_check(string)
-    return string.rjust(width, fillchar)
+    sanitzed_string = string_sanity_check(string)
+    return sanitzed_string.rjust(width, fillchar)
 
+''' Return a copy of the string with leading characters removed. '''
 def ltrim(string,chars=None):
-    string = string_sanity_check(string)
+    sanitzed_string = string_sanity_check(string)
     if isinstance( chars, int):
         chars = str(chars)
-    return string.lstrip(chars)
+    return sanitzed_string.lstrip(chars)
+
+''' Repeats a string count times. '''
+def repeat(string, count, separator=None):
+    sanitzed_string = string_sanity_check(string)
+    sanitzed_count = int(count)
+    if separator is None:
+        return sanitzed_count * sanitzed_string
+    sanitzed_separator = str(separator)
+    return (sanitzed_count * (sanitzed_string + str(sanitzed_separator)))[:-len(sanitzed_separator)]
+
+''' Return the string right justified in a string of length width. '''
+def rpad(string, width, fillchar=' '):
+    sanitzed_string = string_sanity_check(string)
+    return sanitzed_string.ljust(width, fillchar)
+
+''' Return a copy of the string with trailing characters removed. '''
+def rtrim(string,chars=None):
+    sanitzed_string = string_sanity_check(string)
+    if isinstance( chars, int):
+        chars = str(chars)
+    return sanitzed_string.rstrip(chars)
+
+def _slugify(string, entities=True, decimal=True, hexadecimal=True, max_length=0, word_boundary=False,
+            separator='-', save_order=False, stopwords=()):
+    if string is None:
+        return ''
+    sanitzed_string = string_sanity_check(string)
+    return slugify(sanitzed_string, entities, decimal, hexadecimal, max_length, word_boundary,
+            separator, save_order, stopwords)
 
 ''' Replace string in string '''
 def splice(string, index, how_many, substring):
-    return string[:index] + substring + string[index + how_many:]
+    sanitzed_string = string_sanity_check(string)
+    sanitzed_substring = string_sanity_check(substring)
+    return sanitzed_string[:index] + sanitzed_substring + sanitzed_string[index + how_many:]
 
 ''' Checks whether the string begins with the needle at position (default: 0). '''
 def starts_with(haystack, needle, beg=0, end=None):
@@ -147,27 +177,29 @@ def starts_with(haystack, needle, beg=0, end=None):
 
 ''' Returns the successor to string '''
 def successor(string):
-    strip_zs = string.rstrip('z')
+    sanitzed_string = string_sanity_check(string)
+    strip_zs = sanitzed_string.rstrip('z')
     if strip_zs:
-        return strip_zs[:-1] + chr(ord(strip_zs[-1]) + 1) + 'a' * (len(string) - len(strip_zs))
+        return strip_zs[:-1] + chr(ord(strip_zs[-1]) + 1) + 'a' * (len(sanitzed_string) - len(strip_zs))
     else:
-        return 'a' * (len(string) + 1)
+        return 'a' * (len(sanitzed_string) + 1)
 
 ''' Returns a copy of the string in which all the case-based characters have had their case swapped.'''
 def swap_case(string):
-    string = string_sanity_check(string)
+    sanitzed_string = string_sanity_check(string)
     return string.swapcase()
 
 def transliterate(string):
-    normalized = unicodedata.normalize('NFKD', string)
+    sanitzed_string = string_sanity_check(string)
+    normalized = unicodedata.normalize('NFKD', sanitzed_string)
     return normalized.encode('ascii', 'ignore').decode('ascii')
 
 ''' Converts a underscored or camelized string into an dasherized one '''
 def underscore(string):
-    string = re.sub(r"([A-Z]+)([A-Z][a-z])", r'\1_\2', string)
-    string = re.sub(r"([a-z\d])([A-Z])", r'\1_\2', string)
-    string = string.replace("-", "_")
-    return string.lower()
+    sanitzed_string = string_sanity_check(string)
+    replaced = re.sub(r"([A-Z]+)([A-Z][a-z])", r'\1_\2', sanitzed_string)
+    replaced = re.sub(r"([a-z\d])([A-Z])", r'\1_\2', replaced)
+    return replaced.replace("-", "_").lower()
 
 ''' Converts entity characters to HTML equivalents. This function supports cent, yen, euro, pound, lt, gt, copy, reg, quote, amp, apos, nbsp. '''
 def unescape_html(haystack):
@@ -193,8 +225,8 @@ class FilterModule(object):
     def filters(self):
         return {
             'camelize': camelize,
-            'classify': classify,
             'clean': clean,
+            'classify': classify,
             'count': count,
             'dasherize': dasherize,
             'decapitalize': decapitalize,
@@ -207,6 +239,10 @@ class FilterModule(object):
             'lines': lines,
             'lpad': lpad,
             'ltrim': ltrim,
+            'rpad': rpad,
+            'rtrim': rtrim,
+            'repeat': repeat,
+            'slugify': _slugify,
             'splice': splice,
             'starts_with': starts_with,
             'successor': successor,
@@ -395,9 +431,77 @@ class TestStringUtlisFunctions(unittest.TestCase):
         self.assertEqual(ltrim('_-foobar-_', '_-'), 'foobar-_');
         self.assertEqual(ltrim(123, 1), '23');
 
+    def test_repeat(self):
+        self.assertEqual(repeat('foo', 3), 'foofoofoo');
+        self.assertEqual(repeat('foo', '3'), 'foofoofoo');
+        self.assertEqual(repeat(123, 2), '123123');
+        self.assertEqual(repeat(1234, 2, '*'), '1234*1234');
+        self.assertEqual(repeat(1234, 2, '**'), '1234**1234');
+        self.assertEqual(repeat(1234, 2, 5), '123451234');
+
+    def test_rpad(self):
+        self.assertEqual(rpad('1', 8), '1       ');
+        self.assertEqual(rpad(1, 8), '1       ');
+        self.assertEqual(rpad('1', 8, '0'), '10000000');
+        self.assertEqual(rpad('foo', 8, '0'), 'foo00000');
+        self.assertEqual(rpad('foo', 7, '0'), 'foo0000');
+        self.assertEqual(rpad('', 2), '  ');
+        self.assertEqual(rpad(None, 2), '  ');
+
+    def test_rtrim(self):
+        self.assertEqual(rtrim('http://foo/', '/'), 'http://foo');
+        self.assertEqual(rtrim(' foo'), ' foo');
+        self.assertEqual(rtrim('foo '), 'foo');
+        self.assertEqual(rtrim('foo     '), 'foo');
+        self.assertEqual(rtrim('foo  bar     '), 'foo  bar');
+        self.assertEqual(rtrim(' foo '), ' foo');
+        self.assertEqual(rtrim('ffoo', 'f'), 'ffoo');
+        self.assertEqual(rtrim('ooff', 'f'), 'oo');
+        self.assertEqual(rtrim('ffooff', 'f'), 'ffoo');
+        self.assertEqual(rtrim('_-foobar-_', '_-'), '_-foobar');
+        self.assertEqual(rtrim(123, 3), '12');
+        self.assertEqual(rtrim(''), '');
+        self.assertEqual(rtrim(None), '');
+
+    def test_slugify(self):
+        self.assertEqual(_slugify('Jack & Jill like numbers 1,2,3 and 4 and silly characters ?%.$!/'), 'jack-jill-like-numbers-1-2-3-and-4-and-silly-characters');
+        self.assertEqual(_slugify('I know latin characters: á í ó ú ç ã õ ñ ü ă ș ț'), 'i-know-latin-characters-a-i-o-u-c-a-o-n-u-a-s-t');
+        self.assertEqual(_slugify('I am a word too, even though I am but a single letter: i!'), 'i-am-a-word-too-even-though-i-am-but-a-single-letter-i');
+        self.assertEqual(_slugify(''), '');
+        self.assertEqual(_slugify(None), '');
+        self.assertEqual(_slugify("This is a test ---"), "this-is-a-test")
+        self.assertEqual(_slugify("___This is a test ---"), "this-is-a-test")
+        self.assertEqual(_slugify("___This is a test___"), "this-is-a-test")
+        self.assertEqual(_slugify("This -- is a ## test ---"), "this-is-a-test")
+        self.assertEqual(_slugify('影師嗎'), "ying-shi-ma")
+        self.assertEqual(_slugify('C\'est déjà l\'été.'), "cest-deja-lete")
+        self.assertEqual(_slugify('Nín hǎo. Wǒ shì zhōng guó rén'), "nin-hao-wo-shi-zhong-guo-ren")
+        self.assertEqual(_slugify('jaja---lol-méméméoo--a'), "jaja-lol-mememeoo-a")
+        self.assertEqual(_slugify('Компьютер'), "kompiuter")
+        self.assertEqual(_slugify('jaja---lol-méméméoo--a', max_length=9), "jaja-lol")
+        self.assertEqual(_slugify('jaja---lol-méméméoo--a', max_length=15), "jaja-lol-mememe")
+        self.assertEqual(_slugify('jaja---lol-méméméoo--a', max_length=50), "jaja-lol-mememeoo-a")
+        self.assertEqual(_slugify('jaja---lol-méméméoo--a', max_length=15, word_boundary=True), "jaja-lol-a")
+        self.assertEqual(_slugify('jaja---lol-méméméoo--a', max_length=17, word_boundary=True), "jaja-lol-mememeoo")
+        self.assertEqual(_slugify('jaja---lol-méméméoo--a', max_length=18, word_boundary=True), "jaja-lol-mememeoo")
+        self.assertEqual(_slugify('jaja---lol-méméméoo--a', max_length=19, word_boundary=True), "jaja-lol-mememeoo-a")
+        self.assertEqual(_slugify('jaja---lol-méméméoo--a', max_length=20, word_boundary=True, separator="."), "jaja.lol.mememeoo.a")
+        self.assertEqual(_slugify('jaja---lol-méméméoo--a', max_length=20, word_boundary=True, separator="ZZZZZZ"), "jajaZZZZZZlolZZZZZZmememeooZZZZZZa")
+        self.assertEqual(_slugify('one two three four five', max_length=13, word_boundary=True, save_order=True), "one-two-three")
+        self.assertEqual(_slugify('one two three four five', max_length=13, word_boundary=True, save_order=False), "one-two-three")
+        self.assertEqual(_slugify('one two three four five', max_length=12, word_boundary=True, save_order=False), "one-two-four")
+        self.assertEqual(_slugify('one two three four five', max_length=12, word_boundary=True, save_order=True), "one-two")
+        self.assertEqual(_slugify('this has a stopword', stopwords=['stopword']), 'this-has-a')
+        self.assertEqual(_slugify('the quick brown fox jumps over the lazy dog', stopwords=['the']), 'quick-brown-fox-jumps-over-lazy-dog')
+        self.assertEqual(_slugify('Foo A FOO B foo C', stopwords=['foo']), 'a-b-c')
+        self.assertEqual(_slugify('Foo A FOO B foo C', stopwords=['FOO']), 'a-b-c')
+        self.assertEqual(_slugify('the quick brown fox jumps over the lazy dog in a hurry', stopwords=['the', 'in', 'a', 'hurry']), 'quick-brown-fox-jumps-over-lazy-dog')
+        self.assertEqual(_slugify('foo &amp; bar'), 'foo-bar')
+
     def test_splice(self):
         self.assertEqual(splice('http://github.com/lxhunter/string', 18, 8, 'awesome'),
                          'http://github.com/awesome/string')
+        self.assertEqual(splice(12345, 1, 2, 321), '132145');
 
     def test_starts_with(self):
         self.assertEqual(starts_with('image.gif', 'image'), True)        
