@@ -147,10 +147,10 @@ Overview
 * [slugify] (docs/underscore_string_functions.md#slugify) - Transform text into an ascii slug which can be used in safely in URLs.
 * [splice] (docs/underscore_string_functions.md#splice) - Return the string right justified in a string of length width.
 * [sprintf] - see [format] (docs/jinja_functions.md#format)
-* [starts_with] (docs/underscore_string_functions.md#starts_with) - 
+* [starts_with] (docs/underscore_string_functions.md#starts_with) - Checks whether the string begins with the needle at position (default: 0).
 * [string] (docs/jinja_functions.md#string) - Make a string unicode.
 * [striptags] (docs/jinja_functions.md#striptags) - Strip SGML/XML tags and replace adjacent whitespace by one space.
-* [strLeft]
+* [strLeft] ()
 * [strLeftBack]
 * [strRight]
 * [strRightBack]

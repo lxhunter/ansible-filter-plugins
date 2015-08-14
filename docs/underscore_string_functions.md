@@ -388,3 +388,25 @@ Transform text into an ascii slug which can be used in safely in URLs. Replaces 
 # => "one-two-three"
 
 ```
+
+#### starts_with
+###### method: starts_with(haystack, needle, beg=0, end=None)
+> custom implementation / needs to be installed
+
+_Using Python Standard Library string startswith_
+
+Return True if string starts with the prefix, otherwise return False. prefix can also be a tuple of prefixes to look for. With optional start, test string beginning at that position. With optional end, stop comparing string at that position.
+
+```python
+{{ 'image.gif' | starts_with('image') }}
+# => True
+
+{{ 'foobar' | starts_with(, 'foo') }}
+# => True
+
+{{ 'oobar' | starts_with('foo') }}
+# => False
+
+{{ 'oobar' | starts_with(, 'o') }}
+# => True
+```

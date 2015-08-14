@@ -171,9 +171,11 @@ def splice(string, index, how_many, substring):
 
 ''' Checks whether the string begins with the needle at position (default: 0). '''
 def starts_with(haystack, needle, beg=0, end=None):
+    sanitzed_haystack = string_sanity_check(haystack)
+    sanitzed_needle = string_sanity_check(needle)
     if end is None:
-        end = len(haystack)
-    return haystack.startswith(needle, beg, end)
+        end = len(sanitzed_haystack)
+    return sanitzed_haystack.startswith(sanitzed_needle, beg, end)
 
 ''' Returns the successor to string '''
 def successor(string):
@@ -504,7 +506,19 @@ class TestStringUtlisFunctions(unittest.TestCase):
         self.assertEqual(splice(12345, 1, 2, 321), '132145');
 
     def test_starts_with(self):
-        self.assertEqual(starts_with('image.gif', 'image'), True)        
+        self.assertEqual(starts_with('image.gif', 'image'), True)
+        self.assertEqual(starts_with('foobar', 'foo'), True);
+        self.assertEqual(starts_with('oobar', 'foo'), False);
+        self.assertEqual(starts_with('oobar', 'o'), True);
+        self.assertEqual(starts_with(12345, 123), True);
+        self.assertEqual(starts_with(2345, 123), False);
+        self.assertEqual(starts_with('', ''), True);
+        self.assertEqual(starts_with(None, ''), True);
+        self.assertEqual(starts_with(None, 'foo'), False);
+        self.assertEqual(starts_with('-foobar', 'foo', 1), True);
+        self.assertEqual(starts_with('foobar', 'foo', 0), True);
+        self.assertEqual(starts_with('foobar', 'foo', 1), False);
+        self.assertEqual(starts_with('Äpfel', 'Ä'), True);
 
     def test_successor(self):
         self.assertEqual(successor('a'), 'b')
