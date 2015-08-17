@@ -1,4 +1,4 @@
-## List of underscore string functions 
+## List of underscore string functions
 
 #### camelize
 ###### method: camelize(string, uppercase_first_letter=True)
@@ -106,7 +106,7 @@ Converts first letter of the string to lowercase.
 
 {{ 'FOO' | decapitalize }}
 # =>  'fOO'
- 
+
 {{ 123 | decapitalize }}
 # => '123'
 ```
@@ -129,7 +129,7 @@ Note that tabs and spaces are both treated as whitespace, but they are not equal
 
 {{ 'Hello\t\nWorld' | dedent }}
 # =>  'Hello\t\nWorld'
- 
+
 {{ 'Hello \nWorld' | dedent }}
 # => 'Hello \nWorld'
 
@@ -179,7 +179,7 @@ Converts HTML special characters to their entity equivalents. This function supp
 ###### method: humanize(string)
 > custom implementation / needs to be installed
 
-Converts an underscored, camelized, or dasherized string into a humanized one. Also removes beginning and ending whitespace, and removes the postfix '_id'. 
+Converts an underscored, camelized, or dasherized string into a humanized one. Also removes beginning and ending whitespace, and removes the postfix '_id'.
 
 ```python
 {{ 'the_humanize_string_method' | humanize }}
@@ -246,7 +246,7 @@ Return the string left justified in a string of length width. Padding is done us
 ```python
 {{ '1' | lpad(8) }}
 # => '       1'
-       
+
 {{ 1 | lpad(8) }}
 # => '       1'
 

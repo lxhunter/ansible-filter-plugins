@@ -83,7 +83,7 @@ Overview
 * [ipv6] (docs/ansible_functions.md#ipv6) - To test if a string is a valid ipv6 address.
 * [ipwrap] (docs/ansible_functions.md#ipwrap) - Some configuration files require IPv6 addresses to be “wrapped” in square brackets ([ ]).
 
-### Number / Math Utilities 
+### Number / Math Utilities
 * [abs] (docs/jinja_functions.md#abs) - Return the absolute value of the argument.
 * [float] (docs/jinja_functions.md#float) - Convert the value into a floating point number.
 * [int] (docs/jinja_functions.md#int) - Convert the value into an integer.
@@ -102,52 +102,52 @@ Overview
 ### Path Utilities
 * [basename] (docs/ansible_functions.md#basename) - Return the base name of pathname path.
 * [dirname] (docs/ansible_functions.md#dirname) - Return the directory name of pathname path.
-* [expanduser] (docs/ansible_functions.md#expanduser) - Expand a path containing a tilde (~) character 
+* [expanduser] (docs/ansible_functions.md#expanduser) - Expand a path containing a tilde (~) character
 * [realpath] (docs/ansible_functions.md#realpath) - Get the real path of a link
 * [relpath] (docs/ansible_functions.md#relpath) - Get the relative path of a link, from a start point.
 * [splitext] (docs/ansible_functions.md#splitext) - To get the root and extension of a path or filename.
 
 ### String Utilities
-* [camelize] (docs/underscore_string_functions.md#camelize) - Converts underscored or dasherized string to a camelized one.
+* [camelize] (docs/string_util_functions.md#camelize) - Converts underscored or dasherized string to a camelized one.
 * [capitalize] (docs/jinja_functions.md#capitalize) - Capitalize a String.
 * [center] (docs/jinja_functions.md#center) - Centers the value in a field of a given width.
-* [chars] - See [list] (docs/jinja_functions.md#list) 
-* [classify] (docs/underscore_string_functions.md#classify) - Converts string to camelized class name. First letter is always upper case.
-* [clean] (docs/underscore_string_functions.md#clean) - Trim and replace multiple spaces with a single space.
-* [count] (docs/underscore_string_functions.md#count) - Counts the number of times needle is in haystack.
-* [dasherize] (docs/underscore_string_functions.md#dasherize) - Converts a underscored or camelized string into an dasherized one.
-* [decapitalize] (docs/underscore_string_functions.md#decapitalize) - Converts first letter of the string to lowercase.
-* [dedent] (docs/underscore_string_functions.md#dedent) - Converts first letter of the string to lowercase.
-* [ends_with] (docs/underscore_string_functions.md#ends_with) - Dedent unnecessary indentation.
+* [chars] - See [list] (docs/jinja_functions.md#list)
+* [classify] (docs/string_util_functions.md#classify) - Converts string to camelized class name. First letter is always upper case.
+* [clean] (docs/string_util_functions.md#clean) - Trim and replace multiple spaces with a single space.
+* [count] (docs/string_util_functions.md#count) - Counts the number of times needle is in haystack.
+* [dasherize] (docs/string_util_functions.md#dasherize) - Converts a underscored or camelized string into an dasherized one.
+* [decapitalize] (docs/string_util_functions.md#decapitalize) - Converts first letter of the string to lowercase.
+* [dedent] (docs/string_util_functions.md#dedent) - Converts first letter of the string to lowercase.
+* [ends_with] (docs/string_util_functions.md#ends_with) - Dedent unnecessary indentation.
 * [escape] (docs/jinja_functions.md#escape) - Convert the chars to HTML-safe sequences.
-* [escape_html] (docs/underscore_string_functions.md#escape_html) - Converts HTML special characters to their entity equivalents.
-* [filesizeformat] (docs/jinja_functions.md#filesizeformat) - Format file sizes into ‘human-readable’ 
+* [escape_html] (docs/string_util_functions.md#escape_html) - Converts HTML special characters to their entity equivalents.
+* [filesizeformat] (docs/jinja_functions.md#filesizeformat) - Format file sizes into ‘human-readable’
 * [forceescape] (docs/jinja_functions.md#forceescape) - Enforce HTML escaping.
 * [format] (docs/jinja_functions.md#format) - Apply python string formatting on an object.
-* [humanize] (docs/underscore_string_functions.md#humanize) - Converts an underscored, camelized, or dasherized string into a humanized one.
+* [humanize] (docs/string_util_functions.md#humanize) - Converts an underscored, camelized, or dasherized string into a humanized one.
 * [indent] (docs/jinja_functions.md#indent) - Indent a string.
-* [insert] (docs/underscore_string_functions.md#insert) - Insert word in string at the defined position.
+* [insert] (docs/string_util_functions.md#insert) - Insert word in string at the defined position.
 * [list] (docs/jinja_functions.md#list) - Convert the value into a list.
 * [lower] (docs/jinja_functions.md#lower) - Convert a value to lowercase.
-* [lpad] (docs/underscore_string_functions.md#lpad) - Return the string left justified in a string of length width.
-* [lrpad] - See [center] (docs/jinja_functions.md#center) 
-* [ltrim] (docs/underscore_string_functions.md#ltrim) - Return a copy of the string with leading characters removed.
+* [lpad] (docs/string_util_functions.md#lpad) - Return the string left justified in a string of length width.
+* [lrpad] - See [center] (docs/jinja_functions.md#center)
+* [ltrim] (docs/string_util_functions.md#ltrim) - Return a copy of the string with leading characters removed.
 * [predecessor] - do not know how to implement this
 * [prune] - see [truncate] (docs/jinja_functions.md#truncate)
 * [quote] (docs/ansible_functions.md#quote) - Add quotes for shell usage
 * [regex_escape] (docs/ansible_functions.md#regex_escape) - Escape special characters within a regex
 * [regex_replace] (docs/ansible_functions.md#regex_replace) - Replace text in a string with a regex
-* [repeat] (docs/underscore_string_functions.md#repeat) - Repeats a string count times, can be seperated by separator.
+* [repeat] (docs/string_util_functions.md#repeat) - Repeats a string count times, can be seperated by separator.
 * [replace] (docs/jinja_functions.md#replace) - Search for needle in haystack and replace it with substitute.
 * [replaceAll] - See [replace] (docs/jinja_functions.md#replace)
 * [reverse] (docs/jinja_functions.md#reverse) - Reverse the object or return an iterator that iterates over it the other way round.
-* [rpad] (docs/underscore_string_functions.md#rpad) - Return the string right justified in a string of length width.
-* [rtrim] (docs/underscore_string_functions.md#rtrim) - Return a copy of the string with trailing characters removed.
+* [rpad] (docs/string_util_functions.md#rpad) - Return the string right justified in a string of length width.
+* [rtrim] (docs/string_util_functions.md#rtrim) - Return a copy of the string with trailing characters removed.
 * [safe] (docs/jinja_functions.md#safe) - Make all potentionally dangerous chars safe. - safety is a illusion, so beware!
-* [slugify] (docs/underscore_string_functions.md#slugify) - Transform text into an ascii slug which can be used in safely in URLs.
-* [splice] (docs/underscore_string_functions.md#splice) - Return the string right justified in a string of length width.
+* [slugify] (docs/string_util_functions.md#slugify) - Transform text into an ascii slug which can be used in safely in URLs.
+* [splice] (docs/string_util_functions.md#splice) - Return the string right justified in a string of length width.
 * [sprintf] - see [format] (docs/jinja_functions.md#format)
-* [starts_with] (docs/underscore_string_functions.md#starts_with) - Checks whether the string begins with the needle at position (default: 0).
+* [starts_with] (docs/string_util_functions.md#starts_with) - Checks whether the string begins with the needle at position (default: 0).
 * [string] (docs/jinja_functions.md#string) - Make a string unicode.
 * [striptags] (docs/jinja_functions.md#striptags) - Strip SGML/XML tags and replace adjacent whitespace by one space.
 * [strLeft] ()
@@ -171,7 +171,7 @@ Overview
 * [urlize] (docs/jinja_functions.md#urlize) - Converts URLs in plain text into clickable links.
 * [wordcount] (docs/jinja_functions.md#wordcount) - Count the words in that string.
 * [words]
-* [wordwrap] (docs/jinja_functions.md#wordwrap) - Return a copy of the string passed to the filter wrapped after n characters. 
+* [wordwrap] (docs/jinja_functions.md#wordwrap) - Return a copy of the string passed to the filter wrapped after n characters.
 * [xmlattr] (docs/jinja_functions.md#xmlattr) - Create an SGML/XML attribute string based on the items in a dict.
 
 
@@ -183,7 +183,14 @@ Overview
 * [equalto] (docs/jinja_tests.md#equalto) - Check if an object has the same value as another object.
 * [escaped] (docs/jinja_tests.md#escaped) - Check if the value is escaped.
 * [even] (docs/jinja_tests.md#even) - Return true if the variable is even.
-* [includes] (docs/underscore_string_functions.md#includes) - Tests if string contains a substring.
+* [includes] (docs/string_util_functions.md#includes) - Tests if string contains a substring.
+* [is_camel_case]
+* [is_credit_card]
+* [is_email]
+* [is_ip]
+* [is_snake_case]
+* [is_url]
+* [is_uuid]
 * [isBlank]
 * [isnan] (docs/ansible_functions.md#isnan) - To see if something is actually a number
 * [iterable] (docs/jinja_tests.md#iterable) - Check if it’s possible to iterate over an object.

@@ -17,19 +17,20 @@ def where(entries, properties):
             for p in properties:
                 if p in entry:
                     obj[p] = entry[p]
-
             ret.append(obj)
-
     return ret
+
 
 def initial(array):
     return array[0:len(array) - 1]
+
 
 def rest(array):
     return array[1:len(array)]
 
 
 class FilterModule(object):
+
     """ utility filters for operating on hashes """
 
     def filters(self):
@@ -41,6 +42,7 @@ class FilterModule(object):
 
 
 class TestCollectionUtils(unittest.TestCase):
+
     def test_where(self):
         l = [
             {'foo': 'bar', 'bar': 'quuux', 'baz': 'qux'},
