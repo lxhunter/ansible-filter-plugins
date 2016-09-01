@@ -1,0 +1,76 @@
+---
+
+- name: camelize(string, uppercase_first_letter=True)
+  assert:
+    that: 
+      - "'the_camelize_string_method' | camelize == 'TheCamelizeStringMethod'"
+      - "'webkit-transform' | camelize(True) == 'WebkitTransform'"
+      - "'webkit-transform' | camelize(False) == 'webkitTransform'"
+
+- name: clean(string)
+  assert:
+    that: 
+      - "' foo    bar   ' | clean == 'foo bar'"
+      - "123 | clean == '123'"
+      - "'   foo\t bar ' | clean == 'foo bar'"
+
+- name: classify(string)
+  assert:
+    that: 
+      - "'some_class_name' | classify == 'SomeClassName'"
+      - "'my wonderfull class_name' | classify == 'MyWonderfullClassName'"
+      - "'my wonderfull.class.name' | classify == 'MyWonderfullClassName'"
+      - "'myLittleCamel' | classify == 'MyLittleCamel'"
+
+- name: count(haystack, needle)
+  assert:
+    that: 
+      - "'Hello world' | count('l') == 3"
+      - "'Hello world' | count('Hello') == 1"
+      - "'Hello world' | count('foo') == 0"
+      - "'x.xx....x.x' | count('x') == 5"
+
+- name: dasherize(string)
+  assert:
+    that: 
+      - "'foo_bar' | dasherize == 'foo-bar'"
+      - "'the_dasherize_string_method' | dasherize == 'the-dasherize-string-method'"
+      - "'thisIsATest' | dasherize == 'this-is-a-test'"
+      - "'this Is A Test' | dasherize == 'this-is-a-test'"
+
+- name: decapitalize(string)
+  assert:
+    that: 
+      - "'Fabio' | decapitalize == 'fabio'"
+      - "'FOO' | decapitalize ==  'fOO'"
+      - "123 | decapitalize == '123'"
+
+- name: dedent(string)
+  assert:
+    that: 
+      - "'Hello\nWorld' | dedent == 'Hello\nWorld'"
+      - "'Hello\t\nWorld' | dedent ==  'Hello\t\nWorld'"
+      - "'Hello \nWorld' | dedent == 'Hello \nWorld'"
+      - "'    Hello\n  World' | dedent == '  Hello\nWorld'"
+
+- name: ends_with(haystack, needle, beg=0, end=None)
+  assert:
+    that: 
+      - "'image.gif' | ends_with('gif') == true"
+      - "'foobar' | ends_with('bar') == true"
+      - "'foobarfoobar' | ends_with('bar') == true"
+      - "'foo' | ends_with('o') == true"
+      - "'foobar' | ends_with('bar') == true"
+      - "'00018-0000062.Plone.sdh264.1a7264e6912a91aa4a81b64dc5517df7b8875994.mp4' | ends_with('mp4') == true"
+
+- name: Print statements during execution
+  debug:
+    msg: "{{ '<div>Blah & \"blah\" & blah</div>' | escape_html }}"
+    # msg:  The customized message that is printed. If omitted, prints a generic message.
+    # var:  A variable name to debug.  Mutually exclusive with the 'msg' option.
+    # verbosity:  A number that controls when the debug is run, if you set to 3 it will only run debug when -vvv or above
+
+# - name: escape_html(string)
+#   assert:
+#     that: 
+#       - "'<div>Blah & \"blah\" & 'blah'</div>' | escape_html == '<div>Blah & \"blah\" & 'blah'</div>'"
