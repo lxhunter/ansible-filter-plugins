@@ -6,6 +6,8 @@
 
 Converts underscored or dasherized string to a camelized one. Begins with a lower case letter unless it starts with an underscore, dash or an upper case letter.
 
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L3-L8)
+
 #### clean
 ###### method: clean(string)
 > custom implementation / needs to be installed
