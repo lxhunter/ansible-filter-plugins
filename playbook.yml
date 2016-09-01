@@ -1,21 +1,7 @@
 ---
 
 - hosts: all
-  
-  # pre_tasks:
-
-  #   - name: Install pip
-  #     package:
-  #       name: python-pip
-
-  #   - name: Install requirements
-  #     pip:
-  #       name: "{{ item }}"
-  #     with_items:
-  #       - pretty
-  #       - netaddr
-  #       - python-slugify
-
+  gather_facts: False
   post_tasks:
 
     - include: tests/string_util_functions.yml
