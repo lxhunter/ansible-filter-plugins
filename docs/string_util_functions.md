@@ -6,7 +6,7 @@
 
 Converts underscored or dasherized string to a camelized one. Begins with a lower case letter unless it starts with an underscore, dash or an upper case letter.
 
-[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L3-L8)
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/master/tests/string_util_functions.yml#L3-L8)
 
 #### clean
 ###### method: clean(string)
@@ -14,7 +14,7 @@ Converts underscored or dasherized string to a camelized one. Begins with a lowe
 
 Trim and replace multiple spaces with a single space.
 
-[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L10-L15)
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/master/tests/string_util_functions.yml#L10-L15)
 
 #### classify
 ###### method: classify(string)
@@ -22,7 +22,7 @@ Trim and replace multiple spaces with a single space.
 
 Converts string to camelized class name. First letter is always upper case.
 
-[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L17-L23)
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/master/tests/string_util_functions.yml#L17-L23)
 
 #### count
 ###### method: count(haystack, needle)
@@ -30,7 +30,7 @@ Converts string to camelized class name. First letter is always upper case.
 
 Counts the number of times needle is in haystack
 
-[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L25-L31)
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/master/tests/string_util_functions.yml#L25-L31)
 
 #### dasherize
 ###### method: dasherize(string)
@@ -38,7 +38,7 @@ Counts the number of times needle is in haystack
 
 Converts a underscored or camelized string into an dasherized one
 
-[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L33-L39)
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/master/tests/string_util_functions.yml#L33-L39)
 
 #### decapitalize
 ###### method: decapitalize(string)
@@ -46,7 +46,7 @@ Converts a underscored or camelized string into an dasherized one
 
 Converts first letter of the string to lowercase.
 
-[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L41-L46)
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/master/tests/string_util_functions.yml#L41-L46)
 
 #### dedent
 ###### method: dedent(string)
@@ -61,7 +61,7 @@ This can be used to make triple-quoted strings line up with the left edge of the
 Note that tabs and spaces are both treated as whitespace, but they are not equal: the lines `  hello` and `\thello` are considered to have no common leading whitespace.
 
 
-[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L48-L54)
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/master/tests/string_util_functions.yml#L48-L54)
 
 #### ends_with
 ###### method: ends_with(haystack, needle, beg=0, end=None)
@@ -70,7 +70,7 @@ Note that tabs and spaces are both treated as whitespace, but they are not equal
 Checks whether the string ends with needle at position (default: haystack.length).
 
 
-[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L56-L64)
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/master/tests/string_util_functions.yml#L56-L64)
 
 #### escape_html
 ###### method: escape_html(string)
@@ -78,7 +78,7 @@ Checks whether the string ends with needle at position (default: haystack.length
 
 Converts HTML special characters to their entity equivalents. This function supports cent, yen, euro, pound, lt, gt, copy, reg, quote, amp, apos.
 
-[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L66-L69)
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/master/tests/string_util_functions.yml#L66-L69)
 
 #### humanize
 ###### method: humanize(string)
@@ -86,7 +86,7 @@ Converts HTML special characters to their entity equivalents. This function supp
 
 Converts an underscored, camelized, or dasherized string into a humanized one. Also removes beginning and ending whitespace, and removes the postfix '_id'.
 
-[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L71-L77)
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/master/tests/string_util_functions.yml#L71-L77)
 
 #### includes
 ###### method: includes(haystack, needle)
@@ -95,7 +95,7 @@ Converts an underscored, camelized, or dasherized string into a humanized one. A
 Tests if string contains a substring.
 
 
-[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L79-L86)
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/master/tests/string_util_functions.yml#L79-L86)
 
 #### insert
 ###### method: insert(string, index, substring)
@@ -103,7 +103,7 @@ Tests if string contains a substring.
 
 Insert word in string at the defined position.
 
-[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L88-L93)
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/master/tests/string_util_functions.yml#L88-L93)
 
 #### lpad
 ###### method: lpad(width[, fillchar])
@@ -113,7 +113,7 @@ _Using Python Standard Library string rjust_
 
 Return the string left justified in a string of length width. Padding is done using the specified fillchar (default is a space). The original string is returned if width is less than or equal to len(s).
 
-[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L95-L100)
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/master/tests/string_util_functions.yml#L95-L100)
 
 #### ltrim
 ###### method: lpad(width[, fillchar])
@@ -123,7 +123,7 @@ _Using Python Standard Library string lstrip_
 
 Return a copy of the string with leading characters removed. The chars argument is a string specifying the set of characters to be removed. If omitted or None, the chars argument defaults to removing whitespace.
 
-[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L103-L109)
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/master/tests/string_util_functions.yml#L103-L109)
 
 #### repeat
 ###### method: repeat(string, count, separator=None)
@@ -132,7 +132,7 @@ Return a copy of the string with leading characters removed. The chars argument 
 Repeats a string count times, can be seperated by separator.
 
 
-[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L111-L118)
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/master/tests/string_util_functions.yml#L111-L118)
 
 #### rpad
 ###### method: rpad(string, width, fillchar=' ')
@@ -141,7 +141,7 @@ Repeats a string count times, can be seperated by separator.
 Return the string right justified in a string of length width.
 
 
-[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L120-L127)
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/master/tests/string_util_functions.yml#L120-L127)
 
 #### rtrim
 ###### method: rtrim(string, characters)
@@ -151,7 +151,7 @@ _Using Python Standard Library string rstrip_
 
 Return a copy of the string with trailing characters removed. If chars is omitted or `None`, whitespace characters are removed. If given and not `None`, chars must be a string; the characters in the string will be stripped from the end of the string this method is called on.
 
-[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L129-L136)
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/master/tests/string_util_functions.yml#L129-L136)
 
 #### splice
 ###### method: splice(string, index, howmany, substring)
@@ -160,7 +160,7 @@ Return a copy of the string with trailing characters removed. If chars is omitte
 Adds/removes substring to/from string.
 
 
-[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L138-L142)
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/master/tests/string_util_functions.yml#L138-L142)
 
 #### starts_with
 ###### method: starts_with(haystack, needle, beg=0, end=None)
@@ -170,4 +170,4 @@ _Using Python Standard Library string startswith_
 
 Return True if string starts with the prefix, otherwise return False. prefix can also be a tuple of prefixes to look for. With optional start, test string beginning at that position. With optional end, stop comparing string at that position.
 
-[example](https://github.com/lxhunter/ansible-filter-plugins/blob/ci/tests/string_util_functions.yml#L144-L150)
+[example](https://github.com/lxhunter/ansible-filter-plugins/blob/master/tests/string_util_functions.yml#L144-L150)
