@@ -4,7 +4,6 @@ import unittest
 import re
 import unicodedata
 import textwrap
-from slugify import slugify
 
 
 def _string_sanity_check(string):
@@ -193,15 +192,6 @@ def rtrim(string, chars=None):
         chars = str(chars)
     return sanitzed_string.rstrip(chars)
 
-
-def _slugify(string, entities=True, decimal=True, hexadecimal=True, max_length=0, word_boundary=False,
-             separator='-', save_order=False, stopwords=()):
-    if string is None:
-        return ''
-    sanitzed_string = _string_sanity_check(string)
-    return slugify(sanitzed_string, entities, decimal, hexadecimal, max_length, word_boundary,
-                   separator, save_order, stopwords)
-
 ''' Replace string in string '''
 
 
@@ -298,7 +288,6 @@ class FilterModule(object):
             'rpad': rpad,
             'rtrim': rtrim,
             'repeat': repeat,
-            'slugify': _slugify,
             'splice': splice,
             'starts_with': starts_with,
             'successor': successor,
@@ -555,65 +544,6 @@ class TestStringUtlisFunctions(unittest.TestCase):
         self.assertEqual(rtrim(123, 3), '12')
         self.assertEqual(rtrim(''), '')
         self.assertEqual(rtrim(None), '')
-
-    def test_slugify(self):
-        self.assertEqual(_slugify('Jack & Jill like numbers 1,2,3 and 4 and silly characters ?%.$!/'),
-                         'jack-jill-like-numbers-1-2-3-and-4-and-silly-characters')
-        self.assertEqual(_slugify('I know latin characters: á í ó ú ç ã õ ñ ü ă ș ț'),
-                         'i-know-latin-characters-a-i-o-u-c-a-o-n-u-a-s-t')
-        self.assertEqual(_slugify('I am a word too, even though I am but a single letter: i!'),
-                         'i-am-a-word-too-even-though-i-am-but-a-single-letter-i')
-        self.assertEqual(_slugify(''), '')
-        self.assertEqual(_slugify(None), '')
-        self.assertEqual(_slugify("This is a test ---"), "this-is-a-test")
-        self.assertEqual(_slugify("___This is a test ---"), "this-is-a-test")
-        self.assertEqual(_slugify("___This is a test___"), "this-is-a-test")
-        self.assertEqual(
-            _slugify("This -- is a ## test ---"), "this-is-a-test")
-        self.assertEqual(_slugify('影師嗎'), "ying-shi-ma")
-        self.assertEqual(_slugify('C\'est déjà l\'été.'), "cest-deja-lete")
-        self.assertEqual(
-            _slugify('Nín hǎo. Wǒ shì zhōng guó rén'), "nin-hao-wo-shi-zhong-guo-ren")
-        self.assertEqual(
-            _slugify('jaja---lol-méméméoo--a'), "jaja-lol-mememeoo-a")
-        self.assertEqual(_slugify('Компьютер'), "kompiuter")
-        self.assertEqual(
-            _slugify('jaja---lol-méméméoo--a', max_length=9), "jaja-lol")
-        self.assertEqual(
-            _slugify('jaja---lol-méméméoo--a', max_length=15), "jaja-lol-mememe")
-        self.assertEqual(
-            _slugify('jaja---lol-méméméoo--a', max_length=50), "jaja-lol-mememeoo-a")
-        self.assertEqual(_slugify(
-            'jaja---lol-méméméoo--a', max_length=15, word_boundary=True), "jaja-lol-a")
-        self.assertEqual(_slugify(
-            'jaja---lol-méméméoo--a', max_length=17, word_boundary=True), "jaja-lol-mememeoo")
-        self.assertEqual(_slugify(
-            'jaja---lol-méméméoo--a', max_length=18, word_boundary=True), "jaja-lol-mememeoo")
-        self.assertEqual(_slugify(
-            'jaja---lol-méméméoo--a', max_length=19, word_boundary=True), "jaja-lol-mememeoo-a")
-        self.assertEqual(_slugify('jaja---lol-méméméoo--a', max_length=20,
-                                  word_boundary=True, separator="."), "jaja.lol.mememeoo.a")
-        self.assertEqual(_slugify('jaja---lol-méméméoo--a', max_length=20,
-                                  word_boundary=True, separator="ZZZZZZ"), "jajaZZZZZZlolZZZZZZmememeooZZZZZZa")
-        self.assertEqual(_slugify('one two three four five', max_length=13,
-                                  word_boundary=True, save_order=True), "one-two-three")
-        self.assertEqual(_slugify('one two three four five', max_length=13,
-                                  word_boundary=True, save_order=False), "one-two-three")
-        self.assertEqual(_slugify('one two three four five', max_length=12,
-                                  word_boundary=True, save_order=False), "one-two-four")
-        self.assertEqual(_slugify(
-            'one two three four five', max_length=12, word_boundary=True, save_order=True), "one-two")
-        self.assertEqual(
-            _slugify('this has a stopword', stopwords=['stopword']), 'this-has-a')
-        self.assertEqual(_slugify('the quick brown fox jumps over the lazy dog', stopwords=[
-                         'the']), 'quick-brown-fox-jumps-over-lazy-dog')
-        self.assertEqual(
-            _slugify('Foo A FOO B foo C', stopwords=['foo']), 'a-b-c')
-        self.assertEqual(
-            _slugify('Foo A FOO B foo C', stopwords=['FOO']), 'a-b-c')
-        self.assertEqual(_slugify('the quick brown fox jumps over the lazy dog in a hurry', stopwords=[
-                         'the', 'in', 'a', 'hurry']), 'quick-brown-fox-jumps-over-lazy-dog')
-        self.assertEqual(_slugify('foo &amp; bar'), 'foo-bar')
 
     def test_splice(self):
         self.assertEqual(splice('http://github.com/lxhunter/string', 18, 8, 'awesome'),

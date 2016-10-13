@@ -1,0 +1,7 @@
+---
+
+- hosts: all
+  gather_facts: False
+  post_tasks:
+
+    - include: tests/string_util_functions.yml
