@@ -30,6 +30,20 @@ For pprint you will need the python `pretty` package:
 $ pip install pretty
 ```
 
+Installation
+===========
+
+The easiest way to make use of the libaries is to checkout this project somewhere on your ansible host,
+and configure `ansible.cfg` to point the filters directory variable to the checkout directory:
+
+```
+filter_plugins = /where/you/checked/out/ansible-filter-plugins
+```
+
+More details can be found here:
+[http://docs.ansible.com/ansible/developing_plugins.html#filter-plugins](http://docs.ansible.com/ansible/developing_plugins.html#filter-plugins)
+
+
 Overview
 ===========
 ### Collection Utilities
