@@ -1,0 +1,12 @@
+---
+- name: Prepare
+  hosts: all
+  gather_facts: false
+  tasks:
+
+    - name: Install requirements
+      pip:
+        name: "{{ item }}"
+      with_items:
+        - "netaddr"
+        - "pretty"

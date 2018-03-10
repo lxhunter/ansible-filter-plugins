@@ -13,6 +13,8 @@ Testing
 $ python -m unittest -v string_utils
 # or
 $ nodemon -e 'py' --exec "python -m unittest -v string_utils"
+# or
+$ molecule test
 ```
 
 Requirements
@@ -255,7 +257,7 @@ License and Author
 
 Author:: [Alexander Jäger](https://github.com/lxhunter)
 
-Copyright 2014
+Copyright 2018
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

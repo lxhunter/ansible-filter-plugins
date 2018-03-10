@@ -1,4 +1,4 @@
-## List of Ansible Built-in Functions 
+## List of Ansible Built-in Functions
 
 #### b64encode
 ###### method: b64encode
@@ -74,7 +74,7 @@ Convert string into human readable JSON
 
 Reading in some JSON formatted data
 
-[Here is an example](https://gist.github.com/lxhunter/45fb119c0128600158d8) 
+[Here is an example](https://gist.github.com/lxhunter/45fb119c0128600158d8)
 
 #### to_yaml
 ###### method: to_yaml
@@ -102,7 +102,7 @@ Convert value into human readable YAML
 # vars:
 #   users:
 #     - bob
-#     - joe  
+#     - joe
 
 {{ users | to_nice_yaml }}
 # => - bob
@@ -115,7 +115,7 @@ Convert value into human readable YAML
 
 Reading in YAML formatted data
 
-[Here is an example for JSON, just adapt it YAML](https://gist.github.com/lxhunter/45fb119c0128600158d8) 
+[Here is an example for JSON, just adapt it YAML](https://gist.github.com/lxhunter/45fb119c0128600158d8)
 
 #### bool
 ###### method: bool
@@ -193,7 +193,7 @@ Platform dependend:
 # => f7fbba6e0636f890e56fbbf3283e524c6fa3204ae298382d624741d0dc6638326e282c41be5e4254d8820772c5518a2c5a8c0c7f7eda19594a7eb539453e1ed7
 
 {{ 'foo'|hash('blowfish') }}
-# is platform dependend 
+# is platform dependend
 ```
 
 #### checksum
@@ -233,7 +233,7 @@ Platform dependend:
 # => $6$8XFFhlPGyfY3V9qm$.Rc4GnmfwO3y.RtfL9c.X6gtrh6rkE33KlfdI2u55RMa8aWYf/K6S/W2knO07EAndV.kADM1Fin75osI4oEtO1
 
 {{ 'fooosecretbar'|password_hash('blowfish') }}
-# => is platform dependend 
+# => is platform dependend
 ```
 
 #### regex_replace
@@ -318,7 +318,7 @@ To get a random number from 0 to supplied end:
 Get a random number from 0 to 100 but in steps of 10:
 
 ```python
-{{ 100 |random(step=10) }} 
+{{ 100 |random(step=10) }}
 # => 60
 ```
 
@@ -328,7 +328,7 @@ Get a random number from 1 to 100 in steps of 10:
 {{ 100 |random(1, 10) }}
 # => 31
 
-{{ 100 |random(start=1, step=10) }} 
+{{ 100 |random(start=1, step=10) }}
 # => 51
 ```
 
@@ -339,10 +339,10 @@ Get a random number from 1 to 100 in steps of 10:
 Randomize an existing list, giving a different order every invocation.
 
 ```python
-{{ ['a','b','c']|shuffle }} 
+{{ ['a','b','c']|shuffle }}
 # => ['c','a','b']
 
-{{ ['a','b','c']|shuffle }} 
+{{ ['a','b','c']|shuffle }}
 # => ['b','c','a']
 ```
 
@@ -502,7 +502,7 @@ Return the directory name of pathname path. This is the first element of the pai
 ###### method: expanduser(path)
 > ansible built-in - _new in 1.5_
 
-Expand a path containing a tilde (~) character 
+Expand a path containing a tilde (~) character
 
 On Unix and Windows, return the argument with an initial component of ~ or ~user replaced by that user‘s home directory.
 
@@ -894,7 +894,7 @@ Because of the size of IPv6 subnets, iteration over all of them to find the corr
 ###### method: hwaddr(value, query = '', alias = 'hwaddr')
 > ansible built-in - _New in 1.9._
 
-You can use `hwaddr` filter to check if a given string is a MAC address or convert it between various formats. 
+You can use `hwaddr` filter to check if a given string is a MAC address or convert it between various formats.
 
 Examples:
 ```python

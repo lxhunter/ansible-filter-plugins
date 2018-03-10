@@ -2,21 +2,21 @@
 
 - name: camelize(string, uppercase_first_letter=True)
   assert:
-    that: 
+    that:
       - "'the_camelize_string_method' | camelize == 'TheCamelizeStringMethod'"
       - "'webkit-transform' | camelize(True) == 'WebkitTransform'"
       - "'webkit-transform' | camelize(False) == 'webkitTransform'"
 
 - name: clean(string)
   assert:
-    that: 
+    that:
       - "' foo    bar   ' | clean == 'foo bar'"
       - "123 | clean == '123'"
       - "'   foo\t bar ' | clean == 'foo bar'"
 
 - name: classify(string)
   assert:
-    that: 
+    that:
       - "'some_class_name' | classify == 'SomeClassName'"
       - "'my wonderfull class_name' | classify == 'MyWonderfullClassName'"
       - "'my wonderfull.class.name' | classify == 'MyWonderfullClassName'"
@@ -24,7 +24,7 @@
 
 - name: count(haystack, needle)
   assert:
-    that: 
+    that:
       - "'Hello world' | count('l') == 3"
       - "'Hello world' | count('Hello') == 1"
       - "'Hello world' | count('foo') == 0"
@@ -32,7 +32,7 @@
 
 - name: dasherize(string)
   assert:
-    that: 
+    that:
       - "'foo_bar' | dasherize == 'foo-bar'"
       - "'the_dasherize_string_method' | dasherize == 'the-dasherize-string-method'"
       - "'thisIsATest' | dasherize == 'this-is-a-test'"
@@ -40,14 +40,14 @@
 
 - name: decapitalize(string)
   assert:
-    that: 
+    that:
       - "'Fabio' | decapitalize == 'fabio'"
       - "'FOO' | decapitalize ==  'fOO'"
       - "123 | decapitalize == '123'"
 
 - name: dedent(string)
   assert:
-    that: 
+    that:
       - "'Hello\nWorld' | dedent == 'Hello\nWorld'"
       - "'Hello\t\nWorld' | dedent ==  'Hello\t\nWorld'"
       - "'Hello \nWorld' | dedent == 'Hello \nWorld'"
@@ -55,7 +55,7 @@
 
 - name: ends_with(haystack, needle, beg=0, end=None)
   assert:
-    that: 
+    that:
       - "'image.gif' | ends_with('gif') == true"
       - "'foobar' | ends_with('bar') == true"
       - "'foobarfoobar' | ends_with('bar') == true"
@@ -65,12 +65,12 @@
 
 - name: escape_html(string)
   assert:
-    that: 
+    that:
       - "'<div>Blah & \"blah\" & blah</div>' | escape_html == '&lt;div&gt;Blah &amp; &quot;blah&quot; &amp; blah&lt;/div&gt;'"
 
 - name: humanize(string)
   assert:
-    that: 
+    that:
       - "'the_humanize_string_method' | humanize == 'The humanize string method'"
       - "'ThehumanizeStringMethod' | humanize == 'Thehumanize string method'"
       - "'the humanize_id string method_id' | humanize == 'The humanize id string method'"
@@ -78,7 +78,7 @@
 
 - name: includes(haystack, needle)
   assert:
-    that: 
+    that:
       - "'foobar' | includes('ob') == True"
       - "'foobar' | includes('qux') == False"
       - "'foobar' | includes('bar') == True"
@@ -87,22 +87,21 @@
 
 - name: insert(string, index, substring)
   assert:
-    that: 
+    that:
       - "'foo ' | insert(4, 'bar') == 'foo bar'"
       - "'Hello ' | insert(6, 'Jessy') == 'Hello Jessy'"
       - "'Hello ' | insert(100, 'Jessy') == 'Hello Jessy'"
 
 - name: lpad(width[, fillchar])
   assert:
-    that: 
+    that:
       - "'1' | lpad(8) == '       1'"
       - "1 | lpad(8) == '       1'"
       - "'1' | lpad(8, '0') == '00000001'"
 
-
 - name: lpad(width[, fillchar])
   assert:
-    that: 
+    that:
       - "' foo' | ltrim == 'foo'"
       - "'    foo' | ltrim == 'foo'"
       - "'foo ' | ltrim == 'foo '"
@@ -110,7 +109,7 @@
 
 - name: repeat(string, count, separator=None)
   assert:
-    that: 
+    that:
       - "'foo' | repeat(3) == 'foofoofoo'"
       - "'foo' | repeat('3') == 'foofoofoo'"
       - "123 | repeat(2) == '123123'"
@@ -119,7 +118,7 @@
 
 - name: rpad(string, width, fillchar=' ')
   assert:
-    that: 
+    that:
       - "'1' | rpad(8) == '1       '"
       - "1 | rpad(8) == '1       '"
       - "1 | rpad(8, '0') == '10000000'"
@@ -128,7 +127,7 @@
 
 - name: rtrim(string, characters)
   assert:
-    that: 
+    that:
       - "'http://foo/' | rtrim('/') == 'http://foo'"
       - "' foo' | rtrim == ' foo'"
       - "'foo     ' | rtrim == 'foo'"
@@ -137,18 +136,40 @@
 
 - name: splice(string, index, howmany, substring)
   assert:
-    that: 
+    that:
       - "'http://github.com/lxhunter/string' | splice(18, 8, 'awesome') == 'http://github.com/awesome/string'"
       - "12345 | splice(1, 2, 321) == '132145'"
 
 - name: starts_with(haystack, needle, beg=0, end=None)
   assert:
-    that: 
+    that:
       - "'image.gif' | starts_with('image') == True"
       - "'foobar' | starts_with('foo') == True"
       - "'oobar' | starts_with('foo') == False"
       - "'oobar' | starts_with('o') == True"
 
+- name: successor(string)
+  assert:
+    that:
+      - "'a' | successor == 'b'"
+      - "'b' | successor == 'c'"
+      - "'z' | successor == 'aa'"
 
+- name: swap_case(string)
+  assert:
+    that:
+      - "'Foo' | swap_case == 'fOO'"
+      - "'BaR' | swap_case == 'bAr'"
+      - "'Ba5z' | swap_case == 'bA5Z'"
 
+- name: transliterate(string)
+  assert:
+    that:
+      - "'älämölö' | transliterate == 'alamolo'"
+      - "'Ærøskøbing' | transliterate == 'rskbing'"
 
+- name: underscore(string)
+  assert:
+    that:
+      - "'FooBar' | underscore == 'foo_bar'"
+      - "'FooBarBazzBam' | underscore == 'foo_bar_bazz_bam'"

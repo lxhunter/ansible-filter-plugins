@@ -1,40 +1,40 @@
-## List of Jinja Builtin Functions 
+## List of Jinja Builtin Functions
 
 #### abs
 ###### method: abs(number)
 > jinja built-in
 
-Return the absolute value of the argument. 
+Return the absolute value of the argument.
 
 ```python
-{{ -1|abs }}|{{ 1|abs }} 
+{{ -1|abs }}|{{ 1|abs }}
 # => 1
 ```
 
 #### attr
-###### method: attr(obj, name) 
+###### method: attr(obj, name)
 > jinja built-in
 
 
 Get an attribute of an object. foo|attr("bar") works like foo.bar just that always an attribute is returned and items are not looked up.
 
 ```python
-{{ foo|attr('bar') }} 
+{{ foo|attr('bar') }}
 # => 'quux'
 ```
 
 #### batch
-###### method: batch(sequence, linecount, fill_with=None) 
+###### method: batch(sequence, linecount, fill_with=None)
 > jinja built-in
 
 
-A filter that batches items. It works pretty much like slice just the other way round. It returns a list of lists with the given number of items. If you provide a second parameter this is used to fill up missing items. 
+A filter that batches items. It works pretty much like slice just the other way round. It returns a list of lists with the given number of items. If you provide a second parameter this is used to fill up missing items.
 
 ```python
-{{ foo|batch(3)|list }} 
+{{ foo|batch(3)|list }}
 # => [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9]]
 
-{{ foo|batch(3, 'X')|list }} 
+{{ foo|batch(3, 'X')|list }}
 # => [[0, 1, 2], [3, 4, 5], [6, 7, 8], [9, 'X', 'X']]
 ```
 
@@ -46,7 +46,7 @@ A filter that batches items. It works pretty much like slice just the other way 
 Capitalize a string. The first character will be uppercase, all others lowercase.
 
 ```python
-{{ "foo bar"|capitalize }} 
+{{ "foo bar"|capitalize }}
 # => 'Foo bar'
 ```
 
@@ -58,7 +58,7 @@ Capitalize a string. The first character will be uppercase, all others lowercase
 Centers the value in a field of a given width.
 
 ```python
-{{ "foo"|center(9) }} 
+{{ "foo"|center(9) }}
 # => '   foo   '
 ```
 
@@ -74,13 +74,13 @@ If the value is undefined it will return the passed default value, otherwise the
 {{ missing|default('no') }}
 # => 'no'
 
-{{ false|default('no') }} 
+{{ false|default('no') }}
 # => 'false'
 
-{{ false|default('no', true) }} 
+{{ false|default('no', true) }}
 # => 'no'
 
-{{ given|default('no') }} 
+{{ given|default('no') }}
 # => 'yes'
 ```
 
@@ -92,13 +92,13 @@ If the value is undefined it will return the passed default value, otherwise the
 Sort a dict and yield (key, value) pairs. Because python dicts are unsorted you may want to use this function to order them by either key or value
 
 ```python
-{{ {"aa": 0, "b": 1, "c": 2, "AB": 3}|dictsort }} 
+{{ {"aa": 0, "b": 1, "c": 2, "AB": 3}|dictsort }}
 # => [('aa', 0), ('AB', 3), ('b', 1), ('c', 2)]
 
-{{ {"aa": 0, "b": 1, "c": 2, "AB": 3}|dictsort(true) }} 
+{{ {"aa": 0, "b": 1, "c": 2, "AB": 3}|dictsort(true) }}
 # => [('AB', 3), ('aa', 0), ('b', 1), ('c', 2)]
 
-{{ {"aa": 0, "b": 1, "c": 2, "AB": 3}|dictsort(false, "value") }} 
+{{ {"aa": 0, "b": 1, "c": 2, "AB": 3}|dictsort(false, "value") }}
 # => [('aa', 0), ('b', 1), ('c', 2), ('AB', 3)]
 ```
 
@@ -213,7 +213,7 @@ Apply python string formatting on an object:
 > jinja built-in
 
 
-Group a sequence of objects by a common attribute. 
+Group a sequence of objects by a common attribute.
 
 ```python
 [{'foo': 1, 'bar': 2},{'foo': 2, 'bar': 3},{'foo': 1, 'bar': 1},{'foo': 3, 'bar': 4}]|groupby('foo')
@@ -538,7 +538,7 @@ _New in jinja version 2.7._
 > jinja built-in
 
 
-Slice an iterator and return a list of lists containing those items. 
+Slice an iterator and return a list of lists containing those items.
 
 ```python
 {{ list(range(10))|slice(3)|list }}

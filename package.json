@@ -1,0 +1,40 @@
+{
+  "name": "apt",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://github.com/brandfrisch/apt.git"
+  },
+  "author": "Alexander Jaeger",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brandfrisch/apt/issues"
+  },
+  "homepage": "https://github.com/brandfrisch/apt#readme",
+  "scripts": {
+    "commitmsg": "commitlint -e ",
+    "precommit": "yamllint . && ansible-lint ."
+  },
+  "commitlint": {
+    "extends": [
+      "./node_modules/@commitlint/config-conventional"
+    ]
+  },
+  "release": {
+    "tagFormat": "${version}",
+    "verifyConditions": [],
+    "publish": [
+      {
+        "path": "@semantic-release/github"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^6.1.2",
+    "@commitlint/config-conventional": "^6.1.2",
+    "@semantic-release/exec": "^2.0.1",
+    "husky": "^0.14.3",
+    "semantic-release": "^13.4.1"
+  }
+}

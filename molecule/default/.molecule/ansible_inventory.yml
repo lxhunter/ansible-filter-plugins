@@ -1,0 +1,11 @@
+# Molecule managed
+
+---
+all:
+  hosts:
+    ansible-filter-plugins-ubuntu-1604: &id001
+      ansible_connection: docker
+ungrouped:
+  hosts:
+    ansible-filter-plugins-ubuntu-1604: *id001
+  vars: {}
