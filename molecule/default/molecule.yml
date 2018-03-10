@@ -1,0 +1,28 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: ansible-filter-plugins-ubuntu-1604
+    image: brandfrisch/ubuntu-16.04:latest
+    privileged: True
+    command: /lib/systemd/systemd
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+provisioner:
+  name: ansible
+  options:
+    D: True
+  lint:
+    name: ansible-lint
+    options:
+      r: /usr/local/src/ansible-lint-rules
+scenario:
+  name: default
+verifier:
+  name: goss
+  lint:
+    name: 'None'

@@ -1,0 +1,5 @@
+---
+- hosts: all
+  tasks:
+
+    - include_tasks: tests/string_utils.yml
