@@ -1,8 +1,8 @@
 
 # Ansible Filters
 
-Setup
-===========
+## Setup
+
 
 Check the filters out to a directory of your choice:
 
@@ -28,8 +28,7 @@ $ filter_plugins = /usr/local/src/ansible-filter-plugins
 More details can be found here:
 [http://docs.ansible.com/ansible/developing_plugins.html#filter-plugins](http://docs.ansible.com/ansible/developing_plugins.html#filter-plugins)
 
-Requirements
-===========
+### Requirements
 
 For the ip address utilites you need the python `netaddr` package:
 
@@ -43,8 +42,7 @@ For pprint you will need the python `pretty` package:
 $ pip install pretty
 ```
 
-Testing
-===========
+## Testing
 
 ```shell
 $ python -m unittest -v string_utils
@@ -54,8 +52,8 @@ $ nodemon -e 'py' --exec "python -m unittest -v string_utils"
 $ molecule test
 ```
 
-Overview
-===========
+## Overview
+
 ### Collection Utilities
 * [batch](docs/jinja_functions.md#batch) - A filter that batches items.
 * [chop] - see [batch](docs/jinja_functions.md#batch)
@@ -235,8 +233,7 @@ Overview
 * [toBoolean]
 * [toNumber]
 
-Credit
-==========
+## Credit
 
 Builtin Jinja functions:
 - [Documentation](http://jinja.pocoo.org/docs/dev/templates/#builtin-filters)
@@ -250,18 +247,15 @@ Builtin Ansible functions:
 - [Ipaddr Filter Documentation](http://docs.ansible.com/ansible/playbooks_filters_ipaddr.html)
 - [Ipaddr Filter Tests](https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/filter/ipaddr.py)
 
-Quote
-==========
+## Quote
 > Look deep into nature, and then you will understand everything better.
 - Albert Einstein
 
-Contribute
-==========
+## Contribute
 
 [Tutorial](http://kbroman.github.io/github_tutorial/pages/fork.html)
 
-License and Author
-==================
+## License and Author
 
 Author:: [Alexander Jäger](https://github.com/lxhunter)
 
