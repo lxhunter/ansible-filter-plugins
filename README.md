@@ -1,21 +1,32 @@
 
 # Ansible Filters
 
-Description
+Setup
 ===========
 
+Check the filters out to a directory of your choice:
 
-
-Testing
-===========
-
-```shell
-$ python -m unittest -v string_utils
+```bash
+$ hub clone lxhunter/ansible-filter-plugins /usr/local/src/ansible-filter-plugins
 # or
-$ nodemon -e 'py' --exec "python -m unittest -v string_utils"
-# or
-$ molecule test
+$ git clone https://github.com/lxhunter/ansible-filter-plugins.git /usr/local/src/ansible-filter-plugins
 ```
+
+**Pro-Tip:** I use [fresh](https://freshshell.com) for this:
+
+```bash
+$ fresh lxhunter/ansible-filter-plugins . --file=/usr/local/src/ansible-filter-plugins
+```
+
+The easiest way to make use of the libaries is to checkout this project somewhere on your ansible host,
+and configure `ansible.cfg` to point the filters directory variable to the checkout directory:
+
+```bash
+$ filter_plugins = /usr/local/src/ansible-filter-plugins
+```
+
+More details can be found here:
+[http://docs.ansible.com/ansible/developing_plugins.html#filter-plugins](http://docs.ansible.com/ansible/developing_plugins.html#filter-plugins)
 
 Requirements
 ===========
@@ -32,19 +43,16 @@ For pprint you will need the python `pretty` package:
 $ pip install pretty
 ```
 
-Installation
+Testing
 ===========
 
-The easiest way to make use of the libaries is to checkout this project somewhere on your ansible host,
-and configure `ansible.cfg` to point the filters directory variable to the checkout directory:
-
+```shell
+$ python -m unittest -v string_utils
+# or
+$ nodemon -e 'py' --exec "python -m unittest -v string_utils"
+# or
+$ molecule test
 ```
-filter_plugins = /where/you/checked/out/ansible-filter-plugins
-```
-
-More details can be found here:
-[http://docs.ansible.com/ansible/developing_plugins.html#filter-plugins](http://docs.ansible.com/ansible/developing_plugins.html#filter-plugins)
-
 
 Overview
 ===========
