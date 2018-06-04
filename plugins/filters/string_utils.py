@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from six import string_types
 import unittest
 import re
 import unicodedata
@@ -9,7 +10,7 @@ import textwrap
 def _string_sanity_check(string):
     if string is None:
         return ''
-    if not isinstance(string, basestring):
+    if not isinstance(string, string_types):
         return str(string)
     return string
 
