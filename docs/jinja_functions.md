@@ -751,7 +751,9 @@ Count the words in that string.
 Return a copy of the string passed to the filter wrapped after 79 characters. You can override this default using the first parameter. If you set the second parameter to false Jinja will not split words apart if they are longer than width. By default, the newlines will be the default newlines for the environment, but this can be changed using the wrapstring keyword argument.
 
 ```python
-# todo: supply example?
+my_verylong_var: 123456789
+{{lookup('vars','my_verylong_var') | wordwrap(width=3, break_long_words=True, wrapstring=None)}}
+# => 123\n456\n789
 ```
 
 _New in version 2.7: Added support for the wrapstring parameter._
