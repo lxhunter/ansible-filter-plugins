@@ -166,7 +166,6 @@ $ molecule test
 * [rpad](docs/string_util_functions.md#rpad) - Return the string right justified in a string of length width.
 * [rtrim](docs/string_util_functions.md#rtrim) - Return a copy of the string with trailing characters removed.
 * [safe](docs/jinja_functions.md#safe) - Make all potentionally dangerous chars safe. - safety is a illusion, so beware!
-* [slugify](docs/string_util_functions.md#slugify) - Transform text into an ascii slug which can be used in safely in URLs.
 * [splice](docs/string_util_functions.md#splice) - Return the string right justified in a string of length width.
 * [sprintf] - see [format](docs/jinja_functions.md#format)
 * [starts_with](docs/string_util_functions.md#starts_with) - Checks whether the string begins with the needle at position (default: 0).
